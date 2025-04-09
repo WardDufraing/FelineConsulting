@@ -1,10 +1,14 @@
 ---
+import { Picture } from 'astro:assets';
+import orangeLogo from './public/Logo_Orange.png';
 ---
 <div class="nav-links">
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/services/">Services</a>
-    <div class="header-image"><img src="./public/Logo_Orange.png"/></div>
+    <div class="header-image">
+        <Picture src={orangeLogo} alt="Logo"/>
+    </div>
     <a href="/portfolio/">Portfolio</a>
     <a href="/contact/">Contact</a>
     <a href="/blog/">Blog</a>
