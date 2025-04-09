@@ -13,6 +13,10 @@
     "astro": "^5.6.1"
   },
   "devDependencies": {
+    "sass": "^1.86.3",
+    "stylelint": "^16.18.0",
+    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-config-standard": "^38.0.0",
     "wrangler": "^4.9.1"
   }
 }

@@ -1,11 +1,23 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Test";
 ---
-
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout pageTitle={pageTitle}>
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Designs die er niet alleengoed uitzien</br>
+        maar ook goed voelen.</h1>
+        <p>Of het nu gaat om de start van een merk of een nieuw hoofdstuk in het leven <br>
+          wij maken doordacht design dat jouw verhaal vertelt. <br>
+          Van krachtige logo’s tot lieve kaartjes, elk ontwerp voelt 100% als jou.</p>
+    </div>
+    
+  </div>
+  <div class="wave">
+    <svg viewBox="0 0 500 110">
+      <path d="M 0 50 C 150 150 330 -30 500 50 L 500 0 L 0 0" fill="#0ba086" opacity="0.8"></path>
+      <path d="M 0 50 C 215 150 250 0 500 100 L 500 0 L 0 0" fill="#0ba086" opacity="0.5"></path>
+      <path d="M 0 50 C 150 150 300 0 500 80 L 500 0 L 0 0" fill="#0ba086"></path>
+    </svg>
+  </div>
+</BaseLayout>

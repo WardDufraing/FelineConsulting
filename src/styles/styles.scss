@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+@use 'fonts.scss';
+@use 'variables.scss';
+
+
+
+body {
+	margin: variables.$spacing-0;
+	background: variables.$colour-brand-orange;
+	font-family: Futura;
+	text-align: center;
+}
+
+h1 {
+	font-size: 3.815rem;
+	margin-bottom: variables.$spacing-12;
+}
+
+/* NAV STYLES */
+
+header{
+  background-color: variables.$colour-brand-green;
+}
+
+.hamburger {
+  padding-top: 20px;
+  padding-left: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  .line {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: variables.$colour-brand-orange;
+  }
+} 
+
+.nav-links {
+    width: 100%;
+    top: 5rem;
+    left: 48px;
+    background-color: variables.$colour-brand-orange;
+    display: none;
+    margin: 0;
+    a {
+        display: block;
+        text-align: center;
+        padding: 10px 0;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: white;
+      }
+      
+      a:hover, a:focus {
+        background-color: variables.$colour-brand-orange;
+      }
+      .header-image{
+        display: none;
+      }
+  }
+  
+  .expanded {
+    display: unset;
+  }
+  
+  @media screen and (min-width: 636px) {
+    .nav-links {
+      padding-top: 2rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: static;
+      width: auto;
+      background: variables.$colour-brand-green;
+      .header-image{
+        display: inline-block;
+        margin: 0 5rem;
+      }
+      a{
+        display: inline-block;
+        padding: 15px 20px;
+        width: 10rem;
+      }
+    }
+
+    .hamburger {
+      display: none;
+    }
+  }
+
+  /* END NAV STYLES */
+
+  .hero{
+    background: variables.$colour-brand-green;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    color: white;
+    .hero-content{
+      padding: 50px 0px 0px 10px;
+      text-align: left;
+      h1{
+        text-align: left;
+        margin-bottom: 0px;
+        font-size: 1rem;
+      }
+      p{
+        text-align: left;
+        font-size: .5rem;
+        font-style: italic;
+      }
+    }
+    
+
+    .wave{
+      background-color: variables.$colour-brand-orange;
+    }
+  }
+
+  @media screen and (min-width: 636px) {
+    .hero{
+      background: variables.$colour-brand-green;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      color: white;
+      .hero-content{
+        padding: 300px 0px 0px 0px;
+        text-align: left;
+        h1{
+          text-align: left;
+          margin-bottom: 0px;
+          font-size: 6rem;
+        }
+        p{
+          text-align: left;
+          font-size: 2rem;
+          font-style: italic;
+        }
+      }
+      
+  
+      .wave{
+        background-color: variables.$colour-brand-orange;
+      }
+    }
+  }
