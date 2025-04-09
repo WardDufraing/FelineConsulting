@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Picture } from 'astro:assets';
+import felineLogo from '../../public/Feline_Consulting_Logo_High.png';
 const pageTitle = "Feline Consulting";
+
 ---
 <BaseLayout pageTitle={pageTitle}>
   <div class="hero">
@@ -24,7 +27,7 @@ const pageTitle = "Feline Consulting";
   <div class="info-block-container">
     <div class="info-block">
       <div class="info-img">
-        <img src="./public/Feline_Consulting_Logo_High.png"/>
+        <Picture src={felineLogo} alt="Logo"/>
       </div>
       <div class="info-title">
         <h2>Brand Equity</h2>
@@ -35,7 +38,7 @@ const pageTitle = "Feline Consulting";
     </div>
     <div class="info-block">
       <div class="info-img">
-        <img src="./public/Feline_Consulting_Logo_High.png"/>
+        <Picture src={felineLogo} alt="Logo"/>
       </div>
       <div class="info-title">
         <h2>Brand Equity</h2>
@@ -46,7 +49,7 @@ const pageTitle = "Feline Consulting";
     </div>
     <div class="info-block">
       <div class="info-img">
-        <img src="./public/Feline_Consulting_Logo_High.png"/>
+        <Picture src={felineLogo} alt="Logo"/>
       </div>
       <div class="info-title">
         <h2>Brand Equity</h2>
@@ -57,7 +60,7 @@ const pageTitle = "Feline Consulting";
     </div>
     <div class="info-block">
       <div class="info-img">
-        <img src="./public/Feline_Consulting_Logo_High.png"/>
+        <Picture src={felineLogo} alt="Logo"/>
       </div>
       <div class="info-title">
         <h2>Brand Equity</h2>
