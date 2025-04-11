@@ -1,0 +1,35 @@
+---
+import '../styles/services-styles.scss';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Picture } from 'astro:assets';
+import felineLogo from '../../public/Feline_Consulting_Logo_High.png';
+const pageTitle = "Services - Feline Consulting";
+
+---
+<BaseLayout pageTitle={pageTitle}>
+    <div class="services-container">
+        <h1>Onze diensten</h2>
+        <p>
+          Van persoonlijke ontwerpen tot zakelijke branding — Feline Consulting helpt je verhaal visueel tot leven brengen.
+        </p>
+    
+        <div class="services-section">
+            <div class="services-section-card">
+                <!-- B2C Services -->
+                <h2>Voor Particulieren</h2>
+                <div>Geboortekaartjes</div>
+                <div>Trouwkaarten & uitnodigingen</div>
+                <div>Feest- & seizoenskaarten</div>
+                <div>Persoonlijke ontwerpen op maat</div>
+            </div>
+            <div class="services-section-card">
+                <!-- B2B Services -->
+                <h2>Voor Ondernemingen</h2>
+                <div>Logo & visuele identiteit</div>
+                <div>Branding & verpakkingsdesign</div>
+                <div>Social media visuals</div>
+                <div>Drukwerk & visitekaartjes</div>
+            </div>
+        </div>
+    </div>
+</BaseLayout>
