@@ -84,6 +84,10 @@ a{
   }
 
   .nav-links {
+    &.expanded {
+      display: block;
+      min-height: 40vh;
+    }
       width: 100%;
       top: 5rem;
       left: 48px;
@@ -108,10 +112,7 @@ a{
         }
     }
     
-    .expanded {
-      display: block;
-      padding-bottom: 10vh;
-    }
+    
 }
   
 @media screen and (min-width: 636px) {
