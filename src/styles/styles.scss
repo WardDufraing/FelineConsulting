@@ -54,11 +54,6 @@ a{
 }
 
 /* NAV STYLES */
-
-header{
-  //background-color: variables.$colour-brand-green;
-}
-
 .hamburger {
   padding-top: 20px;
   padding-left: 20px;
@@ -81,7 +76,7 @@ header{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-    padding-bottom: 15vh;
+    padding-bottom: 60px;
   }
 
   &.bg-index{
@@ -92,7 +87,6 @@ header{
       width: 100%;
       top: 5rem;
       left: 48px;
-      //background-color: variables.$colour-brand-orange;
       display: none;
       margin: 0;
       a {
@@ -115,12 +109,20 @@ header{
     }
     
     .expanded {
-      display: unset;
+      display: block;
+      padding-bottom: 10vh;
     }
 }
   
 @media screen and (min-width: 636px) {
+  .hamburger {
+    display: none;
+  }
+
   .nav-container{
+    &.bg-wave{
+      padding-bottom: 20vh;
+    }
     .nav-links {
       width: 100%;
       display: flex;
@@ -142,10 +144,6 @@ header{
         width: 10rem;
       }
     }
-  }
-
-  .hamburger {
-    display: none;
   }
 }
 
