@@ -1,7 +1,14 @@
 ---
+import { Picture } from 'astro:assets';
+import orangeLogo from '../../public/Logo_Orange.png';
 ---
-<div class="hamburger">
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
+<div class="mobile-nav-container">
+  <div class="mobile-nav-image">
+    <Picture src={orangeLogo} alt="Logo"/>
+</div>
+  <div class="hamburger" id="hamburger">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
   </div>
+</div>

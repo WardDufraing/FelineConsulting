@@ -5,17 +5,17 @@ import orangeLogo from '../../public/Logo_Orange.png';
 const { pageType } = Astro.props;
 ---
 
-<div class={pageType === 'index' ? 'nav-container bg-index' : 'nav-container bg-wave'}>
-    <div class="nav-links">
+<div class={pageType === 'index' ? 'nav-container bg-index' : 'nav-container bg-wave'} id="nav-container">
+    <div class="nav-links" id="nav-links">
         
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/services/">Services</a>
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/about/">About</a>
+        <a class="nav-link" href="/services/">Services</a>
         <div class="header-image">
             <Picture src={orangeLogo} alt="Logo"/>
         </div>
-        <a href="/portfolio/">Portfolio</a>
-        <a href="/contact/">Contact</a>
-        <a href="/blog/">Blog</a>
+        <a class="nav-link" href="/portfolio/">Portfolio</a>
+        <a class="nav-link" href="/contact/">Contact</a>
+        <a class="nav-link" href="/blog/">Blog</a>
     </div>
 </div>

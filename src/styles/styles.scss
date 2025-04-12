@@ -54,21 +54,47 @@ a{
 }
 
 /* NAV STYLES */
-.hamburger {
-  padding-top: 20px;
-  padding-left: 20px;
-  cursor: pointer;
+.mobile-nav-container{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
   background-color: variables.$colour-brand-green;
-  .line {
-    display: block;
-    width: 40px;
-    height: 5px;
-    margin-bottom: 10px;
-    background-color: variables.$colour-brand-orange;
+  .mobile-nav-image{
+    margin-left: 20px;
+    img{
+      width: auto;
+      height: 100px;
+    }
   }
-} 
+  .hamburger {
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    .hamburger-line {
+      display: block;
+      width: 40px;
+      height: 5px;
+      margin-bottom: 10px;
+      background-color: variables.$colour-brand-orange;
+      transition: all 0.3s ease;
+    }
+    &.open {
+      .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translateY(21px);
+      }
+      .hamburger-line:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translateY(-21px);
+      }
+    }
+  } 
+}
+
 
 .nav-container{
   &.bg-wave{
@@ -83,10 +109,15 @@ a{
     background-color: variables.$colour-brand-green;
   }
 
+  &.expanded{
+    height: 150vh;
+  }
+
   .nav-links {
     &.expanded {
       display: block;
       min-height: 40vh;
+      transform: translateY(0%);
     }
       width: 100%;
       top: 5rem;
@@ -116,7 +147,7 @@ a{
 }
   
 @media screen and (min-width: 636px) {
-  .hamburger {
+  .mobile-nav-container{
     display: none;
   }
 
