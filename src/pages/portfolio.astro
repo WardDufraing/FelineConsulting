@@ -1,10 +1,30 @@
 ---
+import 'swiper/swiper-bundle.css';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { Picture } from 'astro:assets';
-import felineLogo from '../../public/Feline_Consulting_Logo_High.png';
+import PortfolioCarousel from '../components/Carousel.tsx';
+
+import '../styles/portfolio-styles.scss';
+
 const pageTitle = "Portfolio - Feline Consulting";
 
+const logoImages = [
+  '../../public/images/portfolio/logos/logo1.png',
+  '../../public/images/portfolio/logos/logo2.png',
+  '../../public/images/portfolio/logos/logo3.png'
+];
+
+const inviteImages = [
+  '../../public/images/portfolio/invites/invite1.jpg',
+  '../../public/images/portfolio/invites/invite2.jpg',
+  '../../public/images/portfolio/invites/invite3.jpg'
+];
 ---
 <BaseLayout pageTitle={pageTitle}>
-  
+    <h1>Logo's</h1>
+    <PortfolioCarousel images={logoImages} client:visible />
+    <h1>Uitnodigingen</h1>
+    <PortfolioCarousel images={inviteImages} client:visible />
 </BaseLayout>
