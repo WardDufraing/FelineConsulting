@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PortfolioCarousel from '../components/Carousel.tsx';
 
 import '../styles/portfolio-styles.scss';
 
@@ -20,8 +21,6 @@ const inviteImages = [
   '../../public/images/portfolio/invites/invite2.jpg',
   '../../public/images/portfolio/invites/invite3.jpg'
 ];
-
-import PortfolioCarousel from '../../public/Carousel.jsx';
 ---
 <BaseLayout pageTitle={pageTitle}>
     <h1>Logo's</h1>
