@@ -7,7 +7,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default {
-  output: 'server',
+  output: 'static',
   adapter: cloudflare(),
   integrations: [react({
     // Disable SSR for React entirely
