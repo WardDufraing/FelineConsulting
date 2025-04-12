@@ -1,17 +1,9 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-
-import cloudflare from '@astrojs/cloudflare';
-
 import react from '@astrojs/react';
+import vercel from '@astrojs/vercel/serverless';
 
-// https://astro.build/config
-export default {
-  output: 'static',
-  adapter: cloudflare(),
-  integrations: [react({
-    // Disable SSR for React entirely
-    // @ts-ignore
-    ssr: false
-  })],
-};
+export default defineConfig({
+  output: 'server',
+  adapter: vercel(),
+  integrations: [react()],
+});

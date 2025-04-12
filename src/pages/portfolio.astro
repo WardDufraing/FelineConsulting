@@ -24,7 +24,7 @@ const inviteImages = [
 ---
 <BaseLayout pageTitle={pageTitle}>
     <h1>Logo's</h1>
-    <PortfolioCarousel images={logoImages} client:only="react" />
+    <PortfolioCarousel images={logoImages} client:visible />
     <h1>Uitnodigingen</h1>
-    <PortfolioCarousel images={inviteImages} client:only="react" />
+    <PortfolioCarousel images={inviteImages} client:visible />
 </BaseLayout>
