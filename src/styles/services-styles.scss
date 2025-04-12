@@ -7,14 +7,25 @@
   .services-section{
     display: flex;
     justify-content: center;
+    flex-direction: column;
     background-image: radial-gradient(closest-side at 50% 50%, variables.$colour-brand-light-orange 0%, variables.$colour-brand-background);
     .services-section-card{
       background-color: variables.$colour-brand-green;
       border-radius: 20px;
       margin: 20px;
-      padding: 20px;
       color: white;
       min-width: 30vw;
+    }
+  }
+}
+
+@media screen and (min-width: 636px) {
+  .services-container{
+    .services-section{
+      flex-direction: row;
+      .services-section-card{
+        padding: 20px;
+      }
     }
   }
 }

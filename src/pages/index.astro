@@ -2,10 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Picture } from 'astro:assets';
 import felineLogo from '../../public/Feline_Consulting_Logo_High.png';
-const pageTitle = "Feline Consulting";
 
+import '../styles/index-styles.scss';
+
+const pageTitle = "Feline Consulting";
+const pageType = "index";
 ---
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} pageType={pageType}>
+
   <div class="hero">
     <div class="hero-content">
       <h1>Designs die er niet alleen goed uitzien,</br>

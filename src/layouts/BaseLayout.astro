@@ -2,7 +2,7 @@
 import '../styles/styles.scss';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-const { pageTitle } = Astro.props;
+const { pageTitle, pageType} = Astro.props; 
 ---
 
 <html lang="en">
@@ -14,7 +14,7 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Header />
+    <Header pageType={pageType}/>
     <div class="main">
       <slot />
     </div>

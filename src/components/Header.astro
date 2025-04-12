@@ -1,10 +1,12 @@
 ---
 import Navigation from './Navigation.astro';
 import Hamburger from './Hamburger.astro';
+
+const { pageType } = Astro.props;
 ---
 <header>
   <nav>
     <Hamburger />
-    <Navigation />
+    <Navigation pageType={pageType}/>
   </nav>
 </header>

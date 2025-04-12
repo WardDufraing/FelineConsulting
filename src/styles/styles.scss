@@ -19,6 +19,40 @@ body {
   flex-grow: 1;
 }
 
+h1{
+  font-size: variables.$font-size-mobile-h1;
+}
+
+h2{
+  font-size: variables.$font-size-mobile-h2;
+}
+
+p{
+  font-size: variables.$font-size-mobile-p;
+}
+
+a{
+  font-size: variables.$font-size-mobile-a;
+}
+
+@media screen and (min-width: 636px) {
+  h1{
+    font-size: variables.$font-size-desktop-h1;
+  }
+
+  h2{
+    font-size: variables.$font-size-desktop-h2;
+  }
+
+  p{
+    font-size: variables.$font-size-desktop-p;
+  }
+
+  a{
+    font-size: variables.$font-size-desktop-a;
+  }
+}
+
 /* NAV STYLES */
 
 header{
@@ -31,6 +65,7 @@ header{
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  background-color: variables.$colour-brand-green;
   .line {
     display: block;
     width: 40px;
@@ -41,11 +76,18 @@ header{
 } 
 
 .nav-container{
-  background-image: url('../../public/wave.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
-  min-height: 30vh;
+  &.bg-wave{
+    background-image: url('../../public/wave.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    padding-bottom: 15vh;
+  }
+
+  &.bg-index{
+    background-color: variables.$colour-brand-green;
+  }
+
   .nav-links {
       width: 100%;
       top: 5rem;
@@ -58,7 +100,7 @@ header{
           text-align: center;
           padding: 10px 0;
           text-decoration: none;
-          font-size: 1.2rem;
+          font-size: variables.$font-size-mobile-navigation;
           font-weight: bold;
           text-transform: uppercase;
           color: white;
@@ -77,164 +119,37 @@ header{
     }
 }
   
-  @media screen and (min-width: 636px) {
-    .nav-container{
-      .nav-links {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: auto;
-        //background: variables.$colour-brand-green;
-        max-height: 20vh;
-        .header-image{
-          display: inline-block;
-          width: 15rem;
-          picture img{
-            width: 100%;
-            height: auto;
-          }
-        }
-        a{
-          display: inline-block;
-          padding: 15px 20px;
-          width: 10rem;
-        }
-      }
-    }
-
-    .hamburger {
-      display: none;
-    }
-  }
-
-  /* END NAV STYLES */
-
-  /* INDEX */
-  /* HERO */
-  .hero{
-    background: variables.$colour-brand-green;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    color: white;
-    .hero-content{
-      padding: 50px 0px 0px 10px;
-      text-align: left;
-      h1{
-        text-align: left;
-        margin-bottom: 0px;
-        font-size: 4vw;
-      }
-      p{
-        text-align: left;
-        font-size: 2vw;
-        font-style: italic;
-      }
-      .hero-CTA{
-        background-color: variables.$colour-brand-orange;
-        border-radius: 20px;
-        width: 25%;
-        padding: 5px 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        a{
-          color: white;
-          text-decoration: none;
-          font-size: 1.2rem;
-        }
-        a:hover, a:focus {
-          color: variables.$colour-brand-orange;
-        }
-        
-      }
-      .hero-CTA:hover{
-        background-color: variables.$colour-brand-background;
-        a{
-          color: variables.$colour-brand-orange;
-        }
-      }
-    }
-    
-
-    .wave{
-      background-color: variables.$colour-brand-orange;
-    }
-  }
-
-  @media screen and (min-width: 636px) {
-    .hero{
-      background: variables.$colour-brand-green;
-      margin: 0;
+@media screen and (min-width: 636px) {
+  .nav-container{
+    .nav-links {
+      width: 100%;
       display: flex;
       justify-content: center;
-      color: white;
-      .hero-content{
-        padding: 1vw 0px 0px 0px;
-        text-align: left;
-        h1{
-          text-align: left;
-          margin-bottom: 0px;
-          font-size: 3vw;
-        }
-        p{
-          text-align: left;
-          font-size: 1vw;
-          font-style: italic;
-        }
-      }
-      
-  
-      .wave{
-        background-color: variables.$colour-brand-orange;
-      }
-    }
-  }
-
-/* END HERO */
-
-/* INFO BLOCKS */
-.info-blocks{
-  .info-blocks-title{
-    color: variables.$colour-brand-orange;
-  }
-  .info-block-container {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    background-image: radial-gradient(closest-side at 50% 50%, variables.$colour-brand-light-orange 0%, variables.$colour-brand-background);
-    .info-block{
-      background-color: variables.$colour-brand-green;
-      border-radius: 20px;
-      margin: 20px;
-      padding: 10px;
-      //box-shadow: 0px 0px 200px variables.$colour-brand-orange;
-      .info-img{
-        img{
+      align-items: center;
+      width: auto;
+      max-height: 20vh;
+      .header-image{
+        display: inline-block;
+        width: 15rem;
+        picture img{
           width: 100%;
           height: auto;
         }
       }
-    }
-  }
-}
-
-
-@media screen and (min-width: 636px) {
-  .info-blocks{
-    .info-block-container {
-      justify-content: center;
-      flex-direction: row;
-      .info-block{
-        width: 15vw;
+      a{
+        display: inline-block;
+        padding: 15px 20px;
+        width: 10rem;
       }
     }
   }
+
+  .hamburger {
+    display: none;
+  }
 }
-/* END INFO BLOCKS */
-/* END INDEX */
+
+/* END NAV STYLES */
 
 /* FOOTER */
 footer{

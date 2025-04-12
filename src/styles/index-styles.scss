@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+@use 'fonts.scss';
+@use 'variables.scss';
+
+
+/* INDEX */
+/* HERO */
+.hero{
+background: variables.$colour-brand-green;
+margin: 0;
+display: flex;
+justify-content: center;
+color: white;
+.hero-content{
+    padding: 50px 0px 0px 10px;
+    text-align: left;
+    h1{
+    text-align: left;
+    margin-bottom: 0px;
+    }
+    p{
+    text-align: left;
+    font-style: italic;
+    }
+    .hero-CTA{
+    background-color: variables.$colour-brand-orange;
+    border-radius: 20px;
+    width: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    a:hover, a:focus {
+        color: variables.$colour-brand-orange;
+    }
+    
+    }
+    .hero-CTA:hover{
+    background-color: variables.$colour-brand-background;
+    a{
+        color: variables.$colour-brand-orange;
+    }
+    }
+}
+}
+
+@media screen and (min-width: 636px) {
+.hero{
+    background: variables.$colour-brand-green;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    color: white;
+    .hero-content{
+    padding: 1vw 0px 0px 0px;
+    text-align: left;
+    h1{
+        text-align: left;
+        margin-bottom: 0px;
+    }
+    p{
+        text-align: left;
+        font-style: italic;
+    }
+
+    .hero-CTA{
+        width: 25%;
+        padding: 5px 10px;
+    }
+    .hero-CTA:hover{
+        background-color: variables.$colour-brand-background;
+        a{
+        color: variables.$colour-brand-orange;
+        }
+    }
+    }
+}
+}
+
+/* END HERO */
+
+/* INFO BLOCKS */
+.info-blocks{
+  .info-blocks-title{
+    color: variables.$colour-brand-orange;
+  }
+  .info-block-container {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-image: radial-gradient(closest-side at 50% 50%, variables.$colour-brand-light-orange 0%, variables.$colour-brand-background);
+    .info-block{
+      background-color: variables.$colour-brand-green;
+      border-radius: 20px;
+      margin: 25px 50px;
+      padding: 10px;
+      //box-shadow: 0px 0px 200px variables.$colour-brand-orange;
+      .info-img{
+        img{
+          width: 75%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 636px) {
+  .info-blocks{
+    .info-block-container {
+      justify-content: center;
+      flex-direction: row;
+      margin: 20px;
+      .info-block{
+        width: 15vw;
+        .info-img{
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+/* END INFO BLOCKS */
+/* END INDEX */

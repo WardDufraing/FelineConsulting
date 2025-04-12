@@ -1,16 +1,11 @@
 ---
 import { Picture } from 'astro:assets';
 import orangeLogo from '../../public/Logo_Orange.png';
+
+const { pageType } = Astro.props;
 ---
 
-<div class="nav-container">
-    <!-- <div class="nav-wave">
-        <svg viewBox="0 0 500 110">
-            <path d="M 0 50 C 150 150 330 -30 500 50 L 500 0 L 0 0" fill="#79d1c2" opacity="0.8"></path>
-            <path d="M 0 50 C 215 150 250 0 500 100 L 500 0 L 0 0" fill="#79d1c2" opacity="0.5"></path>
-            <path d="M 0 50 C 150 150 300 0 500 80 L 500 0 L 0 0" fill="#79d1c2"></path>
-        </svg>
-    </div> -->
+<div class={pageType === 'index' ? 'nav-container bg-index' : 'nav-container bg-wave'}>
     <div class="nav-links">
         
         <a href="/">Home</a>
