@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+@use 'fonts.scss';
+@use 'variables.scss';
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .contact-section{
+        .contact-header{
+
+        }
+
+        .contact-form{
+            width: 90vw;
+            .form-input-container{
+                display: flex;
+                width: 100%;
+                margin: 10px 0px;
+                font-size: variables.$font-size-mobile-a;
+                .form-label{
+                    width: 25%;
+                    text-align: left;
+                    align-content: center;
+                }
+    
+                .form-input{
+                    width: 75%;
+                    font-size: variables.$font-size-mobile-a;
+                    font-family: Futura; 
+                    padding: 6px 5px;
+                    border-radius: 10px;
+                    border: 0px;
+                }
+            }
+            
+
+            .form-button{
+                background-color: variables.$colour-brand-orange;
+                border: 1px solid variables.$colour-brand-orange;
+                border-radius: 4px;
+                box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+                box-sizing: border-box;
+                color: white;
+                font-family: Futura;
+                font-size: variables.$font-size-mobile-a;
+                cursor: pointer;
+                outline: none;
+                outline: 0;
+                padding: 0.5rem 1rem;
+                margin-top: 10px;
+                text-align: center;
+                transform: translateY(0);
+                transition: transform 150ms, box-shadow 150ms;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+                &:hover {
+                  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+                  transform: translateY(-2px);
+                }
+            }
+
+            .form-confirmation-message{
+                &.hidden{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 636px) {
+    .contact{
+        .contact-section{
+            .contact-header{
+    
+            }
+    
+            .contact-form{
+                width: 50vw;
+                .form-input-container{
+                    display: flex;
+                    width: 50vw;
+                    margin: 10px;
+                    font-size: variables.$font-size-desktop-a;
+                    .form-label{
+                        width: 25%;
+                        text-align: left;
+                        align-content: center;
+                    }
+        
+                    .form-input{
+                        width: 75%;
+                        font-size: variables.$font-size-desktop-a;
+                        font-family: Futura; 
+                        padding: 6px 5px;
+                        border-radius: 10px;
+                        border: 0px;
+                    }
+                }
+                
+    
+                .form-button{
+                    font-size: variables.$font-size-desktop-a;
+                    padding: 0.5rem 1rem;
+                    margin-top: 10px;
+                }
+    
+                .form-confirmation-message{
+                    &.hidden{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

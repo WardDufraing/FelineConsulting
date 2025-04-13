@@ -18,7 +18,7 @@ export default function Carousel({ images, title }: Props) {
       {title && <h2 className="text-3xl font-bold text-center mb-6">{title}</h2>}
 
         <Swiper
-          modules={[Autoplay, Pagination, EffectCoverflow]}
+          modules={[Autoplay, Pagination, EffectCoverflow, Navigation]}
           centeredSlides
           slidesPerView={1} // 👈 default for mobile
           breakpoints={{
@@ -33,6 +33,7 @@ export default function Carousel({ images, title }: Props) {
           }}
           className="carousel-wrapper"
           pagination={true}
+          navigation={true}
         >
         {images.map((src, i) => (
           <SwiperSlide key={i}>
