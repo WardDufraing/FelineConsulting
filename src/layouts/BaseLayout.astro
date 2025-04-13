@@ -2,6 +2,7 @@
 import '../styles/styles.scss';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 const { pageTitle, pageType} = Astro.props; 
 ---
 
@@ -19,7 +20,7 @@ const { pageTitle, pageType} = Astro.props;
       <slot />
     </div>
     <Footer />
-
+    <CookieBanner />
     <script>
       import "../scripts/menu.js";
     </script>

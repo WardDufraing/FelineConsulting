@@ -17,37 +17,42 @@ color: white;
 .hero-content{
     padding: 0px 0px 0px 10px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
     h1{
     text-align: left;
-    margin-bottom: 0px;
+    color: white;
     }
     p{
     text-align: left;
     font-style: italic;
     }
     .hero-CTA{
-    background-color: variables.$colour-brand-orange;
-    border-radius: 20px;
-    width: 50%;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    a{
-        color: white;
-        text-decoration: none;
-    }
-    a:hover, a:focus {
-        color: variables.$colour-brand-orange;
-    }
+      width: 50%;
+      text-decoration: none;
+      background-color: variables.$colour-brand-orange;
+      border: 1px solid variables.$colour-brand-orange;
+      border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+      box-sizing: border-box;
+      color: white;
+      font-family: Futura;
+      font-size: variables.$font-size-mobile-a;
+      cursor: pointer;
+      outline: none;
+      outline: 0;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      transform: translateY(0);
+      transition: transform 150ms, box-shadow 150ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+        transform: translateY(-2px);
+      }
     
-    }
-    .hero-CTA:hover{
-    background-color: variables.$colour-brand-background;
-    a{
-        color: variables.$colour-brand-orange;
-    }
     }
 }
 }
@@ -60,7 +65,7 @@ color: white;
     justify-content: center;
     color: white;
     .hero-content{
-    padding: 1vw 0px 0px 0px;
+    padding: 1vw 0px 20px 0px;
     text-align: left;
     h1{
         text-align: left;
@@ -72,16 +77,9 @@ color: white;
     }
 
     .hero-CTA{
-        width: 25%;
-        padding: 5px 10px;
+      width: 25%;
     }
-    .hero-CTA:hover{
-        background-color: variables.$colour-brand-background;
-        a{
-        color: variables.$colour-brand-orange;
-        }
-    }
-    }
+  }
 }
 }
 
@@ -107,6 +105,11 @@ color: white;
       margin: 25px 50px;
       padding: 10px;
       //box-shadow: 0px 0px 200px variables.$colour-brand-orange;
+      .info-title{
+        h2{
+          color: white;
+        }
+      }
       .info-img{
         img{
           width: 75%;

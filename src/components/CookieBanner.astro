@@ -1,0 +1,37 @@
+---
+import '../styles/cookieBanner-styles.scss';
+---
+<div id="cookie-banner" class="cookie-banner hidden">
+    <p class="cookie-message">
+      Deze website gebruikt cookies om de gebruikerservaring te verbeteren.
+      <a href="/cookiepolicy" class="cookie-link">Lees meer</a>
+    </p>
+  
+    <div class="cookie-actions">
+      <button id="accept-cookies" class="cookie-accept-button">Akkoord</button>
+      <button id="reject-cookies" class="cookie-reject-button">Weiger</button>
+    </div>
+  
+    <script>
+      const banner = document.getElementById('cookie-banner');
+      const acceptBtn = document.getElementById('accept-cookies');
+      const rejectBtn = document.getElementById('reject-cookies');
+  
+      if (banner && acceptBtn && rejectBtn) {
+        if (!localStorage.getItem('cookiesAccepted')) {
+          banner.classList.remove('hidden');
+        }
+  
+        acceptBtn.addEventListener('click', () => {
+          localStorage.setItem('cookiesAccepted', 'true');
+          banner.classList.add('hidden');
+        });
+  
+        rejectBtn.addEventListener('click', () => {
+          localStorage.setItem('cookiesAccepted', 'false');
+          banner.classList.add('hidden');
+        });
+      }
+    </script>
+  </div>
+  

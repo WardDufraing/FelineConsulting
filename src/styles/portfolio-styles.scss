@@ -14,8 +14,31 @@
     }
     .swiper-pagination{
         position: relative;
+        .swiper-pagination-bullet {
+            background: #ccc; // inactive color
+            opacity: 1;
+          }
+          
+          .swiper-pagination-bullet-active {
+            background: variables.$colour-brand-orange; // active color
+          }
     }
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: variables.$colour-brand-orange;
+        padding: 1rem;
+        width: 40px;
+        height: 40px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            color: darken(variables.$colour-brand-orange, 10%);
+        }
+    }
+
 }
+
+
 
 @media screen and (min-width: 636px) {
     .swiper{

@@ -3,7 +3,7 @@
 @use 'fonts.scss';
 @use 'variables.scss';
 
-.services-container{
+/* .services-container{
   .services-section{
     display: flex;
     justify-content: center;
@@ -27,5 +27,71 @@
         padding: 20px;
       }
     }
+  }
+} */
+
+.services-page {
+  padding: 0 1rem;
+  margin: 0 auto;
+
+  .services-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    .services-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: variables.$colour-brand-green;
+    }
+
+    p {
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #eee;
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.8rem;
+      color: variables.$colour-brand-orange;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  
+}
+
+@media screen and (min-width: 636px) {
+  .services-page {
+    padding: 0 1.5rem;
   }
 }

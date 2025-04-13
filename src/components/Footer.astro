@@ -1,10 +1,49 @@
 ---
-import Social from '../components/Social.astro' 
+import Social from '../components/Social.astro'
+
+import '../styles/footer-styles.scss';
+
 const platform = "github";
 const username = "withastro";
 ---
-<footer>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2 class="footer-logo">Feline Consulting</h2>
+    </div>
+
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">Over ons</a></li>
+        <li><a href="/services">Diensten</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/cookiepolicy">Cookiebeleid</a></li>
+        <li><a href="/privacy">Privacybeleid</a></li>
+        <li><a href="/terms-conditions">Voorwaarden</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-contact">
+      <p>Email: <a href="mailto:jolien@feline-consulting.be">jolien@feline-consulting.be</a></p>
+      <p>BTW BE0794.844.328</p>
+      <p>IBAN BE88 0019 4300 1441</p>
+      <p>Steursstraat 16<br/> 3130 BEGIJNENDIJK</p>
+      <!-- <p>Tel: <a href="tel:+32471234567">+32 471 23 45 67</a></p> -->
+    </div>
+
+    <div class="footer-social">
+        <Social platform="instagram" username="felineconsulting" />
+        <Social platform="facebook" username="felineconsulting" />
+        <Social platform="youtube" username="felineconsulting" />
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Feline Consulting — Alle rechten voorbehouden.</p>
+  </div>
+</footer>
 </footer>

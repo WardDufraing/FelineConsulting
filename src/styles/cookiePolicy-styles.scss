@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+@use 'fonts.scss';
+@use 'variables.scss';
+
+.cookiepolicy {
+    padding: 3rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: #222;
+  
+    .cookiepolicy-section {
+        display: flex;
+        flex-direction: column;
+        .cookiepolicy-header {
+        color: variables.$colour-brand-orange;
+        margin-bottom: 0px;
+        }
+        p {
+            margin: 0;
+            text-align: left;
+        }
+        a {
+        color: variables.$colour-brand-orange;
+        text-decoration: underline;
+            &:hover {
+                color: darken(variables.$colour-brand-orange, 10%);
+            }
+        }
+        h2 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: variables.$colour-brand-orange;
+            }
+
+        .cookiepolicy-list {
+            list-style: none;
+            padding-left: 1rem;
+            text-align: left;
+            li {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+  }
+  

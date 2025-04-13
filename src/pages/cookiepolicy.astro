@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import '../styles/cookiePolicy-styles.scss';
+
+const pageTitle = "Cookiebeleid - Feline Consulting";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <main class="cookiepolicy">
+    <section class="cookiepolicy-section">
+      <h1 class="cookiepolicy-header">Cookiebeleid</h1>
+
+      <p>
+        We gebruiken cookies om je ervaring op onze website te verbeteren. Cookies helpen ons te begrijpen hoe bezoekers de site gebruiken en zorgen ervoor dat bepaalde functionaliteiten correct werken.
+      </p>
+
+      <h2>Welke cookies gebruiken we?</h2>
+      <ul class="cookiepolicy-list">
+        <li><strong>Noodzakelijke cookies:</strong> Deze zorgen ervoor dat de website goed functioneert, bijvoorbeeld om je cookievoorkeuren te onthouden.</li>
+        <li><strong>Analytische cookies:</strong> Indien ingeschakeld, helpen deze ons anoniem te begrijpen hoe bezoekers onze site gebruiken.</li>
+        <li><strong>Marketing cookies:</strong> We gebruiken momenteel geen marketing cookies. Indien dit verandert, zullen we dit hier vermelden.</li>
+      </ul>
+
+      <h2>Wat doen we met de gegevens?</h2>
+      <p>
+        We verzamelen geen persoonlijke gegevens zonder jouw toestemming. Indien we analytische tools gebruiken, gebeurt dit enkel op anonieme basis en worden er geen persoonsgegevens gedeeld met derden.
+      </p>
+
+      <h2>Hoe beheer je cookies?</h2>
+      <p>
+        Je kunt je cookievoorkeuren op elk moment wijzigen via je browserinstellingen. Je kunt ook je voorkeur op deze site beheren via de cookiebanner onderaan de pagina.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Heb je vragen over ons cookiebeleid? Neem gerust contact op via <a href="mailto:jolien@feline-consulting.be ">jolien@feline-consulting.be</a>.
+      </p>
+    </section>
+  </main>
+</BaseLayout>
