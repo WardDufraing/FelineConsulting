@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getEntry, type CollectionEntry } from 'astro:content';
+
+import '../../styles/blogPost-styles.scss';
+
+const { slug } = Astro.params;
+const post = await getEntry('blog', slug as CollectionEntry<'blog'>['slug']);
+
+if (!post) throw new Error(`Blogpost met slug '${slug}' niet gevonden.`);
+
+const { Content } = await post.render();
+---
+
+<BaseLayout pageTitle={post.data.title}>
+  <main class="blog-post-page">
+    <article class="blog-post">
+      <img src={post.data.img} alt={post.data.title} class="blog-post-img" />
+      <h1 class="blog-post-title">{post.data.title}</h1>
+      <p class="blog-post-date">
+        {post.data.publishDate.toLocaleDateString('nl-BE')}
+      </p>
+      <div class="blog-post-content">
+        <Content />
+      </div>
+    </article>
+  </main>
+
+  <script>
+    const post = document.querySelector('.blog-post');
+  
+    if (post) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+  
+      observer.observe(post);
+    }
+  </script>
+</BaseLayout>

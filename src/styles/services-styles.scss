@@ -3,32 +3,16 @@
 @use 'fonts.scss';
 @use 'variables.scss';
 
-/* .services-container{
-  .services-section{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    background-image: radial-gradient(closest-side at 50% 50%, variables.$colour-brand-light-orange 0%, variables.$colour-brand-background);
-    .services-section-card{
-      background-color: variables.$colour-brand-green;
-      border-radius: 20px;
-      margin: 20px;
-      color: white;
-      min-width: 30vw;
-    }
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-
-@media screen and (min-width: 636px) {
-  .services-container{
-    .services-section{
-      flex-direction: row;
-      .services-section-card{
-        padding: 20px;
-      }
-    }
-  }
-} */
 
 .services-page {
   padding: 0 1rem;
@@ -57,6 +41,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    margin: auto;
+    width: 80vw;
   }
 
   .service-card {
@@ -66,6 +52,13 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border: 1px solid #eee;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+    &.visible {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
 
     h2 {
       font-size: 1.3rem;
@@ -86,9 +79,6 @@
   }
 }
 
-@media screen and (max-width: 600px) {
-  
-}
 
 @media screen and (min-width: 636px) {
   .services-page {

@@ -42,4 +42,25 @@ const pageTitle = "Diensten - Feline Consulting";
       </div>
     </section>
   </main>
+
+  <script>
+    const cards = document.querySelectorAll('.service-card');
+  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Stagger each card by 100ms
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+  
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+  
+    cards.forEach(card => observer.observe(card));
+  </script>
 </BaseLayout>
+
+

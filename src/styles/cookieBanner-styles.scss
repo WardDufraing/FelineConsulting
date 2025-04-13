@@ -53,11 +53,11 @@
     }
 
     .cookie-accept-button {
-        background-color: #ff6600;
+        background-color: variables.$colour-brand-orange;
         color: white;
 
         &:hover {
-        background-color: darken(#ff6600, 10%);
+        background-color: darken(variables.$colour-brand-orange, 10%);
         }
     }
 
