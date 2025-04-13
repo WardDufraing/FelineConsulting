@@ -16,6 +16,7 @@
             width: 90vw;
             .form-input-container{
                 display: flex;
+                gap: 10px;
                 width: 100%;
                 margin: 10px 0px;
                 font-size: variables.$font-size-mobile-a;
@@ -23,6 +24,7 @@
                     width: 25%;
                     text-align: left;
                     align-content: center;
+                    flex-grow: 1;
                 }
     
                 .form-input{
@@ -32,6 +34,7 @@
                     padding: 6px 5px;
                     border-radius: 10px;
                     border: 0px;
+                    flex-grow: 2;
                 }
             }
             
