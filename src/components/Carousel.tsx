@@ -20,6 +20,7 @@ export default function Carousel({ images, title }: Props) {
         <Swiper
           modules={[Autoplay, Pagination, EffectCoverflow, Navigation]}
           centeredSlides
+          initialSlide={1}
           slidesPerView={1} // 👈 default for mobile
           breakpoints={{
             636: {

@@ -8,11 +8,11 @@
 body {
 	margin: variables.$spacing-0;
 	background: variables.$colour-brand-background;
-	font-family: Futura;
 	text-align: center;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: Futura, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
 }
 
 .main{
@@ -35,6 +35,35 @@ p{
 
 a{
   font-size: variables.$font-size-mobile-a;
+}
+
+.custom-button{
+    width: fit-content;
+    text-decoration: none;
+    background-color: variables.$colour-brand-orange;
+    border: 1px solid variables.$colour-brand-orange;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: Futura;
+    font-size: variables.$font-size-mobile-a;
+    cursor: pointer;
+    outline: none;
+    outline: 0;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform 150ms, box-shadow 150ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    &:hover {
+      box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+      transform: translateY(-2px);
+    }
 }
 
 @media screen and (min-width: 636px) {
@@ -104,7 +133,13 @@ a{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
-    padding-bottom: 60px;
+    padding-bottom: 78px;
+    @media screen and (min-width: 636px) {
+      padding-bottom: 110px;
+    }
+    @media screen and (min-width: 850px) {
+      padding-bottom: 20vh;
+    }
   }
 
   &.bg-index{
@@ -148,7 +183,7 @@ a{
     
 }
   
-@media screen and (min-width: 636px) {
+@media screen and (min-width: 850px) {
   .mobile-nav-container{
     display: none;
   }

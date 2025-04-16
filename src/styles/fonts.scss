@@ -1,15 +1,13 @@
-/* Futura regular */
 @font-face {
     font-family: 'Futura';
     font-style: normal;
     font-weight: 400;
-    src: local(''), url('/fonts/futura/futur.ttf') format('ttf');
+    src: local(''), url('/fonts/futura/futura-regular.ttf') format('ttf');
   }
   
-  /* roboto-700 - latin */
   @font-face {
     font-family: 'Futura';
     font-style: italic;
     font-weight: 700;
-    src: local(''), url('/fonts/Futura Light Italic font.ttf') format('woff2');
+    src: local(''), url('/fonts/futura/futura-light-italic.ttf') format('ttf');
   }

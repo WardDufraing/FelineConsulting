@@ -4,6 +4,17 @@
 @use 'variables.scss';
 
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* INDEX */
 /* HERO */
 .hero{
@@ -94,20 +105,32 @@ color: white;
   .info-blocks-title{
     color: variables.$colour-brand-orange;
   }
-  .info-block-container {
-    display: flex;
-    flex-direction: column;
-    color: white;
+  .info-block-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: auto;
+    width: 80vw;
     background-image: radial-gradient(closest-side at 50% 50%, variables.$colour-brand-light-orange 0%, variables.$colour-brand-background);
-    .info-block{
-      background-color: variables.$colour-brand-green;
-      border-radius: 20px;
-      margin: 25px 50px;
-      padding: 10px;
-      //box-shadow: 0px 0px 200px variables.$colour-brand-orange;
+    .info-card{
+      background-color: #f9f9f9;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid #eee;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      &.visible {
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
       .info-title{
         h2{
-          color: white;
         }
       }
       .info-img{
@@ -117,24 +140,19 @@ color: white;
         }
       }
     }
-  }
-}
-
-
-@media screen and (min-width: 636px) {
-  .info-blocks{
-    .info-block-container {
-      justify-content: center;
-      flex-direction: row;
-      margin: 20px;
-      .info-block{
-        width: 15vw;
+    @media screen and (min-width: 636px) {
+      grid-template-columns: repeat(2, 1fr);
+      .info-card{
         .info-img{
           img{
             width: 100%;
           }
         }
       }
+    }
+  
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }

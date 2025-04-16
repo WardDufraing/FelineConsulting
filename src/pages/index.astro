@@ -10,22 +10,19 @@ const pageType = "index";
 ---
 <BaseLayout pageTitle={pageTitle} pageType={pageType}>
 
-  <div class="hero">
+  <header class="hero">
     <div class="hero-content">
       <h1>Designs die er niet alleen goed uitzien,</br>
         maar ook goed voelen.</h1>
-        <p>
-          Of het nu gaat om de start van een merk of een nieuw hoofdstuk in het leven <br>
-          wij maken doordacht design dat jouw verhaal vertelt. <br>
-          Van krachtige logo’s tot lieve kaartjes, elk ontwerp voelt 100% als jou.
-        </p>
-        <!-- <div class="hero-CTA"> -->
-          <a class="hero-CTA" href="/portfolio/">Bekijk onze diensten.</a>
-        <!-- </div> -->
-    
-        </div>
-    
-  </div>
+      <p>
+        Of het nu gaat om de start van een merk of een nieuw hoofdstuk in het leven <br>
+        wij maken doordacht design dat jouw verhaal vertelt. <br>
+        Van krachtige logo’s tot lieve kaartjes, elk ontwerp voelt 100% als jou.
+      </p>
+      <a class="hero-CTA" href="/services/">Bekijk onze diensten.</a>
+    </div>
+  </header>
+
   <div class="wave">
     <svg viewBox="0 0 500 110">
       <path d="M 0 50 C 150 150 330 -30 500 50 L 500 0 L 0 0" fill="#79d1c2" opacity="0.8"></path>
@@ -34,53 +31,47 @@ const pageType = "index";
     </svg>
   </div>
 
-  <div class="info-blocks">
+  <section class="info-blocks">
     <h1 class="info-blocks-title">Waarom kiezen voor Feline Consulting?</h1>
-    <div class="info-block-container">
-      <div class="info-block">
-        <div class="info-img">
-          <Picture src={felineLogo} alt="Logo"/>
-        </div>
-        <div class="info-title">
-          <h2>Brand Equity</h2>
-        </div>
-        <div class="info">
-          <p>We zoeken samen naar wat jouw merk uniek maakt. Deze merkwaarde vertalen wij in design om jouw zaak te onderscheiden van de rest.</p>
-        </div>
-      </div>
-      <div class="info-block">
-        <div class="info-img">
-          <Picture src={felineLogo} alt="Logo"/>
-        </div>
-        <div class="info-title">
-          <h2>Personal Approach</h2>
-        </div>
-        <div class="info">
-          <p>Bandwerk is uit den boze bij ons. Er wordt voldoende tijd geïnvesteerd om het persoonlijk verhaal van elke klant te verwoorden.</p>
-        </div>
-      </div>
-      <div class="info-block">
-        <div class="info-img">
-          <Picture src={felineLogo} alt="Logo"/>
-        </div>
-        <div class="info-title">
-          <h2>University Degree</h2>
-        </div>
-        <div class="info">
-          <p>Geen natte vinger werk, maar een masterdiploma marketing op zak. Jouw design steunt zodus op theorie en wetenschap.</p>
-        </div>
-      </div>
-      <div class="info-block">
-        <div class="info-img">
-          <Picture src={felineLogo} alt="Logo"/>
-        </div>
-        <div class="info-title">
-          <h2>Fair Prices</h2>
-        </div>
-        <div class="info">
-          <p>Feline Consulting is nog een jong bedrijfje. Wij rekenen dus geen monsterbedragen zoals ervaren grafische studios of webdesigners.</p>
-        </div>
-      </div>
-  </div>
-</div>
+    <div class="info-block-grid">
+      {['Brand Equity', 'Personal Approach', 'University Degree', 'Fair Prices'].map((title, i) => (
+        <article class="info-card">
+          <div class="info-img">
+            <Picture src={felineLogo} alt="Logo" />
+          </div>
+          <header class="info-title">
+            <h2>{title}</h2>
+          </header>
+          <div class="info">
+            <p>
+              {{
+                0: "We zoeken samen naar wat jouw merk uniek maakt. Deze merkwaarde vertalen wij in design om jouw zaak te onderscheiden van de rest.",
+                1: "Bandwerk is uit den boze bij ons. Er wordt voldoende tijd geïnvesteerd om het persoonlijk verhaal van elke klant te verwoorden.",
+                2: "Geen natte vinger werk, maar een masterdiploma marketing op zak. Jouw design steunt zodus op theorie en wetenschap.",
+                3: "Feline Consulting is nog een jong bedrijfje. Wij rekenen dus geen monsterbedragen zoals ervaren grafische studios of webdesigners."
+              }[i]}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+  <script>
+    const cards = document.querySelectorAll('.info-card');
+  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Stagger each card by 100ms
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+  
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+  
+    cards.forEach(card => observer.observe(card));
+  </script>
 </BaseLayout>

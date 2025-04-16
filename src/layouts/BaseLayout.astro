@@ -16,9 +16,9 @@ const { pageTitle, pageType} = Astro.props;
   </head>
   <body>
     <Header pageType={pageType}/>
-    <div class="main">
+    <main class="main">
       <slot />
-    </div>
+    </main>
     <Footer />
     <CookieBanner />
     <script>

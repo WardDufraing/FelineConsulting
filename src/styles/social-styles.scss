@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@use 'fonts.scss';
+@use 'variables.scss';
+
+.social-button {
+    width: auto;
+    gap: 0.5rem;
+    .social-icon {
+      width: 1.2rem;
+      height: 1.2rem;
+      color: white;
+    }
+  }
+  

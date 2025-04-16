@@ -1,4 +1,38 @@
 ---
-const { platform, username } = Astro.props;
+import { Image } from 'astro:assets';
+
+import '../styles/social-styles.scss';
+
+import instagram from '../images/socials/instagram.svg';
+import pinterest from '../images/socials/pinterest.svg';
+import linkedin from '../images/socials/linkedin.svg';
+import facebook from '../images/socials/facebook.svg';
+
+const { platform, username } = Astro.props as {
+  platform: 'instagram' | 'pinterest' | 'linkedin' | 'facebook';
+  username: string;
+};
+
+const platformMap = {
+  instagram,
+  pinterest,
+  linkedin,
+  facebook,
+};
+
+const formattedPlatform = platform.charAt(0).toUpperCase() + platform.slice(1);
+const url = `https://www.${platform}.com/${username}`;
+const icon = platformMap[platform];
 ---
-<a class="social-button" href={`https://www.${platform}.com/${username}`}>{platform}</a>
+<a
+  class="social-button custom-button"
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`Volg ons op ${formattedPlatform}`}
+>
+  {icon && (
+    <Image src={icon} alt={`${formattedPlatform} icon`} width={20} height={20} class="social-icon" />
+  )}
+  {formattedPlatform}
+</a>
