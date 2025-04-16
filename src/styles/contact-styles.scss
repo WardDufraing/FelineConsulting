@@ -13,7 +13,6 @@
         }
 
         .contact-form{
-            width: 90vw;
             .form-input-container {
                 display: grid;
                 grid-template-columns: 1fr; // or use min-content 1fr for auto-fit label
@@ -77,7 +76,7 @@
     .contact{
         .contact-section{
             .contact-form{
-                @media screen and (min-width: 636px) {
+                width: 70vw;
                 .form-input-container {
                     grid-template-columns: 120px 1fr; // a bit more space for desktop
                     font-size: variables.$font-size-desktop-a;
@@ -89,7 +88,6 @@
                     .form-input {
                     font-size: variables.$font-size-desktop-a;
                     }
-                }
                 }
                 
     
