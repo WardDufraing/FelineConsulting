@@ -8,14 +8,16 @@ const { pageType } = Astro.props;
 <div class={pageType === 'index' ? 'nav-container bg-index' : 'nav-container bg-wave'} id="nav-container">
     <div class="nav-links" id="nav-links">
         
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/about/">About</a>
-        <a class="nav-link" href="/services/">Services</a>
-        <div class="header-image">
-            <Picture src={orangeLogo} alt="Logo"/>
-        </div>
-        <a class="nav-link" href="/portfolio/">Portfolio</a>
-        <a class="nav-link" href="/contact/">Contact</a>
-        <a class="nav-link" href="/blog/">Blog</a>
+        <a class={`nav-link ${pageType === 'index' ? 'active' : ''}`} href="/">Home</a>
+        <a class={`nav-link ${pageType === 'about' ? 'active' : ''}`} href="/about/">About</a>
+        <a class={`nav-link ${pageType === 'services' ? 'active' : ''}`} href="/services/">Services</a>
+        <a class="home-link" href="/">
+            <div class="header-image">
+                <Picture src={orangeLogo} alt="Logo"/>
+            </div>
+        </a>
+        <a class={`nav-link ${pageType === 'portfolio' ? 'active' : ''}`} href="/portfolio/">Portfolio</a>
+        <a class={`nav-link ${pageType === 'contact' ? 'active' : ''}`} href="/contact/">Contact</a>
+        <a class={`nav-link ${pageType === 'blog' ? 'active' : ''}`} href="/blog/">Blog</a>
     </div>
 </div>

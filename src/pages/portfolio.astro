@@ -9,6 +9,7 @@ import PortfolioCarousel from '../components/Carousel.tsx';
 import '../styles/portfolio-styles.scss';
 
 const pageTitle = "Portfolio - Feline Consulting";
+const pageType = "portfolio";
 
 const logoImages = [
   '/images/portfolio/logos/logo1.png',
@@ -22,7 +23,7 @@ const inviteImages = [
   '/images/portfolio/invites/invite3.jpg'
 ];
 ---
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} pageType={pageType}>
     <h1>Logo's</h1>
     <PortfolioCarousel images={logoImages} client:visible />
     <h1>Uitnodigingen</h1>

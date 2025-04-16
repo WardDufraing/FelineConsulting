@@ -14,11 +14,17 @@ footer{
     display: grid;
     grid-template-columns: 1fr;
     .footer-container{
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 2rem;
-        justify-content: space-between;
         align-items: flex-start;
+        @media screen and (min-width: 636px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    
+        @media screen and (min-width: 1024px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
         .footer-brand{
             .footer-logo {
                 margin: 0;
@@ -62,10 +68,20 @@ footer{
         }
 
         .footer-social{
-            display: flex;
+            display: grid;
             gap: 1rem;
-            flex-direction: column;
-            
+            grid-auto-columns: max-content;   
+
+            @media screen and (min-width: 350px) {
+                grid-template-columns: repeat(2, max-content);
+            } 
+        
+            @media screen and (min-width: 590px) {
+                grid-template-columns: repeat(4, max-content);
+            }   
+            @media screen and (min-width: 636px) {
+                grid-template-columns: repeat(2, max-content);
+            }        
         }
         .footer-bottom {
             text-align: center;

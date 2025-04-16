@@ -14,29 +14,28 @@
 
         .contact-form{
             width: 90vw;
-            .form-input-container{
-                display: flex;
-                gap: 10px;
+            .form-input-container {
+                display: grid;
+                grid-template-columns: 1fr; // or use min-content 1fr for auto-fit label
+                align-items: center;
+                margin: 10px 0;
                 width: 100%;
-                margin: 10px 0px;
-                font-size: variables.$font-size-mobile-a;
-                .form-label{
-                    width: 25%;
-                    text-align: left;
-                    align-content: center;
-                    flex-grow: 1;
+                padding: 0px 10px 0px 0px;
+
+                .form-label {
+                  text-align: left;
+                  margin-bottom: 5px;
                 }
-    
-                .form-input{
-                    width: 75%;
-                    font-size: variables.$font-size-mobile-a;
-                    font-family: Futura; 
-                    padding: 6px 5px;
-                    border-radius: 10px;
-                    border: 0px;
-                    flex-grow: 2;
+              
+                .form-input {
+                  width: 100%;
+                  font-size: variables.$font-size-mobile-a;
+                  font-family: Futura;
+                  padding: 6px 10px;
+                  border-radius: 10px;
+                  border: 0;
                 }
-            }
+              }
             
 
             .form-button{
@@ -77,31 +76,20 @@
 @media screen and (min-width: 636px) {
     .contact{
         .contact-section{
-            .contact-header{
-    
-            }
-    
             .contact-form{
-                width: 50vw;
-                .form-input-container{
-                    display: flex;
-                    width: 50vw;
-                    margin: 10px;
+                @media screen and (min-width: 636px) {
+                .form-input-container {
+                    grid-template-columns: 120px 1fr; // a bit more space for desktop
                     font-size: variables.$font-size-desktop-a;
-                    .form-label{
-                        width: 25%;
-                        text-align: left;
-                        align-content: center;
+
+                    .form-label {
+                    font-size: variables.$font-size-desktop-a;
                     }
-        
-                    .form-input{
-                        width: 75%;
-                        font-size: variables.$font-size-desktop-a;
-                        font-family: Futura; 
-                        padding: 6px 5px;
-                        border-radius: 10px;
-                        border: 0px;
+
+                    .form-input {
+                    font-size: variables.$font-size-desktop-a;
                     }
+                }
                 }
                 
     
