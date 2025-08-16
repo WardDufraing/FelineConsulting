@@ -9,39 +9,63 @@ const pageType = "about"
 
 <BaseLayout pageTitle={pageTitle} pageType={pageType}>
   <main class="about-page">
-    <section class="about-section">
+    <section class="about-title-section">
       <h1 class="about-title">Over Feline Consulting</h1>
 
       <p>
         Feline Consulting is het creatieve project van Jolien, een gepassioneerde grafisch ontwerpster met oog voor detail en gevoel voor stijl. Of het nu gaat om een geboortekaartje, een uitnodiging, een logo of een volledige branding — elk ontwerp is doordacht, persoonlijk en tot in de puntjes afgewerkt.
       </p>
-
-      <h2>Wie we zijn</h2>
-      <p>
-        Jolien startte Feline Consulting met de droom om mensen en merken te helpen hun verhaal visueel tot leven te brengen. Ze combineert creativiteit met structuur, waardoor elk project vlot verloopt en tot een resultaat leidt waar jij trots op kan zijn.
-      </p>
-
-      <h2>Wat we doen</h2>
-      <p>
-        We bieden grafische ontwerpen op maat aan voor zowel particulieren als bedrijven. Denk aan:
-      </p>
-      <ul>
-        <li>Geboorte- en huwelijksdrukwerk</li>
-        <li>Logo’s & huisstijl</li>
-        <li>Promotiemateriaal</li>
-        <li>Social media visuals</li>
-        <li>Drukwerk en begeleiding van A tot Z</li>
-      </ul>
-
-      <h2>Onze aanpak</h2>
-      <p>
-        We luisteren eerst goed naar jouw wensen en gaan dan creatief aan de slag. Transparantie, communicatie en kwaliteit staan centraal. We geloven dat elk project uniek is en zetten in op een persoonlijke aanpak.
-      </p>
-
-      <h2>Waarom Feline?</h2>
-      <p>
-        Omdat we niet enkel willen ontwerpen wat er goed uitziet — we willen iets creëren dat klopt, dat raakt en dat blijft hangen. Design met gevoel dus. En een glimlach natuurlijk.
-      </p>
-    </section>
+      </section>
+      <section class="about-grid">
+        <div class="about-card">
+          <h2>Wie we zijn</h2>
+          <p>
+            Jolien startte Feline Consulting met de droom om mensen en merken te helpen hun verhaal visueel tot leven te brengen. Ze combineert creativiteit met structuur, waardoor elk project vlot verloopt en tot een resultaat leidt waar jij trots op kan zijn.
+          </p>
+        </div>
+        <div class="about-card">
+          <h2>Wat we doen</h2>
+          <p>
+            We bieden grafische ontwerpen op maat aan voor zowel particulieren als bedrijven. Denk aan:
+          </p>
+          <ul>
+            <li>Geboorte- en huwelijksdrukwerk</li>
+            <li>Logo’s & huisstijl</li>
+            <li>Promotiemateriaal</li>
+            <li>Social media visuals</li>
+            <li>Drukwerk en begeleiding van A tot Z</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <h2>Onze aanpak</h2>
+          <p>
+            We luisteren eerst goed naar jouw wensen en gaan dan creatief aan de slag. Transparantie, communicatie en kwaliteit staan centraal. We geloven dat elk project uniek is en zetten in op een persoonlijke aanpak.
+          </p>
+        </div>
+        <div class="about-card">
+          <h2>Waarom Feline?</h2>
+          <p>
+            Omdat we niet enkel willen ontwerpen wat er goed uitziet — we willen iets creëren dat klopt, dat raakt en dat blijft hangen. Design met gevoel dus. En een glimlach natuurlijk.
+          </p>
+        </div>
+      </section>
   </main>
+  <script>
+    const cards = document.querySelectorAll('.about-card');
+  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Stagger each card by 100ms
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+  
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+  
+    cards.forEach(card => observer.observe(card));
+  </script>
 </BaseLayout>
