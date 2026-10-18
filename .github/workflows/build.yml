@@ -13,6 +13,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node scripts/check-contact.mjs
+      - run: node scripts/check-contact-delivery.mjs
       - run: node scripts/check-cookie-choice.mjs
       - run: npm run build
       - run: node scripts/check-search.mjs
