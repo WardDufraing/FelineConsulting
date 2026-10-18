@@ -12,5 +12,8 @@ jobs:
           node-version: 22.22.0
           cache: npm
       - run: npm ci
+      - run: node scripts/check-contact.mjs
+      - run: node scripts/check-cookie-choice.mjs
       - run: npm run build
+      - run: node scripts/check-search.mjs
       - run: npm audit --audit-level=low

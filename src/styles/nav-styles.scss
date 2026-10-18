@@ -28,7 +28,7 @@
         width: 40px;
         height: 5px;
         margin-bottom: 10px;
-        background-color: variables.$colour-brand-orange;
+        background-color: #244f47;
         transition: all 0.3s ease;
       }
       &.open {
@@ -67,6 +67,7 @@
     }
   
     .nav-links {
+      .home-link { display: none; }
       &.expanded {
         display: block;
         min-height: 40vh;
@@ -87,6 +88,7 @@
             text-transform: uppercase;
             color: #244f47;
             &:hover, &:focus-visible {
+                color: #173e36;
                 background-color: variables.$colour-brand-orange;
               }
 
@@ -116,6 +118,7 @@
         justify-content: center;
         align-items: center;
         width: auto;
+        .home-link { display: block; }
         max-width: 1440px;
         margin-inline: auto;
         padding-inline: clamp(.5rem, 2vw, 2rem);

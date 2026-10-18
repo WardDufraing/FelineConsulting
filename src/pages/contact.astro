@@ -22,7 +22,9 @@ const pageType = "contact"
       >
         <p class="form-note">Alle velden zijn verplicht. Deel alleen gegevens die nodig zijn om je vraag te beantwoorden.</p>
         <!-- Honeypot -->
-        <input type="text" name="_honey" style="display:none" tabindex="-1" />
+        <input type="text" name="_honey" hidden tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <input type="hidden" name="_subject" value="Nieuwe ontwerpvraag via Feline Consulting" />
+        <input type="hidden" name="_template" value="table" />
 
         <!-- Disable CAPTCHA -->
         <input type="hidden" name="_captcha" value="false" />
@@ -35,7 +37,6 @@ const pageType = "contact"
             id="name"
             autocomplete="name"
             required
-            minlength="2"
             class="form-input"
           />
         </div>
@@ -47,6 +48,9 @@ const pageType = "contact"
             name="email"
             id="email"
             autocomplete="email"
+            inputmode="email"
+            autocapitalize="none"
+            spellcheck="false"
             required
             class="form-input"
           />
@@ -71,10 +75,10 @@ const pageType = "contact"
           <span class="button-loader hidden" aria-hidden="true"></span>
         </button>
 
-        <p role="status" aria-live="polite" class="form-confirmation-message hidden">Bedankt voor je bericht! We nemen snel contact met je op.</p>
+        <p role="status" aria-live="polite" aria-atomic="true" class="form-confirmation-message"></p>
       </form>
 
-      <p class="contact-alternative">Liever rechtstreeks mailen? <a href="mailto:jolien@feline-consulting.be">jolien@feline-consulting.be</a></p>
+      <p class="contact-alternative">Liever via je e-mailapp, of lukt het versturen niet? <a id="email-draft-link" href="mailto:jolien@feline-consulting.be">Open een e-mail aan Jolien</a></p>
 
       <script>
         const form = document.querySelector<HTMLFormElement>('#contact-form');
@@ -87,7 +91,9 @@ const pageType = "contact"
           button.disabled = true;
           form.setAttribute('aria-busy', 'true');
           text.textContent = 'Bezig met versturen…';
-          message.classList.add('hidden');
+          message.textContent = '';
+          let feedback = '';
+          let failed = false;
           try {
             const response = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
               method: 'POST', body: new FormData(form),
@@ -96,19 +102,31 @@ const pageType = "contact"
             });
             const result = await response.json();
             if (!response.ok || ![true, 'true'].includes(result.success)) throw new Error('Submission failed');
-            message.textContent = 'Bedankt voor je bericht! We nemen snel contact met je op.';
-            message.classList.remove('error');
+            feedback = 'Bedankt! Je bericht is ingediend. Jolien kan je via het opgegeven e-mailadres beantwoorden.';
             form.reset();
+            updateEmailDraft();
           } catch {
-            message.textContent = 'Versturen is niet gelukt. Probeer opnieuw of mail naar jolien@feline-consulting.be.';
-            message.classList.add('error');
+            feedback = 'We konden niet bevestigen dat je bericht is verstuurd. Je tekst is bewaard. Probeer opnieuw of open hieronder een e-mail aan Jolien.';
+            failed = true;
           } finally {
             button.disabled = false;
             form.removeAttribute('aria-busy');
             text.textContent = 'Verstuur';
-            message.classList.remove('hidden');
+            message.classList.toggle('error', failed);
+            message.textContent = feedback;
           }
         });
+        const emailDraft = document.querySelector<HTMLAnchorElement>('#email-draft-link');
+        function updateEmailDraft() {
+          if (!emailDraft) return;
+          const value = (name: string) => (form?.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement | null)?.value.trim() ?? '';
+          const body = `Naam: ${value('name')}\nE-mailadres: ${value('email')}\n\n${value('message')}`;
+          emailDraft.href = `mailto:jolien@feline-consulting.be?subject=${encodeURIComponent('Ontwerpvraag via Feline Consulting')}&body=${encodeURIComponent(body)}`;
+        }
+        form?.addEventListener('input', updateEmailDraft);
+        emailDraft?.addEventListener('focus', updateEmailDraft);
+        emailDraft?.addEventListener('click', updateEmailDraft);
+        updateEmailDraft();
       </script>
     </section>
   </div>
