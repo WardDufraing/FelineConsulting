@@ -1,10 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectCoverflow, Pagination, Navigation, A11y, Keyboard } from 'swiper/modules';
+import { Pagination, Navigation, A11y, Keyboard } from 'swiper/modules';
 
 
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/effect-coverflow';
+import 'swiper/css/navigation';
 
 interface Props {
   images: string[];
@@ -18,7 +18,7 @@ export default function Carousel({ images, title }: Props) {
 
 
         <Swiper
-          modules={[Autoplay, Pagination, EffectCoverflow, Navigation, A11y, Keyboard]}
+          modules={[Pagination, Navigation, A11y, Keyboard]}
           keyboard={{ enabled: true, onlyInViewport: true }}
           a11y={{ prevSlideMessage: "Vorig ontwerp", nextSlideMessage: "Volgend ontwerp", paginationBulletMessage: "Ga naar ontwerp {{index}}" }}
           watchOverflow
@@ -42,7 +42,7 @@ export default function Carousel({ images, title }: Props) {
         {images.map((src, i) => (
           <SwiperSlide key={i}>
           <div className="carousel-slide">
-            <img src={src} alt={`${title ?? "Ontwerp"} ${i + 1}`} loading="lazy" decoding="async" />
+            <img src={src} alt={`${title ?? "Ontwerp"} ${i + 1}`} width={1600} height={src.includes('/logos/') ? 1200 : 2400} loading="lazy" decoding="async" />
           </div>
         </SwiperSlide>
         ))}
