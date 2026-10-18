@@ -17,6 +17,6 @@ Google's verification guidance: https://support.google.com/webmasters/answer/900
 
 ## Icons
 
-The Astro starter favicon is replaced with a mint F monogram, dark green letter and orange accent. SVG is the source; PNG versions cover 16, 32, 48, 180, 192 and 512px. A multi-size ICO provides a conventional browser fallback, the Apple touch icon supports saved home-screen shortcuts, and the manifest preserves ordinary browser display (no service worker/offline behaviour added).
+The Astro starter favicon is replaced with a flowing F inspired by the existing logo: looped top stroke and curved stem in dark green on mint, with orange dots. SVG is the source; PNG versions cover 16, 32, 48, 180, 192 and 512px. A multi-size ICO provides a conventional browser fallback, the Apple touch icon supports saved home-screen shortcuts, and the manifest preserves ordinary browser display (no service worker/offline behaviour added).
 
 Browser and Google favicon caches can retain the old icon after deployment. Check the favicon asset URL directly to distinguish deployment problems from cached icons.
