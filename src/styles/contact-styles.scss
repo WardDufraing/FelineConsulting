@@ -94,3 +94,7 @@
     a { color: #356e64; font-size: inherit; overflow-wrap: anywhere; text-underline-offset: .2em; }
   }
 }
+
+@media (max-width: 635px) {
+  .contact .contact-alternative a { display: block; margin-top: .35rem; font-size: .95rem; }
+}

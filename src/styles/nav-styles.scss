@@ -52,12 +52,12 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: bottom;
-      padding-bottom: 78px;
+      padding-bottom: 40px;
       @media screen and (min-width: 636px) {
-        padding-bottom: 110px;
+        padding-bottom: 56px;
       }
       @media screen and (min-width: 850px) {
-        padding-bottom: 20vh;
+        padding-bottom: 64px;
       }
     }
   
@@ -111,7 +111,7 @@
   
     .nav-container{
       &.bg-wave{
-        padding-bottom: 20vh;
+        padding-bottom: 64px;
       }
       .nav-links {
         width: 100%;

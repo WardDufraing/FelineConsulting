@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { Picture } from 'astro:assets';
-import felineLogo from '../../public/Feline_Consulting_Logo_High.png';
+import BenefitIllustration from '../components/BenefitIllustration.astro';
 
 import '../styles/index-styles.scss';
 
@@ -12,8 +11,7 @@ const pageType = "index";
 
   <header class="hero">
     <div class="hero-content">
-      <h1>Designs die er niet alleen goed uitzien,<br />
-        maar ook goed voelen.</h1>
+      <h1>Designs die er niet alleen goed uitzien, maar ook goed voelen.</h1>
       <p>
         Of het nu gaat om de start van een merk of een nieuw hoofdstuk in het leven <br>
         wij maken doordacht design dat jouw verhaal vertelt. <br>
@@ -24,7 +22,7 @@ const pageType = "index";
   </header>
 
   <div class="wave">
-    <svg viewBox="0 0 500 110">
+    <svg viewBox="0 0 500 110" preserveAspectRatio="none" aria-hidden="true" focusable="false">
       <path d="M 0 50 C 150 150 330 -30 500 50 L 500 0 L 0 0" fill="#79d1c2" opacity="0.8"></path>
       <path d="M 0 50 C 215 150 250 0 500 100 L 500 0 L 0 0" fill="#79d1c2" opacity="0.5"></path>
       <path d="M 0 50 C 150 150 300 0 500 80 L 500 0 L 0 0" fill="#79d1c2"></path>
@@ -37,7 +35,7 @@ const pageType = "index";
       {['Sterke merkidentiteit', 'Persoonlijke aanpak', 'Onderbouwd ontwerp', 'Eerlijke prijzen'].map((title, i) => (
         <article class="info-card">
           <div class="info-img">
-            <Picture src={felineLogo} alt="Logo" />
+            <BenefitIllustration kind={i} />
           </div>
           <header class="info-title">
             <h2>{title}</h2>
@@ -55,6 +53,19 @@ const pageType = "index";
         </article>
       ))}
     </div>
+  </section>
+  <section class="working-together" aria-labelledby="working-together-title">
+    <header class="working-together-intro">
+      <h2 id="working-together-title">Hoe we samenwerken</h2>
+      <p>Van een eerste idee tot een ontwerp dat bij je past. Zo geven we jouw verhaal samen vorm.</p>
+    </header>
+    <ol class="process-steps">
+      <li><span class="step-number" aria-hidden="true">01</span><h3>We luisteren</h3><p>Je vertelt over je idee, je stijl en wat je nodig hebt. We bespreken samen de mogelijkheden.</p></li>
+      <li><span class="step-number" aria-hidden="true">02</span><h3>We maken een plan</h3><p>We stemmen de aanpak, planning en prijs af, zodat je weet waar je aan toe bent.</p></li>
+      <li><span class="step-number" aria-hidden="true">03</span><h3>We ontwerpen samen</h3><p>We werken een ontwerp uit en bespreken je feedback. Samen verfijnen we de details.</p></li>
+      <li><span class="step-number" aria-hidden="true">04</span><h3>Klaar voor jouw verhaal</h3><p>Je ontvangt het afgewerkte ontwerp. Heb je drukwerk nodig? Dan bekijken we ook de afwerking.</p></li>
+    </ol>
+    <a class="custom-button" href="/contact/">Vertel ons je idee</a>
   </section>
   <script>
     const cards = document.querySelectorAll('.info-card');

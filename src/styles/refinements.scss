@@ -40,3 +40,13 @@ footer { padding: clamp(2rem, 5vw, 4rem) max(1rem, 5vw); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Darker green for small text links on pale surfaces. */
+.blog-card .blog-content .blog-readmore,
+.blog-post-content a,
+.privacy-policy a, .terms-page a, .cookiepolicy a {
+  color: #356e64;
+  text-underline-offset: .2em;
+}
+.blog-card .blog-content .blog-readmore:hover,
+.blog-post-content a:hover { color: #244f47; }
