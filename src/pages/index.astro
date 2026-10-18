@@ -1,19 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { Picture } from 'astro:assets';
-import felineLogo from '../../public/Feline_Consulting_Logo_High.png';
+import BenefitIllustration from '../components/BenefitIllustration.astro';
 
 import '../styles/index-styles.scss';
 
 const pageTitle = "Feline Consulting";
 const pageType = "index";
 ---
-<BaseLayout pageTitle={pageTitle} pageType={pageType}>
+<BaseLayout description="Persoonlijk grafisch ontwerp in België: logo’s, huisstijl, kaartjes en drukwerk. Ontdek Feline Consulting en vertel ons jouw idee." pageTitle={pageTitle} pageType={pageType}>
 
   <header class="hero">
     <div class="hero-content">
-      <h1>Designs die er niet alleen goed uitzien,</br>
-        maar ook goed voelen.</h1>
+      <h1>Designs die er niet alleen goed uitzien, maar ook goed voelen.</h1>
       <p>
         Of het nu gaat om de start van een merk of een nieuw hoofdstuk in het leven <br>
         wij maken doordacht design dat jouw verhaal vertelt. <br>
@@ -24,37 +22,58 @@ const pageType = "index";
   </header>
 
   <div class="wave">
-    <svg viewBox="0 0 500 110">
+    <svg viewBox="0 0 500 110" preserveAspectRatio="none" aria-hidden="true" focusable="false">
       <path d="M 0 50 C 150 150 330 -30 500 50 L 500 0 L 0 0" fill="#79d1c2" opacity="0.8"></path>
       <path d="M 0 50 C 215 150 250 0 500 100 L 500 0 L 0 0" fill="#79d1c2" opacity="0.5"></path>
       <path d="M 0 50 C 150 150 300 0 500 80 L 500 0 L 0 0" fill="#79d1c2"></path>
     </svg>
   </div>
 
+  <section class="content-section home-services" aria-labelledby="home-services-title">
+    <h2 id="home-services-title">Voor jouw merk. Voor jouw moment.</h2>
+    <p class="section-lead">Een onderneming die vorm krijgt of een bijzonder moment dat je wil delen: elk verhaal vraagt om een eigen ontwerp.</p>
+    <div class="content-grid">
+      <article class="content-card"><h3>Een herkenbaar merk</h3><p>Een logo, huisstijl, flyer of social media visual: laat de verschillende onderdelen van je communicatie bij elkaar passen.</p><a href="/services/#merken">Ontwerp voor ondernemers →</a></article>
+      <article class="content-card"><h3>Een persoonlijk kaartje</h3><p>Geboorte, huwelijk of uitnodiging: zoek een stijl die bij jullie past, met aandacht voor tekst, papier en afwerking.</p><a href="/services/#kaartjes">Ontwerp voor bijzondere momenten →</a></article>
+    </div>
+  </section>
   <section class="info-blocks">
-    <h1 class="info-blocks-title">Waarom kiezen voor Feline Consulting?</h1>
+    <h2 class="info-blocks-title">Waarom kiezen voor Feline Consulting?</h2>
     <div class="info-block-grid">
-      {['Brand Equity', 'Personal Approach', 'University Degree', 'Fair Prices'].map((title, i) => (
+      {['Sterke merkidentiteit', 'Persoonlijke aanpak', 'Onderbouwd ontwerp', 'Een duidelijke aanpak'].map((title, i) => (
         <article class="info-card">
           <div class="info-img">
-            <Picture src={felineLogo} alt="Logo" />
+            <BenefitIllustration kind={i} />
           </div>
           <header class="info-title">
-            <h2>{title}</h2>
+            <h3>{title}</h3>
           </header>
           <div class="info">
             <p>
               {{
                 0: "We zoeken samen naar wat jouw merk uniek maakt. Deze merkwaarde vertalen wij in design om jouw zaak te onderscheiden van de rest.",
-                1: "Bandwerk is uit den boze bij ons. Er wordt voldoende tijd geïnvesteerd om het persoonlijk verhaal van elke klant te verwoorden.",
-                2: "Geen natte vinger werk, maar een masterdiploma marketing op zak. Jouw design steunt zodus op theorie en wetenschap.",
-                3: "Feline Consulting is nog een jong bedrijfje. Wij rekenen dus geen monsterbedragen zoals ervaren grafische studios of webdesigners."
+                1: "Jouw verhaal is het vertrekpunt. We luisteren naar je wensen en vertalen die naar een ontwerp dat bij jou of je onderneming past.",
+                2: "Een mooi ontwerp heeft ook een doel. We denken na over je doelgroep, boodschap en de plekken waar je ontwerp gebruikt wordt.",
+                3: "Elk ontwerp begint met een duidelijke vraag. We bespreken wat je nodig hebt en stemmen de aanpak en prijs af op de omvang van je project."
               }[i]}
             </p>
           </div>
         </article>
       ))}
     </div>
+  </section>
+  <section class="working-together" aria-labelledby="working-together-title">
+    <header class="working-together-intro">
+      <h2 id="working-together-title">Hoe we samenwerken</h2>
+      <p>Van een eerste idee tot een ontwerp dat bij je past. Zo geven we jouw verhaal samen vorm.</p>
+    </header>
+    <ol class="process-steps">
+      <li><span class="step-number" aria-hidden="true">01</span><h3>We luisteren</h3><p>Je vertelt over je idee, je stijl en wat je nodig hebt. We bespreken samen de mogelijkheden.</p></li>
+      <li><span class="step-number" aria-hidden="true">02</span><h3>We maken een plan</h3><p>We stemmen de aanpak, planning en prijs af, zodat je weet waar je aan toe bent.</p></li>
+      <li><span class="step-number" aria-hidden="true">03</span><h3>We ontwerpen samen</h3><p>We werken een ontwerp uit en bespreken je feedback. Samen verfijnen we de details.</p></li>
+      <li><span class="step-number" aria-hidden="true">04</span><h3>Klaar voor jouw verhaal</h3><p>Je ontvangt het afgewerkte ontwerp. Heb je drukwerk nodig? Dan bekijken we ook de afwerking.</p></li>
+    </ol>
+    <a class="custom-button" href="/contact/">Vertel ons je idee</a>
   </section>
   <script>
     const cards = document.querySelectorAll('.info-card');

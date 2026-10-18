@@ -1,38 +1,36 @@
 ---
-title: "Hoe kies je het perfecte lettertype voor je merk?"
-excerpt: "Een goed lettertype doet meer dan je denkt. Het vertelt iets over je merkidentiteit en zorgt voor herkenbaarheid..."
-img: "/images/blog/lettertype-kiezen.png"
+title: "Hoe kies je een lettertype dat bij je merk past?"
+excerpt: "Kijk verder dan een mooie letter. Test uitstraling, leesbaarheid en gebruik op de toepassingen die voor jouw merk tellen."
+img: "/images/blog/lettertype-kiezen.webp"
 publishDate: 2025-04-10
 ---
 
-Een goed lettertype kan een wereld van verschil maken voor de uitstraling van je merk. Je typografie vertelt niet alleen wat je doet, maar ook hoe je dat doet. Een speels, handgeschreven font straalt iets totaal anders uit dan een strak, geometrisch lettertype. Denk dus goed na over wat je met je merk wil zeggen — en hoe een lettertype dat kan ondersteunen. Een goed gekozen font zorgt voor herkenbaarheid, versterkt je merkidentiteit en wekt vertrouwen bij je doelgroep.
+Een lettertype bepaalt mee hoe je merk aanvoelt. Maar een mooie titelletter is niet automatisch geschikt voor een prijslijst, website of lange tekst. Kies daarom op basis van uitstraling én gebruik.
 
-Daarnaast is het belangrijk dat je lettertype niet alleen mooi oogt, maar ook functioneel is. Kan het gemakkelijk gelezen worden op verschillende schermformaten? Hoe zit het met drukwerk? Sommige fonts zijn prachtig op scherm maar verliezen hun kracht in print — of andersom. Door een lettertype te kiezen dat zowel esthetisch als praktisch werkt, zet je een grote stap richting een professionele uitstraling.
+## Begin met drie woorden
 
-Let ook op het gebruik van lettertypes in combinatie. Het kan aantrekkelijk zijn om meerdere fonts te gebruiken om contrast aan te brengen, maar wees voorzichtig. Idealiter combineer je niet meer dan twee of drie lettertypes in je branding. Gebruik bijvoorbeeld één voor koppen, één voor bodytekst, en eventueel nog één accentfont. Zo behoud je overzicht én stijl.
+Hoe wil je overkomen? Bijvoorbeeld toegankelijk, rustig en zorgvuldig. Of energiek, direct en uitgesproken. Gebruik die woorden om je keuze te beoordelen. Een lettertype hoeft niet letterlijk te tonen wat je doet, maar moet wel passen bij het gevoel dat je wil overbrengen.
 
-Een goed lettertype kan een wereld van verschil maken voor de uitstraling van je merk. In dit artikel leggen we uit waar je op moet letten bij het kiezen van het juiste font.
+## Test met echte inhoud
 
-## 1. Past het bij je merk?
+Probeer je merknaam, een titel, een alinea en een bedrag. Gebruik geen willekeurige voorbeeldzin als je straks vooral productnamen of langere Nederlandse teksten gaat zetten. Controleer ook cijfers, leestekens en accenten. Een letter kan op groot formaat mooi zijn, maar op een klein kaartje moeilijk leesbaar worden.
 
-Kies een lettertype dat je merk weerspiegelt. Ben je speels en creatief? Of eerder professioneel en strak?
+## Geef elke letter een rol
 
-## 2. Leesbaarheid boven alles
+Een eenvoudige combinatie is vaak genoeg: één lettertype voor titels en één voor lopende tekst. Je kan ook variëren met gewichten binnen dezelfde familie. Zorg dat titels, tussenkoppen en gewone tekst duidelijk van elkaar verschillen zonder dat de pagina onrustig wordt.
 
-Zorg ervoor dat je tekst goed leesbaar blijft, zowel online als in druk.
+Kijk niet alleen naar de letters op zichzelf. Regelafstand, tekstbreedte en contrast met de achtergrond hebben minstens zoveel invloed op de leesbaarheid.
 
-## 3. Blijf consistent
+## Controleer het gebruiksrecht
 
-Gebruik niet meer dan twee tot drie lettertypes in je branding. Minder is vaak meer.
+Een downloadbare letter is niet vanzelf voor elke toepassing bruikbaar. Controleer de licentie voor het beoogde gebruik, bijvoorbeeld op een website, in drukwerk of in een logo. Bespreek ook wie een licentie nodig heeft als meerdere mensen met de bestanden werken.
 
-## 4. Kijk naar je concurrenten
+## Vergelijk in de juiste context
 
-Wat voor lettertypes gebruiken concurrenten in jouw branche? Je hoeft ze niet te kopiëren, maar het helpt je wel om in te schatten wat werkt — of juist wat opvalt.
+Zet twee mogelijke combinaties naast elkaar op dezelfde toepassing, zoals een visitekaartje of een social post. Bekijk de tekst op een telefoon en, als drukwerk belangrijk is, op papier. Vraag iemand om de belangrijkste informatie terug te vinden. Zo test je meer dan alleen smaak.
 
-## 5. Test op verschillende schermen
+## Leg je keuze vast
 
-Wat er goed uitziet op desktop, kan op mobiel of in druk totaal anders overkomen. Test je gekozen fonts dus op meerdere schermgroottes.
+Noteer de lettertypen, gewichten en basisafspraken in je [brandinggids](/blog/branding-gids). Dat maakt het eenvoudiger om later consistent te blijven.
 
-## 6. Vraag feedback
-
-Laat collega's of klanten naar je typografie kijken. Soms zie je zelf dingen over het hoofd die anderen direct opvallen.
+Twijfel je tussen verschillende richtingen? [Vertel ons over je merk](/contact/) en waar je het ontwerp wil gebruiken.

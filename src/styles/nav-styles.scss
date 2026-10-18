@@ -47,17 +47,14 @@
   
   
   .nav-container{
+    background-color: variables.$colour-brand-green;
     &.bg-wave{
-      background-image: url('../../public/wave.svg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: bottom;
-      padding-bottom: 78px;
-      @media screen and (min-width: 636px) {
-        padding-bottom: 110px;
-      }
-      @media screen and (min-width: 850px) {
-        padding-bottom: 20vh;
+      padding-bottom: 0;
+      &::after {
+        content: '';
+        display: block;
+        height: clamp(40px, 6vw, 80px);
+        background: variables.$colour-brand-background url('../../public/wave.svg') center / 100% 100% no-repeat;
       }
     }
   
@@ -88,8 +85,8 @@
             font-size: variables.$font-size-mobile-navigation;
             font-weight: bold;
             text-transform: uppercase;
-            color: white;
-            &:hover, :focus {
+            color: #244f47;
+            &:hover, &:focus-visible {
                 background-color: variables.$colour-brand-orange;
               }
 
@@ -111,7 +108,7 @@
   
     .nav-container{
       &.bg-wave{
-        padding-bottom: 20vh;
+        padding-bottom: 0;
       }
       .nav-links {
         width: 100%;
@@ -119,10 +116,13 @@
         justify-content: center;
         align-items: center;
         width: auto;
-        max-height: 20vh;
+        max-width: 1440px;
+        margin-inline: auto;
+        padding-inline: clamp(.5rem, 2vw, 2rem);
         .header-image{
           display: inline-block;
-          min-width: 10rem;
+          min-width: 7rem;
+          width: clamp(7rem, 16vw, 15rem);
           max-width: 15rem;
           picture img{
             width: 100%;
@@ -131,8 +131,11 @@
         }
         .nav-link{
           display: inline-block;
-          padding: 15px 20px;
-          width: 10rem;
+          padding: 15px clamp(.35rem, 1vw, 1.25rem);
+          flex: 1 1 0;
+          width: auto;
+          white-space: nowrap;
+          font-size: clamp(.85rem, 1.3vw, 1.2rem);
           &.active {
             border-bottom: 2px solid variables.$colour-brand-orange;
           }

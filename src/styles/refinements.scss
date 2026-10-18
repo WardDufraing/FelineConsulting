@@ -1,0 +1,52 @@
+/* Shared spacing and responsive refinements; preserve the existing palette and type. */
+*, *::before, *::after { box-sizing: border-box; }
+body { line-height: 1.6; }
+img { max-width: 100%; height: auto; }
+:where(a, button, input, textarea):focus-visible { outline: 3px solid #333; outline-offset: 4px; }
+.hidden { display: none !important; }
+.skip-link { position: absolute; left: 1rem; top: -10rem; z-index: 100; background: white; padding: .75rem 1rem; }
+.skip-link:focus { top: 1rem; }
+.about-page, .services-page, .blog-page, .contact, .not-found, .portfolio-page {
+  width: min(90%, 1200px); margin-inline: auto; padding: clamp(1.5rem, 4vw, 3rem) 0 clamp(3rem, 6vw, 5rem);
+}
+.about-page .about-title-section { max-width: 75ch; margin: 0 auto clamp(2rem, 4vw, 3rem); }
+.about-page .about-grid, .services-page .services-grid, .blog-page .blog-grid { width: 100%; }
+.about-page .about-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+.about-card, .service-card, .info-card { min-width: 0; overflow-wrap: break-word; }
+.about-page .about-grid .about-card ul { margin-block: 1.5rem 0; line-height: 1.6; }
+.about-card li + li { margin-top: .6rem; }
+.about-card h2, .service-card h2 { margin-top: 0; }
+.hero .hero-content { max-width: 1200px; padding-block: clamp(1.5rem, 4vw, 3rem); }
+.hero .hero-content .hero-CTA { margin-top: 1rem; }
+.info-blocks { padding-bottom: clamp(3rem, 6vw, 5rem); }
+.info-blocks-title { margin: 0 auto 2.5rem; padding-inline: 1rem; }
+.info-blocks .info-block-grid { width: min(90%, 1200px); }
+textarea { resize: vertical; }
+button:disabled { cursor: wait; opacity: .7; }
+.form-confirmation-message.error { color: #9e2020; }
+.portfolio-page section + section { margin-top: clamp(3rem, 6vw, 5rem); }
+.carousel-slide { padding: .5rem 1rem 1.5rem; }
+.swiper-pagination { margin-top: 1rem; }
+.blog-post-page { padding-block: 2rem 4rem; }
+.blog-post-page .blog-post { width: min(90%, 760px); line-height: 1.75; }
+.blog-post-content h2, .blog-post-content h3 { margin-top: 2rem; }
+.not-found .custom-button { margin: 2rem auto 0; }
+.mobile-nav-container { width: 100%; }
+.mobile-nav-container .hamburger { background: none; border: 0; }
+.nav-container.expanded { height: auto; }
+footer .footer-container { width: min(100%, 1200px); margin-inline: auto; }
+footer .footer-contact { overflow-wrap: anywhere; }
+footer { padding: clamp(2rem, 5vw, 4rem) max(1rem, 5vw); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Darker green for small text links on pale surfaces. */
+.blog-card .blog-content .blog-readmore,
+.blog-post-content a,
+.privacy-policy a, .terms-page a, .cookiepolicy a {
+  color: #356e64;
+  text-underline-offset: .2em;
+}
+.blog-card .blog-content .blog-readmore:hover,
+.blog-post-content a:hover { color: #244f47; }

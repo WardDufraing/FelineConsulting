@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCallout from '../components/ProjectCallout.astro';
 import PortfolioCarousel from '../components/Carousel.tsx';
 
 import '../styles/portfolio-styles.scss';
@@ -12,20 +13,26 @@ const pageTitle = "Portfolio - Feline Consulting";
 const pageType = "portfolio";
 
 const logoImages = [
-  '/images/portfolio/logos/logo1.png',
-  '/images/portfolio/logos/logo2.png',
-  '/images/portfolio/logos/logo3.png'
+  '/images/portfolio/logos/logo1.webp'
 ];
 
 const inviteImages = [
-  '/images/portfolio/invites/invite1.jpg',
-  '/images/portfolio/invites/invite2.jpg',
-  '/images/portfolio/invites/invite3.jpg'
+  '/images/portfolio/invites/invite1.webp',
+  '/images/portfolio/invites/invite2.webp',
+  '/images/portfolio/invites/invite3.webp'
 ];
 ---
-<BaseLayout pageTitle={pageTitle} pageType={pageType}>
-    <h1>Logo's</h1>
-    <PortfolioCarousel images={logoImages} client:visible />
-    <h1>Uitnodigingen</h1>
-    <PortfolioCarousel images={inviteImages} client:visible />
+<BaseLayout description="Bekijk de beschikbare ontwerpvoorbeelden van Feline Consulting: een eigen merkidentiteit en uitnodigingen als inspiratie voor jouw project." pageTitle={pageTitle} pageType={pageType}>
+<div class="portfolio-page">
+    <h1>Ontwerp in beeld</h1>
+    <p class="section-lead">Een eerste blik op de beschikbare ontwerpen: van de eigen merkidentiteit van Feline Consulting tot uitnodigingen. Gebruik ze als vertrekpunt om te vertellen welke sfeer jij zoekt.</p>
+    <section><h2>Een eigen identiteit</h2><p class="section-lead">Het logo van Feline Consulting brengt de naam en de zachte, persoonlijke uitstraling van het merk samen.</p>
+    <PortfolioCarousel images={logoImages} title="Logo-ontwerpen" client:visible />
+    </section>
+    <section>
+    <h2>Uitnodigingen</h2><p class="section-lead">Kijk naar de combinatie van typografie, kleur en compositie. Wat spreekt je aan: rustig, speels, uitgesproken of verfijnd?</p>
+    <PortfolioCarousel images={inviteImages} title="Uitnodigingsontwerpen" client:visible />
+    </section>
+    <ProjectCallout title="Welke stijl spreekt jou aan?" text="Vertel welke voorbeelden je mooi vindt en waarom. Je mag ook eigen inspiratiebeelden of een korte beschrijving van je gewenste sfeer meebrengen." />
+    </div>
 </BaseLayout>

@@ -6,8 +6,8 @@ import '../styles/privacy-styles.scss';
 const pageTitle = "Privacybeleid - Feline Consulting";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <main class="privacy-policy">
+<BaseLayout description="Lees welke gegevens je via het contactformulier deelt, waarom Feline Consulting ze gebruikt en hoe je vragen over privacy stelt." pageTitle={pageTitle}>
+  <div class="privacy-policy legal-page">
     <section class="privacy-section">
       <h1 class="privacy-header">Privacybeleid</h1>
 
@@ -32,7 +32,7 @@ const pageTitle = "Privacybeleid - Feline Consulting";
 
       <h2>Hoe worden je gegevens verwerkt?</h2>
       <p>
-        De gegevens die je via ons contactformulier verzendt, worden verwerkt via Formsubmit.co. Deze dienst stuurt jouw bericht rechtstreeks naar ons e-mailadres zonder dat jouw gegevens op hun servers worden opgeslagen.
+        De gegevens die je via ons contactformulier verzendt, worden verwerkt via Formsubmit.co. Deze dienst verwerkt je inzending en stuurt die door naar ons e-mailadres. FormSubmit biedt ook een inzendingsarchief aan. Gebruik het formulier daarom niet voor vertrouwelijke of gevoelige informatie die niet nodig is voor je vraag. Meer informatie vind je in de <a href="https://formsubmit.co/documentation" rel="noopener noreferrer" target="_blank">documentatie van FormSubmit</a>.
       </p>
 
       <h2>Gegevensbeveiliging</h2>
@@ -55,5 +55,5 @@ const pageTitle = "Privacybeleid - Feline Consulting";
         Vragen over dit privacybeleid? Neem contact op via <a href="mailto:jolien@feline-consulting.be">jolien@feline-consulting.be</a>.
       </p>
     </section>
-  </main>
+  </div>
 </BaseLayout>

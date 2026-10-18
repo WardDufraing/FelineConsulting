@@ -1,42 +1,34 @@
 ---
-title: "Wat is een branding gids en waarom heb je die nodig?"
-excerpt: "Consistentie is key. Een branding gids zorgt ervoor dat je merk herkenbaar blijft, ook als je groeit..."
-img: "/images/blog/branding-guide.png"
+title: "Wat is een brandinggids en waarom heb je die nodig?"
+excerpt: "Wat leg je vast over je logo, kleuren en lettertypes? Maak je huisstijl bruikbaar voor jezelf en de mensen die ermee werken."
+img: "/images/blog/branding-guide.webp"
 publishDate: 2025-04-12
 ---
 
-Een branding gids is eigenlijk het fundament van je visuele communicatie. Het zorgt ervoor dat iedereen die met je merk werkt — intern én extern — dezelfde taal spreekt. Zo blijft je merkconsistent, herkenbaar en professioneel, ongeacht het medium of de uitvoerder. In een branding gids leg je vast hoe je merk er moet uitzien, klinken en aanvoelen.
+Een huisstijl wordt pas herkenbaar als je ze consequent gebruikt. Een brandinggids bundelt de afspraken over je logo, kleuren en lettertypes. Handig voor jezelf, maar ook voor een drukker, webbouwer of collega die met je merk aan de slag gaat.
 
-De kern van een goede branding gids bestaat uit richtlijnen voor logo-gebruik, kleurgebruik, typografie, iconografie en eventueel fotografie. Maar je kan ook verder gaan: denk aan tone of voice, schrijfwijze van productnamen, of hoe je sociale media benadert. Elk detail draagt bij tot een sterk en coherent merkverhaal.
+## Begin met de toepassingen
 
-Wanneer je groeit als merk — en dus meer mensen of partners met je merk gaan werken — is een branding gids essentieel. Het bespaart discussies, verkleint fouten en zorgt ervoor dat je merk ook bij uitbreiding of overname herkenbaar blijft. Het is als een receptenboek dat je branding telkens opnieuw perfect laat smaken, ongeacht wie het klaarmaakt.
+Waar zien mensen je merk? Denk aan je website, sociale media, offertes, visitekaartjes en verpakkingen. Maak eerst een lijst. Zo wordt je gids een praktisch hulpmiddel in plaats van een verzameling mooie voorbeelden.
 
-Een branding gids is een document dat alle visuele richtlijnen voor je merk verzamelt.
+## Wat hoort er minimaal in?
 
-## Waarom is het belangrijk?
+- **Logo:** de hoofdversie, eventuele alternatieven en de ruimte die eromheen vrij moet blijven.
+- **Kleuren:** de afgesproken waarden voor digitale en gedrukte toepassingen. Een scherm en papier geven kleur verschillend weer.
+- **Typografie:** welke letters je gebruikt voor titels, lopende tekst en accenten, met voorbeelden van grootte en hiërarchie.
+- **Beeldstijl:** de sfeer van foto's, illustraties en andere grafische elementen.
+- **Voorbeelden:** minstens één digitale en één gedrukte toepassing, als je beide gebruikt.
 
-Je wil dat je merk er overal hetzelfde uitziet: online, op drukwerk, op sociale media...
+Leg ook uit wat je beter vermijdt: een uitgerekt logo, te weinig contrast of nieuwe kleuren die niet bij de huisstijl horen. Een concreet voorbeeld is vaak duidelijker dan een lange regel.
 
-## Wat staat erin?
+## Houd de gids bruikbaar
 
-- Je logo (en varianten)
-- Kleurenpalet
-- Lettertypes
-- Afstand en plaatsing
-- Do's en don'ts
+Bundel de juiste logobestanden op één plek en geef ze duidelijke namen. Noteer welke versie voor welk gebruik bedoeld is. Werk je met externe partners? Deel de gids samen met de bestanden, zodat niemand een logo uit een oude e-mail hoeft te halen.
 
-## Wie gebruikt het?
+Je hoeft niet meteen een uitgebreid document te maken. Een compacte basis die je echt gebruikt, is waardevoller dan een grote gids die niemand opent. Voeg toepassingen toe wanneer ze relevant worden.
 
-Iedereen die met je merk werkt: ontwerpers, drukkers, sociale media managers... Zo blijft je merk herkenbaar en professioneel.
+## Een kleine controle voor je volgende ontwerp
 
-## Hoe begin je eraan?
+Bekijk een social post en een visitekaartje naast elkaar. Herken je dezelfde kleuren, letters en beeldtaal? Zo niet, noteer waar het verschil zit. Dat is een goed vertrekpunt voor het aanscherpen van je huisstijl.
 
-Start klein: kies je kleuren, typografie en logo-varianten. Daarna kan je het uitbreiden met tone of voice, fotografie-stijl en meer.
-
-## Digitale en offline toepassingen
-
-Zorg dat je gids zowel werkt voor websites als drukwerk. Denk ook aan sociale media, presentaties, e-mailhandtekeningen...
-
-## Laat het evolueren
-
-Je merk groeit, en je branding gids mag mee evolueren. Houd het levend en pas aan waar nodig.
+Lees ook [hoe je een lettertype voor je merk kiest](/blog/lettertype-kiezen). Wil je je merkidentiteit laten uitwerken? Bekijk onze [diensten voor ondernemers](/services/#merken).

@@ -1,0 +1,14 @@
+---
+interface Props { kind: number }
+const { kind } = Astro.props;
+const drawings = [
+  '<path d="m32 15 5 11 12 2-9 9 2 12-10-6-10 6 2-12-9-9 12-2Z"/><path d="M12 14h5m-2-3v6M49 45h6m-3-3v6"/>',
+  '<path d="M12 15h31v22H25l-9 7v-7h-4Z"/><path d="M43 25h9v25l-9-6H31v-7M20 24h15M20 30h10"/>',
+  '<path d="m10 24 22-10 22 10-22 10Z"/><path d="M19 29v14c8 7 18 7 26 0V29M53 25v18M50 47h6"/>',
+  '<path d="M13 20h22l18 18-21 21-19-19Z"/><circle cx="23" cy="30" r="3"/><path d="m30 43 5 5 10-10M13 20l-3-6"/>'
+];
+---
+<svg class="benefit-illustration" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <circle cx="32" cy="32" r="29" fill="#e6f5f1" stroke="none" />
+  <g set:html={drawings[kind] ?? drawings[0]} />
+</svg>

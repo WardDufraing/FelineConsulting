@@ -1,30 +1,36 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getEntry, type CollectionEntry } from 'astro:content';
+import ProjectCallout from '../../components/ProjectCallout.astro';
+import { getEntry, getCollection, render } from 'astro:content';
 
 import '../../styles/blogPost-styles.scss';
 
 const { slug } = Astro.params;
-const post = await getEntry('blog', slug as CollectionEntry<'blog'>['slug']);
+const post = await getEntry('blog', slug!);
 
-if (!post) throw new Error(`Blogpost met slug '${slug}' niet gevonden.`);
+if (!post) return Astro.rewrite('/404');
 
-const { Content } = await post.render();
+const { Content } = await render(post);
+const readingMinutes = Math.max(1, Math.ceil((post.body ?? '').split(/\s+/).length / 180));
+const related = (await getCollection('blog')).filter(entry => entry.id !== post.id).sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()).slice(0, 2);
 ---
 
-<BaseLayout pageTitle={post.data.title}>
-  <main class="blog-post-page">
+<BaseLayout pageTitle={post.data.title} pageType="blog" description={post.data.excerpt}>
+  <div class="blog-post-page">
     <article class="blog-post">
+      <a class="article-back" href="/blog/">← Alle ontwerptips</a>
       <img src={post.data.img} alt={post.data.title} class="blog-post-img" />
       <h1 class="blog-post-title">{post.data.title}</h1>
-      <p class="blog-post-date">
-        {post.data.publishDate.toLocaleDateString('nl-BE')}
+      <p class="blog-post-date article-meta">
+        <time datetime={post.data.publishDate.toISOString()}>{post.data.publishDate.toLocaleDateString('nl-BE')}</time> · {readingMinutes} min leestijd
       </p>
       <div class="blog-post-content">
         <Content />
       </div>
+      <nav class="related-articles" aria-label="Meer ontwerptips"><h2>Lees ook</h2><ul>{related.map(entry => <li><a href={`/blog/${entry.id}`}>{entry.data.title}</a></li>)}</ul></nav>
+      <ProjectCallout title="Hoe vertaal je dit naar jouw project?" text="Vertel ons wat je wil ontwerpen en welke vragen je nog hebt. We denken graag met je mee." />
     </article>
-  </main>
+  </div>
 
   <script>
     const post = document.querySelector('.blog-post');

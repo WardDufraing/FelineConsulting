@@ -6,17 +6,20 @@ const pageTitle = "Contact - Feline Consulting";
 const pageType = "contact"
 ---
 
-<BaseLayout pageTitle={pageTitle} pageType={pageType}>
-  <main class="contact">
+<BaseLayout description="Bespreek jouw ontwerpidee met Feline Consulting. Vertel over je project, gewenste timing en stijl, of mail rechtstreeks naar Jolien." pageTitle={pageTitle} pageType={pageType}>
+  <div class="contact">
     <section class="contact-section">
       <h1 class="contact-header">Neem contact op</h1>
+      <p class="contact-intro">Een idee voor een logo, kaartje of huisstijl? Vertel ons wat je in gedachten hebt. We denken graag met je mee.</p>
 
+      <details class="brief-help"><summary>Wat zet ik in mijn bericht?</summary><ul><li>Wat wil je laten ontwerpen en voor wie?</li><li>Waar ga je het gebruiken: online, op papier of allebei?</li><li>Heb je een gewenste datum of een budget in gedachten?</li><li>Welke stijl of voorbeelden spreken je aan?</li></ul><p>Je hoeft nog niet op alles een antwoord te hebben. Begin gerust met je idee.</p></details>
       <form
         id="contact-form"
-        action="https://formsubmit.co/warddufraing@gmail.com"
+        action="https://formsubmit.co/jolien@feline-consulting.be"
         method="POST"
         class="contact-form"
       >
+        <p class="form-note">Alle velden zijn verplicht. Deel alleen gegevens die nodig zijn om je vraag te beantwoorden.</p>
         <!-- Honeypot -->
         <input type="text" name="_honey" style="display:none" tabindex="-1" />
 
@@ -29,6 +32,7 @@ const pageType = "contact"
             type="text"
             name="name"
             id="name"
+            autocomplete="name"
             required
             minlength="2"
             class="form-input"
@@ -41,6 +45,7 @@ const pageType = "contact"
             type="email"
             name="email"
             id="email"
+            autocomplete="email"
             required
             class="form-input"
           />
@@ -51,65 +56,59 @@ const pageType = "contact"
           <textarea
             name="message"
             id="message"
+            aria-describedby="message-help"
             rows="5"
             required
             class="form-input"
           ></textarea>
+          <p id="message-help" class="field-help">Een korte beschrijving van je idee en gewenste timing is genoeg om te beginnen.</p>
         </div>
 
+        <p class="form-note">Je bericht wordt via FormSubmit naar Jolien gestuurd. Lees hoe dit werkt in ons <a href="/privacy/">privacybeleid</a>.</p>
         <button type="submit" class="form-button">
           <span class="button-text">Verstuur</span>
           <span class="button-loader hidden" aria-hidden="true"></span>
         </button>
 
-        <p class="form-confirmation-message hidden">Bedankt voor je bericht! We nemen snel contact met je op.</p>
+        <p role="status" aria-live="polite" class="form-confirmation-message hidden">Bedankt voor je bericht! We nemen snel contact met je op.</p>
       </form>
 
+      <p class="contact-alternative">Liever rechtstreeks mailen? <a href="mailto:jolien@feline-consulting.be">jolien@feline-consulting.be</a></p>
+
       <script>
-        const form = document.getElementById('contact-form') as HTMLFormElement | null;
-        if (form) {
-          form.addEventListener('submit', async function (e) {
-            e.preventDefault();
-
-            const message = form.querySelector('.form-confirmation-message') as HTMLElement | null;
-            const button = form.querySelector('.form-button');
-            const buttonText = form.querySelector('.button-text');
-            const loader = form.querySelector('.button-loader');
-
-            if (!message || !buttonText || !loader) return;
-
-            // Show loader, hide text
-            buttonText.classList.add('hidden');
-            loader.classList.remove('hidden');
-
-            const formData = new FormData(form);
-
-            const response = await fetch(form.action, {
-              method: 'POST',
-              body: formData,
-              headers: {
-                Accept: 'application/json'
-              }
+        const form = document.querySelector<HTMLFormElement>('#contact-form');
+        form?.addEventListener('submit', async event => {
+          event.preventDefault();
+          const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+          const message = form.querySelector<HTMLElement>('.form-confirmation-message');
+          const text = form.querySelector<HTMLElement>('.button-text');
+          if (!button || !message || !text || button.disabled) return;
+          button.disabled = true;
+          form.setAttribute('aria-busy', 'true');
+          text.textContent = 'Bezig met versturen…';
+          message.classList.add('hidden');
+          try {
+            const response = await fetch(form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/'), {
+              method: 'POST', body: new FormData(form),
+              headers: { Accept: 'application/json' },
+              signal: AbortSignal.timeout(15000)
             });
-
-            // Reset button UI
-            buttonText.classList.remove('hidden');
-            loader.classList.add('hidden');
-
-            // Animate message
+            const result = await response.json();
+            if (!response.ok || ![true, 'true'].includes(result.success)) throw new Error('Submission failed');
+            message.textContent = 'Bedankt voor je bericht! We nemen snel contact met je op.';
+            message.classList.remove('error');
+            form.reset();
+          } catch {
+            message.textContent = 'Versturen is niet gelukt. Probeer opnieuw of mail naar jolien@feline-consulting.be.';
+            message.classList.add('error');
+          } finally {
+            button.disabled = false;
+            form.removeAttribute('aria-busy');
+            text.textContent = 'Verstuur';
             message.classList.remove('hidden');
-            message.classList.add('fade-in');
-
-            if (response.ok) {
-              message.classList.remove('error');
-              form.reset();
-            } else {
-              message.textContent = 'Er ging iets mis. Probeer opnieuw aub.';
-              message.classList.add('error');
-            }
-          });
-        }
+          }
+        });
       </script>
     </section>
-  </main>
+  </div>
 </BaseLayout>

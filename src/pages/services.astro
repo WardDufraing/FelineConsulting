@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCallout from '../components/ProjectCallout.astro';
 
 import '../styles/services-styles.scss';
 
@@ -7,8 +8,8 @@ const pageTitle = "Diensten - Feline Consulting";
 const pageType = "services"
 ---
 
-<BaseLayout pageTitle={pageTitle} pageType={pageType}>
-  <main class="services-page">
+<BaseLayout description="Van logo en huisstijl tot geboorte- en huwelijksdrukwerk: ontdek de ontwerpservices van Feline Consulting en bereid je project voor." pageTitle={pageTitle} pageType={pageType}>
+  <div class="services-page">
     <section class="services-intro">
       <h1 class="services-title">Onze diensten</h1>
       <p>
@@ -17,32 +18,40 @@ const pageType = "services"
     </section>
 
     <section class="services-grid">
-      <div class="service-card">
+      <div class="service-card" id="merken">
         <h2>🎨 Grafisch ontwerp op maat</h2>
-        <p>Van logo tot flyer — ontwerpen die opvallen en blijven hangen. We zorgen voor een uniek ontwerp dat past bij jouw stijl en doelgroep.</p>
+        <p>Van logo tot flyer — ontwerpen die opvallen en blijven hangen. We zorgen voor een uniek ontwerp dat past bij jouw stijl en doelgroep.</p><p class="service-detail">Denk aan een logo, visitekaartje, flyer of affiche. Vertel waar je het ontwerp wil gebruiken, zodat formaat en inhoud daarop afgestemd kunnen worden.</p>
       </div>
 
-      <div class="service-card">
+      <div class="service-card" id="kaartjes">
         <h2>💌 Geboorte- en huwelijksdrukwerk</h2>
-        <p>Een bijzonder moment vraagt om een bijzonder ontwerp. We maken samen iets dat écht bij jullie past, van uitnodiging tot bedankkaartje.</p>
+        <p>Een bijzonder moment vraagt om een bijzonder ontwerp. We maken samen iets dat écht bij jullie past, van uitnodiging tot bedankkaartje.</p><p class="service-detail">Je kan al nadenken over de stijl, tekst, oplage en enveloppen. Voor geboorteaankondigingen bespreken we ook welke gegevens pas later ingevuld kunnen worden.</p>
       </div>
 
       <div class="service-card">
         <h2>🪪 Branding voor starters</h2>
-        <p>We helpen je om je merk visueel sterk te positioneren met een logo, kleurenpalet, typografie en eventueel drukwerk of social media templates.</p>
+        <p>We helpen je om je merk visueel sterk te positioneren met een logo, kleurenpalet, typografie en eventueel drukwerk of social media templates.</p><p class="service-detail">Een huisstijl helpt je om herkenbaar te communiceren. We bespreken welke onderdelen je nodig hebt en hoe je ze later consequent kan gebruiken.</p>
       </div>
 
       <div class="service-card">
         <h2>🧾 Drukwerk & begeleiding</h2>
-        <p>Wij denken met je mee van digitaal ontwerp tot drukwerk. Geen stress, enkel mooi afgewerkte resultaten.</p>
+        <p>Wij denken met je mee van digitaal ontwerp tot drukwerk. Geen stress, enkel mooi afgewerkte resultaten.</p><p class="service-detail">Formaat, papiersoort en afwerking hebben invloed op het resultaat. Geef bij je aanvraag aan of je alleen een ontwerp nodig hebt of ook begeleiding richting drukwerk.</p>
       </div>
 
       <div class="service-card">
         <h2>📱 Social media visuals</h2>
-        <p>Laat je social posts er consistent en professioneel uitzien. Ideaal voor ondernemers die online willen opvallen.</p>
+        <p>Laat je social posts er consistent en professioneel uitzien. Ideaal voor ondernemers die online willen opvallen.</p><p class="service-detail">Vermeld je kanalen en de soorten berichten die je wil delen. Dan kunnen we nadenken over de juiste verhoudingen, leesbaarheid en samenhang met je huisstijl.</p>
       </div>
     </section>
-  </main>
+    <section class="content-section faq-section" aria-labelledby="service-questions">
+      <h2 id="service-questions">Goed om vooraf te weten</h2>
+      <details><summary>Wat kost een ontwerp?</summary><p>Dat hangt af van de opdracht: een los kaartje vraagt een andere aanpak dan een volledige huisstijl. Vertel wat je nodig hebt, welke toepassingen je voorziet en of er drukwerk bij komt. De prijs en inhoud stemmen we per project af.</p></details>
+      <details><summary>Wanneer neem ik het best contact op?</summary><p>Zodra je weet wat je ongeveer nodig hebt. Vermeld een gewenste datum, zeker als het ontwerp nog gedrukt moet worden. Een planning hangt af van de omvang, feedbackmomenten en eventuele productie.</p></details>
+      <details><summary>Moet ik zelf al een idee hebben?</summary><p>Een uitgewerkt plan is niet nodig. Een paar voorbeelden van wat je mooi vindt, je doelgroep en een korte uitleg over je doel helpen om het gesprek te starten.</p></details>
+      <details><summary>Welke bestanden heb ik nodig?</summary><p>Dat hangt af van het gebruik. Een drukker heeft andere bestanden nodig dan een social media kanaal. Vermeld vooraf waar je het ontwerp wil gebruiken en bespreek ook welke gebruiksrechten en bewerkbare bestanden bij de opdracht horen.</p></details>
+    </section>
+    <ProjectCallout title="Waar kunnen we jou mee helpen?" text="Beschrijf je project, gewenste timing en de toepassingen die je voor ogen hebt. Zo kunnen we gericht meedenken." />
+  </div>
 
   <script>
     const cards = document.querySelectorAll('.service-card');
