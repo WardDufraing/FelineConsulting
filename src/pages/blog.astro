@@ -13,7 +13,7 @@ const blogPosts = (await getCollection("blog")).sort(
 ---
 
 <BaseLayout pageTitle={pageTitle} pageType={pageType}>
-  <main class="blog-page">
+  <div class="blog-page">
     <section class="blog-intro">
       <h1 class="blog-title">Blog</h1>
       <p>Welkom op onze blog! Hier delen we tips, inspiratie en inzichten over grafisch ontwerp, branding, drukwerk en meer.</p>
@@ -46,7 +46,7 @@ const blogPosts = (await getCollection("blog")).sort(
 
       cards.forEach(card => observer.observe(card));
     </script>
-  </main>
+  </div>
 </BaseLayout>
 
 

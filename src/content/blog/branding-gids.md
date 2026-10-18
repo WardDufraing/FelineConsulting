@@ -1,7 +1,7 @@
 ---
 title: "Wat is een branding gids en waarom heb je die nodig?"
 excerpt: "Consistentie is key. Een branding gids zorgt ervoor dat je merk herkenbaar blijft, ook als je groeit..."
-img: "/images/blog/branding-guide.png"
+img: "/images/blog/branding-guide.webp"
 publishDate: 2025-04-12
 ---
 

@@ -12,7 +12,7 @@ const { title, excerpt, href, img } = Astro.props;
 ---
 
 <article class="blog-card">
-  <img src={img} alt={title} class="blog-thumbnail" />
+  <img loading="lazy" decoding="async" src={img} alt={title} class="blog-thumbnail" />
   <div class="blog-content">
     <h2 class="blog-heading">{title}</h2>
     <p class="blog-excerpt">{excerpt}</p>

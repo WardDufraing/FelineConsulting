@@ -12,20 +12,26 @@ const pageTitle = "Portfolio - Feline Consulting";
 const pageType = "portfolio";
 
 const logoImages = [
-  '/images/portfolio/logos/logo1.png',
-  '/images/portfolio/logos/logo2.png',
-  '/images/portfolio/logos/logo3.png'
+  '/images/portfolio/logos/logo1.webp',
+  '/images/portfolio/logos/logo2.webp',
+  '/images/portfolio/logos/logo3.webp'
 ];
 
 const inviteImages = [
-  '/images/portfolio/invites/invite1.jpg',
-  '/images/portfolio/invites/invite2.jpg',
-  '/images/portfolio/invites/invite3.jpg'
+  '/images/portfolio/invites/invite1.webp',
+  '/images/portfolio/invites/invite2.webp',
+  '/images/portfolio/invites/invite3.webp'
 ];
 ---
 <BaseLayout pageTitle={pageTitle} pageType={pageType}>
-    <h1>Logo's</h1>
-    <PortfolioCarousel images={logoImages} client:visible />
-    <h1>Uitnodigingen</h1>
-    <PortfolioCarousel images={inviteImages} client:visible />
+<div class="portfolio-page">
+    <h1>Ons werk</h1>
+    <section><h2>Logo’s</h2>
+    <PortfolioCarousel images={logoImages} title="Logo-ontwerpen" client:visible />
+    </section>
+    <section>
+    <h2>Uitnodigingen</h2>
+    <PortfolioCarousel images={inviteImages} title="Uitnodigingsontwerpen" client:visible />
+    </section>
+    </div>
 </BaseLayout>

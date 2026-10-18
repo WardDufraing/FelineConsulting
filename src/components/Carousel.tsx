@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, EffectCoverflow, Pagination, Navigation, A11y, Keyboard } from 'swiper/modules';
 
 
 import 'swiper/css';
@@ -15,10 +15,12 @@ interface Props {
 export default function Carousel({ images, title }: Props) {
   return (
     <section className="my-16">
-      {title && <h2 className="text-3xl font-bold text-center mb-6">{title}</h2>}
+
 
         <Swiper
-          modules={[Autoplay, Pagination, EffectCoverflow, Navigation]}
+          modules={[Autoplay, Pagination, EffectCoverflow, Navigation, A11y, Keyboard]}
+          keyboard={{ enabled: true, onlyInViewport: true }}
+          a11y={{ prevSlideMessage: "Vorig ontwerp", nextSlideMessage: "Volgend ontwerp", paginationBulletMessage: "Ga naar ontwerp {{index}}" }}
           centeredSlides
           initialSlide={1}
           slidesPerView={1} // 👈 default for mobile
@@ -39,7 +41,7 @@ export default function Carousel({ images, title }: Props) {
         {images.map((src, i) => (
           <SwiperSlide key={i}>
           <div className="carousel-slide">
-            <img src={src} alt={`Slide ${i}`} />
+            <img src={src} alt={`${title ?? "Ontwerp"} ${i + 1}`} loading="lazy" decoding="async" />
           </div>
         </SwiperSlide>
         ))}

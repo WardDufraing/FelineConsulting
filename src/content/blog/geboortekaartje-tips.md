@@ -1,7 +1,7 @@
 ---
 title: "Geboortekaartje laten maken: 5 tips"
 excerpt: "Een geboortekaartje is meer dan een aankondiging – het is een herinnering. Hier zijn 5 dingen om op te letten..."
-img: "/images/blog/geboortekaartje-tips.png"
+img: "/images/blog/geboortekaartje-tips.webp"
 publishDate: 2025-04-11
 ---
 

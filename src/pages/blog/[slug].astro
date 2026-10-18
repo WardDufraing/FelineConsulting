@@ -7,13 +7,13 @@ import '../../styles/blogPost-styles.scss';
 const { slug } = Astro.params;
 const post = await getEntry('blog', slug as CollectionEntry<'blog'>['slug']);
 
-if (!post) throw new Error(`Blogpost met slug '${slug}' niet gevonden.`);
+if (!post) return Astro.rewrite('/404');
 
 const { Content } = await post.render();
 ---
 
-<BaseLayout pageTitle={post.data.title}>
-  <main class="blog-post-page">
+<BaseLayout pageTitle={post.data.title} pageType="blog" description={post.data.excerpt}>
+  <div class="blog-post-page">
     <article class="blog-post">
       <img src={post.data.img} alt={post.data.title} class="blog-post-img" />
       <h1 class="blog-post-title">{post.data.title}</h1>
@@ -24,7 +24,7 @@ const { Content } = await post.render();
         <Content />
       </div>
     </article>
-  </main>
+  </div>
 
   <script>
     const post = document.querySelector('.blog-post');

@@ -1,13 +1,15 @@
 @font-face {
     font-family: 'Futura';
+    font-display: swap;
     font-style: normal;
     font-weight: 400;
-    src: local(''), url('/fonts/futura/futura-regular.ttf') format('ttf');
+    src: local(''), url('../fonts/futura/futura-regular.ttf') format('truetype');
   }
   
   @font-face {
     font-family: 'Futura';
+    font-display: swap;
     font-style: italic;
     font-weight: 700;
-    src: local(''), url('/fonts/futura/futura-light-italic.ttf') format('ttf');
+    src: local(''), url('../fonts/futura/futura-light-italic.ttf') format('truetype');
   }

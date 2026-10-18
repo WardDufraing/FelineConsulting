@@ -1,7 +1,7 @@
 ---
 title: "Hoe kies je het perfecte lettertype voor je merk?"
 excerpt: "Een goed lettertype doet meer dan je denkt. Het vertelt iets over je merkidentiteit en zorgt voor herkenbaarheid..."
-img: "/images/blog/lettertype-kiezen.png"
+img: "/images/blog/lettertype-kiezen.webp"
 publishDate: 2025-04-10
 ---
 
