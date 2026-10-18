@@ -88,7 +88,9 @@ color: white;
     }
 
     .hero-CTA{
-      width: 25%;
+      width: 30%;
+      min-width: max-content;
+      max-width: 100%;
     }
   }
 }
