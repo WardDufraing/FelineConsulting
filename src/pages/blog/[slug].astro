@@ -1,15 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getEntry, type CollectionEntry } from 'astro:content';
+import { getEntry, render } from 'astro:content';
 
 import '../../styles/blogPost-styles.scss';
 
 const { slug } = Astro.params;
-const post = await getEntry('blog', slug as CollectionEntry<'blog'>['slug']);
+const post = await getEntry('blog', slug!);
 
 if (!post) return Astro.rewrite('/404');
 
-const { Content } = await post.render();
+const { Content } = await render(post);
 ---
 
 <BaseLayout pageTitle={post.data.title} pageType="blog" description={post.data.excerpt}>

@@ -4,8 +4,10 @@ Belgian graphic design studio website, in Dutch, built with Astro, React and SCS
 
 ## Development
 
-Use Node.js 22 LTS. Run `npm ci`, then `npm run dev`.
-Run `npm run build` before submitting changes.
+Use Node.js 22.22 or newer (Node.js 22 LTS recommended). Run `npm ci`, then `npm run dev`.
+Run `npm run build` and `npm audit --audit-level=low` before submitting changes.
+
+The GitHub workflow checks both. Unused Stylelint dependencies were removed (there was no lint script or configuration). A scoped override keeps Vercel routing on the compatible patched `path-to-regexp` 6.x release until its parent dependency updates.
 
 ## Deployment
 
@@ -22,8 +24,8 @@ FormSubmit handles delivery. The recipient must activate the service. Verify del
 
 ## Review notes
 
-- Replace the three identical logo samples with distinct approved client projects and add short case studies (brief, approach, outcome).
-- Confirm the intended form recipient: the form delivers to Ward while the footer lists Jolien. The recipient has been preserved to avoid changing delivery without confirmation.
+- Duplicate logo slides have been removed. Add distinct approved client projects and factual case studies (brief, approach, outcome) when supplied.
+- Enquiries deliver to `jolien@feline-consulting.be`, matching the public contact address. FormSubmit activation for this address and an end-to-end delivery check are required before publishing.
 - Review third-party form and cookie wording against the services actually used; no tracking was added.
 - Confirm font licensing before publishing; supplied Futura assets are preserved.
 - Check a real phone and deployed Vercel preview, including form delivery.

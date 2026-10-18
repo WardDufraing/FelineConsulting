@@ -21,22 +21,23 @@ export default function Carousel({ images, title }: Props) {
           modules={[Autoplay, Pagination, EffectCoverflow, Navigation, A11y, Keyboard]}
           keyboard={{ enabled: true, onlyInViewport: true }}
           a11y={{ prevSlideMessage: "Vorig ontwerp", nextSlideMessage: "Volgend ontwerp", paginationBulletMessage: "Ga naar ontwerp {{index}}" }}
+          watchOverflow
           centeredSlides
-          initialSlide={1}
+          initialSlide={images.length > 1 ? 1 : 0}
           slidesPerView={1} // 👈 default for mobile
           breakpoints={{
             636: {
-              slidesPerView: 2,
+              slidesPerView: Math.min(images.length, 2),
               spaceBetween: 20,
             },
             1024: {
-              slidesPerView: 3,
+              slidesPerView: Math.min(images.length, 3),
               spaceBetween: 30,
             },
           }}
           className="carousel-wrapper"
-          pagination={true}
-          navigation={true}
+          pagination={images.length > 1}
+          navigation={images.length > 1}
         >
         {images.map((src, i) => (
           <SwiperSlide key={i}>
