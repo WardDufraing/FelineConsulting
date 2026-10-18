@@ -1,81 +1,57 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCallout from '../components/ProjectCallout.astro';
-
+import ServiceSymbol from '../components/ServiceSymbol.astro';
 import '../styles/about-styles.scss';
 
-const pageTitle = "Over Feline Consulting";
-const pageType = "about"
+const principles = [
+  { kind: 'card' as const, title: 'Eerst luisteren', text: 'Wat wil je vertellen, wie wil je bereiken en welke sfeer past bij je? Jouw antwoorden geven richting aan het ontwerp.' },
+  { kind: 'brand' as const, title: 'Samen scherpstellen', text: 'We bespreken ideeën en feedback om tot een ontwerp te komen dat klopt. Je hoeft bij de start nog niet alle keuzes gemaakt te hebben.' },
+  { kind: 'print' as const, title: 'Voor echt gebruik', text: 'Een ontwerp leeft op een scherm, op papier of in een huisstijl. We houden rekening met de toepassingen die je voor ogen hebt.' },
+];
 ---
-
-<BaseLayout description="Maak kennis met Jolien en de persoonlijke aanpak van Feline Consulting. Doordacht grafisch ontwerp voor ondernemers en bijzondere momenten." pageTitle={pageTitle} pageType={pageType}>
+<BaseLayout pageTitle="Over Feline Consulting" pageType="about" description="Maak kennis met Jolien en Feline Consulting. Persoonlijk grafisch ontwerp met aandacht voor jouw verhaal, je doelgroep en de details.">
   <div class="about-page">
-    <section class="about-title-section">
-      <h1 class="about-title">Over Feline Consulting</h1>
+    <header class="about-intro">
+      <p class="about-eyebrow">Over Feline Consulting</p>
+      <h1>Ontwerp met aandacht.<br />Voor jouw verhaal.</h1>
+      <p>Een merk dat bij je past. Een kaartje dat iets betekent. Achter elk ontwerp zit een verhaal — en dat van jou is ons vertrekpunt.</p>
+    </header>
 
-      <p>
-        Feline Consulting is het creatieve project van Jolien, een gepassioneerde grafisch ontwerpster met oog voor detail en gevoel voor stijl. Of het nu gaat om een geboortekaartje, een uitnodiging, een logo of een volledige branding — elk ontwerp is doordacht, persoonlijk en tot in de puntjes afgewerkt.
-      </p>
-      </section>
-      <section class="about-grid">
-        <div class="about-card">
-          <h2>Wie we zijn</h2>
-          <p>
-            Jolien startte Feline Consulting met de droom om mensen en merken te helpen hun verhaal visueel tot leven te brengen. Ze combineert creativiteit met structuur, waardoor elk project vlot verloopt en tot een resultaat leidt waar jij trots op kan zijn.
-          </p>
-        </div>
-        <div class="about-card">
-          <h2>Wat we doen</h2>
-          <p>
-            We bieden grafische ontwerpen op maat aan voor zowel particulieren als bedrijven. Denk aan:
-          </p>
-          <ul>
-            <li>Geboorte- en huwelijksdrukwerk</li>
-            <li>Logo’s & huisstijl</li>
-            <li>Promotiemateriaal</li>
-            <li>Social media visuals</li>
-            <li>Drukwerk en begeleiding van A tot Z</li>
-          </ul>
-        </div>
-        <div class="about-card">
-          <h2>Onze aanpak</h2>
-          <p>
-            We luisteren eerst goed naar jouw wensen en gaan dan creatief aan de slag. Transparantie, communicatie en kwaliteit staan centraal. We geloven dat elk project uniek is en zetten in op een persoonlijke aanpak.
-          </p>
-        </div>
-        <div class="about-card">
-          <h2>Waarom Feline?</h2>
-          <p>
-            Omdat we niet enkel willen ontwerpen wat er goed uitziet — we willen iets creëren dat klopt, dat raakt en dat blijft hangen. Design met gevoel dus. En een glimlach natuurlijk.
-          </p>
-        </div>
-      </section>
-    <section class="content-section" aria-labelledby="about-values">
-      <h2 id="about-values">Van een mooi idee naar een bruikbaar ontwerp</h2>
-      <p class="section-lead">Een ontwerp moet niet alleen bij je passen, maar ook werken op de plekken waar je het gebruikt.</p>
-      <div class="content-grid">
-        <article class="content-card"><h3>Jouw verhaal als vertrekpunt</h3><p>Inspiratiebeelden zijn welkom, maar je hoeft nog geen uitgewerkt plan te hebben. Vertel vooral wat je wil overbrengen en voor wie het bedoeld is.</p></article>
-        <article class="content-card"><h3>Aandacht voor het geheel</h3><p>Kleuren, letters, beeld en materiaal versterken elkaar. Daarom bekijken we een ontwerp in zijn context: op een scherm, op papier of als onderdeel van je huisstijl.</p></article>
+    <section class="about-story" aria-label="Het verhaal en de aanpak van Feline Consulting">
+      <article class="about-panel" aria-labelledby="about-jolien">
+        <div class="about-icon"><ServiceSymbol kind="brand" /></div>
+        <p class="about-eyebrow">De persoon achter het ontwerp</p>
+        <h2 id="about-jolien">Achter Feline staat Jolien.</h2>
+        <p>Feline Consulting is het creatieve project van Jolien: een grafisch ontwerpster met oog voor detail en gevoel voor stijl. Ze helpt mensen en merken om hun verhaal visueel tot leven te brengen.</p>
+        <p>Van een eerste logo tot een geboortekaartje: het begint bij wat jij wil overbrengen. Niet bij een vaste formule, maar bij een gesprek over jouw idee.</p>
+        <p class="about-panel-note">Persoonlijk, zorgvuldig en met aandacht voor het geheel.</p>
+      </article>
+      <article class="about-panel about-panel-warm" aria-labelledby="about-approach">
+        <div class="about-icon"><ServiceSymbol kind="finish" /></div>
+        <p class="about-eyebrow">Mooi én doordacht</p>
+        <h2 id="about-approach">Een ontwerp dat klopt.</h2>
+        <p>Een ontwerp mag goed voelen én een duidelijke bedoeling hebben. Daarom kijken we verder dan een mooie kleur of een opvallend lettertype.</p>
+        <p>We denken na over je boodschap, je doelgroep en de plek waar het ontwerp gebruikt wordt. Kleuren, typografie, beeld en materiaal moeten elkaar versterken.</p>
+        <p class="about-panel-note">Zo krijgt jouw verhaal een vorm die persoonlijk aanvoelt en praktisch werkt.</p>
+      </article>
+    </section>
+
+    <section class="about-principles" aria-labelledby="principles-title">
+      <header class="about-section-heading"><h2 id="principles-title">Zo werken we het liefst.</h2><p>Een persoonlijke aanpak, heldere gesprekken en aandacht voor wat je ontwerp moet doen.</p></header>
+      <div class="about-principles-grid">
+        {principles.map(principle => <article class="about-principle"><div class="about-icon"><ServiceSymbol kind={principle.kind} /></div><h3>{principle.title}</h3><p>{principle.text}</p></article>)}
       </div>
     </section>
-    <ProjectCallout title="Past onze aanpak bij jouw idee?" text="Ontdek de diensten of vertel ons alvast waar je naar op zoek bent." />
+
+    <section class="about-directions" aria-labelledby="directions-title">
+      <header class="about-section-heading"><h2 id="directions-title">Voor jouw merk. Voor jouw moment.</h2><p>Wat je ook wil laten vormgeven: de aandacht voor jouw verhaal blijft dezelfde.</p></header>
+      <div class="about-directions-grid">
+        <div><h3>Je onderneming in beeld</h3><p>Een herkenbare identiteit die je kan doortrekken in je communicatie, van logo tot drukwerk.</p><a href="/services/#merken">Ontdek logo & huisstijl <span aria-hidden="true">→</span></a></div>
+        <div><h3>Een bijzonder moment op papier</h3><p>Persoonlijke kaartjes en uitnodigingen waarin tekst, vorm en afwerking samenkomen.</p><a href="/services/#kaartjes">Ontdek persoonlijke kaartjes <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+
+    <ProjectCallout title="Welk verhaal wil jij vertellen?" text="Vertel ons wat je in gedachten hebt. Een eerste idee of een paar voorbeelden zijn genoeg om het gesprek te starten." label="Vertel ons je idee" />
   </div>
-  <script>
-    const cards = document.querySelectorAll('.about-card');
-  
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          // Stagger each card by 100ms
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 100);
-  
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-  
-    cards.forEach(card => observer.observe(card));
-  </script>
 </BaseLayout>
