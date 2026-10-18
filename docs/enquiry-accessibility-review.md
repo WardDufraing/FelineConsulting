@@ -1,22 +1,24 @@
 # Enquiry delivery and accessibility review
 
-Branch: `fix/enquiry-delivery-and-accessibility`, based on current main.
+Accessibility changes merged in PR #16. Resend follow-up branch: `fix/resend-enquiry-delivery`, based on current main.
 
-## Delivery status — not yet confirmed
+## Delivery status — replacement prepared; inbox test pending
 
-The live form targets `jolien@feline-consulting.be` through FormSubmit's AJAX endpoint. One explicitly approved live test was submitted with the name “Feline website delivery test”, Jolien's public email in the email field, and the agreed delivery-test message. The live form displayed its failure message; the user confirmed no test or activation email arrived. No additional test email was sent.
+The approved live FormSubmit test failed, and the user confirmed no email arrived. A subsequent test in the user's normal browser also failed. The user chose Resend as the replacement.
 
-Read-only HTTP diagnostics against FormSubmit were blocked with Cloudflare error 1010 (browser signature denied). This confirms the diagnostic client was blocked; it does not establish that every normal visitor is blocked. The exact response body of the browser's POST was not available, so activation, filtering and delivery cannot be distinguished from that test alone. A test from the user's normal browser is pending. Do not describe delivery as fixed or verified.
+The branch replaces FormSubmit with a same-origin server endpoint. Resend's sending domain `contact.feline-consulting.be` is verified. The approved DKIM and two CNAME records were added; existing inbox MX and website records were preserved. A sending-only key restricted to that domain and a managed Turnstile widget were created. The four settings are saved only in the Feline Vercel project's Production environment; private values are neither committed nor printed. See [setup notes](resend-delivery-setup.md).
 
-Google and Cloudflare public DNS both return Cloudflare Email Routing MX records for feline-consulting.be. This establishes a mail route, not that the Jolien forwarding rule or destination inbox is working. Mail forwarding and FormSubmit activation need confirmation by the mailbox owner. No DNS, forwarding or account settings were changed.
+The current live deployment still uses FormSubmit until this branch is merged and deployed. No real Resend test email has been sent. Provider acceptance and actual inbox arrival must be checked after deployment, with fresh approval for a labelled test and confirmation from the mailbox owner. DNS verification alone does not establish inbox delivery.
 
 ## Form changes
 
-- Add a clear email subject and table format, retaining the recipient and visitor email field used for Reply-To.
-- Keep the status region present and atomic; announce the result after the form's busy state clears.
-- Keep drafts on failures and say when sending cannot be confirmed, rather than implying confirmed delivery. Reset only after provider success.
-- Provide an email-app fallback that carries the current name, email and message in a properly encoded draft. It also works as a plain mailto link without JavaScript; it requires an email app and does not send automatically.
-- Retain required/email validation, allow a one-character name, and improve mobile email entry settings.
+- Send through `/api/contact/`, with the fixed recipient `jolien@feline-consulting.be` and the visitor address as Reply-To.
+- Validate fields and request size on the server; verify Turnstile token, hostname and action before sending. A honeypot also filters simple bots.
+- Use a stable submission ID and content hash for provider idempotency when retrying an uncertain result. Visitor edits create a new submission ID; token refreshes do not.
+- Only show success when Resend returns an accepted message ID. Preserve drafts on failure, keep fields read-only during submission, and provide specific validation/configuration feedback.
+- Keep the status region present and atomic; announce results after the busy state clears.
+- Provide an encoded email-app draft as a fallback, including without JavaScript. It requires an email app and never sends automatically.
+- Update privacy/cookie information for Resend and Turnstile.
 
 ## Accessibility changes
 
@@ -29,7 +31,8 @@ Google and Cloudflare public DNS both return Cloudflare Email Routing MX records
 ## Validation
 
 - Production build and 12-page search metadata checks passed.
-- `node scripts/check-contact.mjs`: network/HTTP/activation/JSON/timeout failures preserve drafts, success retry/reset, duplicate-submit prevention, live-region update order and email-draft encoding.
+- `node scripts/check-contact.mjs`: network/HTTP/JSON/timeout failures preserve drafts, success retry/reset, duplicate-submit prevention, live-region update order and email-draft encoding.
+- `node scripts/check-contact-delivery.mjs`: mocked provider checks cover validation, origin and size limits, verification failures, fixed recipient/Reply-To, stable retry keys, provider errors and private error responses. No email is sent by these tests.
 - `node scripts/check-cookie-choice.mjs`: notice spacing and dismissal with normal or blocked storage.
 - Browser: required fields prevent an empty submission and focus the name; email keyboard focus has a 3px outline; mobile menu Escape returns focus; hidden logo link is removed from the mobile tab sequence; skip link moves focus to main.
 - Browser: carousel Enter advances design 2 to 3; dots are 44×44px with button roles and tabindex.
@@ -38,4 +41,4 @@ Google and Cloudflare public DNS both return Cloudflare Email Routing MX records
 
 This is a targeted code/keyboard/mobile review, not a formal WCAG certification or a test with every screen reader. Reduced-motion rules remain in place. Real inbox delivery remains the outstanding external check.
 
-References: https://formsubmit.co/documentation and https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html
+References: https://resend.com/docs/api-reference/emails/send-email, https://developers.cloudflare.com/turnstile/get-started/server-side-validation/ and https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html
