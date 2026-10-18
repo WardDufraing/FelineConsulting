@@ -1,6 +1,6 @@
 # Enquiry delivery and accessibility review
 
-Branch: `fix/enquiry-delivery-and-accessibility`, based on current main.
+Accessibility changes merged in PR #16. Resend follow-up branch: `fix/resend-enquiry-delivery`, based on current main.
 
 ## Delivery status — replacement prepared; inbox test pending
 

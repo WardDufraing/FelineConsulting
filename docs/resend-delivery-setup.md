@@ -22,7 +22,7 @@ All four are configured for Production only. Private values are stored in the pr
 
 ## Deployment and final check
 
-Merge PR #16 and allow a new Production deployment so both runtime secrets and the build-time public widget key apply. No redeployment or merge was performed during configuration.
+Merge the Resend delivery PR and allow a new Production deployment so both runtime secrets and the build-time public widget key apply. No redeployment or merge was performed during configuration.
 
 Check the contact form on desktop and mobile. With fresh approval, send one clearly labelled test enquiry; check Resend's delivery status and have Jolien confirm receipt in the destination inbox/spam folder. A successful API response means provider acceptance, not proof of inbox placement. No real Resend message has been sent yet.
 
