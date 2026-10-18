@@ -1,76 +1,68 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ProjectCallout from '../components/ProjectCallout.astro';
-
+import ServiceSymbol from '../components/ServiceSymbol.astro';
 import '../styles/services-styles.scss';
 
-const pageTitle = "Diensten - Feline Consulting";
-const pageType = "services"
+const supportingServices = [
+  { kind: 'print' as const, title: 'Grafisch drukwerk', text: 'Een duidelijke boodschap in een vorm die opvalt. We stemmen de vormgeving af op je huisstijl en de plek waar je ontwerp gezien wordt.', examples: 'Flyers, affiches, visitekaartjes en banners.', question: 'Waar verspreid je het en wat moet de lezer onthouden?' },
+  { kind: 'social' as const, title: 'Social media visuals', text: 'Geef je online communicatie een herkenbare lijn. We bekijken hoe beeld, tekst en formaat samenwerken op de kanalen die je gebruikt.', examples: 'Posts, stories en visuele sjablonen.', question: 'Voor welke kanalen en soorten berichten heb je ontwerp nodig?' },
+  { kind: 'finish' as const, title: 'Drukwerkbegeleiding', text: 'Een ontwerp komt pas echt tot leven op het juiste materiaal. We denken mee over de stap van digitaal bestand naar afgewerkt drukwerk.', examples: 'Formaat, papierkeuze, afwerking en voorbereiding.', question: 'Heb je al een drukker of wil je ook begeleiding bij de productie?' },
+];
 ---
-
-<BaseLayout description="Van logo en huisstijl tot geboorte- en huwelijksdrukwerk: ontdek de ontwerpservices van Feline Consulting en bereid je project voor." pageTitle={pageTitle} pageType={pageType}>
+<BaseLayout pageTitle="Diensten - Feline Consulting" pageType="services" description="Logo en huisstijl, persoonlijke kaartjes, drukwerk en social media visuals. Ontdek welk ontwerp bij jouw project past en wat je vooraf kan voorbereiden.">
   <div class="services-page">
-    <section class="services-intro">
-      <h1 class="services-title">Onze diensten</h1>
-      <p>
-        Elk project bij Feline Consulting is op maat gemaakt. Of je nu een geboorte- of trouwkaart nodig hebt, een volledig brandingpakket of hulp bij drukwerk — we denken met je mee en zorgen voor een creatief en kwalitatief resultaat.
-      </p>
+    <header class="services-intro">
+      <p class="service-eyebrow">Doordacht ontwerp, persoonlijk gemaakt</p>
+      <h1 class="services-title">Jouw verhaal, mooi vormgegeven.</h1>
+      <p>Een merk dat herkenbaar mag worden. Een bijzonder moment dat je wil delen. We vertalen jouw idee naar grafisch ontwerp dat bij je past, op papier én op het scherm.</p>
+    </header>
+    <nav class="service-shortcuts" aria-label="Ontdek onze diensten">
+      <a href="#merken">Logo & huisstijl</a><a href="#kaartjes">Persoonlijke kaartjes</a><a href="#aanvullend">Meer ontwerpwerk</a><a href="#service-questions">Veelgestelde vragen</a>
+    </nav>
+
+    <section class="service-directions" aria-label="Onze twee ontwerprichtingen">
+      <article class="service-feature" id="merken" aria-labelledby="brand-service-title">
+        <div class="service-icon"><ServiceSymbol kind="brand" /></div>
+        <p class="service-eyebrow">Voor ondernemers</p>
+        <h2 id="brand-service-title">Logo & huisstijl</h2>
+        <p>Een sterk merk begint met een herkenbare basis. Samen zoeken we naar de kleuren, letters en vormen die jouw verhaal vertellen en passen bij je doelgroep.</p>
+        <h3>Waar kunnen we aan werken?</h3>
+        <ul><li>Een nieuw logo of een passende visuele richting.</li><li>Kleuren en typografie voor een samenhangende huisstijl.</li><li>Toepassingen voor drukwerk en digitale communicatie.</li></ul>
+        <p class="service-note"><strong>Goed vertrekpunt:</strong> vertel wat je onderneming doet, wie je wil bereiken en waar je het ontwerp gaat gebruiken.</p>
+        <a class="service-text-link" href="/blog/branding-gids/">Wat hoort er bij een huisstijl? <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="service-feature service-feature-warm" id="kaartjes" aria-labelledby="card-service-title">
+        <div class="service-icon"><ServiceSymbol kind="card" /></div>
+        <p class="service-eyebrow">Voor bijzondere momenten</p>
+        <h2 id="card-service-title">Kaartjes met karakter</h2>
+        <p>Een geboorte, een huwelijk of een feest: sommige verhalen wil je op papier bewaren. We zoeken een persoonlijke stijl waarin tekst, beeld en afwerking elkaar versterken.</p>
+        <h3>Waar kunnen we aan werken?</h3>
+        <ul><li>Geboortekaartjes en bijpassende details.</li><li>Huwelijksdrukwerk, uitnodigingen en bedankkaartjes.</li><li>De combinatie van formaat, papier en enveloppen.</li></ul>
+        <p class="service-note"><strong>Goed vertrekpunt:</strong> deel de gelegenheid, je gewenste timing, een geschatte oplage en een paar stijlvoorbeelden.</p>
+        <a class="service-text-link" href="/portfolio/">Bekijk de ontwerpvoorbeelden <span aria-hidden="true">→</span></a>
+      </article>
     </section>
 
-    <section class="services-grid">
-      <div class="service-card" id="merken">
-        <h2>🎨 Grafisch ontwerp op maat</h2>
-        <p>Van logo tot flyer — ontwerpen die opvallen en blijven hangen. We zorgen voor een uniek ontwerp dat past bij jouw stijl en doelgroep.</p><p class="service-detail">Denk aan een logo, visitekaartje, flyer of affiche. Vertel waar je het ontwerp wil gebruiken, zodat formaat en inhoud daarop afgestemd kunnen worden.</p>
-      </div>
-
-      <div class="service-card" id="kaartjes">
-        <h2>💌 Geboorte- en huwelijksdrukwerk</h2>
-        <p>Een bijzonder moment vraagt om een bijzonder ontwerp. We maken samen iets dat écht bij jullie past, van uitnodiging tot bedankkaartje.</p><p class="service-detail">Je kan al nadenken over de stijl, tekst, oplage en enveloppen. Voor geboorteaankondigingen bespreken we ook welke gegevens pas later ingevuld kunnen worden.</p>
-      </div>
-
-      <div class="service-card">
-        <h2>🪪 Branding voor starters</h2>
-        <p>We helpen je om je merk visueel sterk te positioneren met een logo, kleurenpalet, typografie en eventueel drukwerk of social media templates.</p><p class="service-detail">Een huisstijl helpt je om herkenbaar te communiceren. We bespreken welke onderdelen je nodig hebt en hoe je ze later consequent kan gebruiken.</p>
-      </div>
-
-      <div class="service-card">
-        <h2>🧾 Drukwerk & begeleiding</h2>
-        <p>Wij denken met je mee van digitaal ontwerp tot drukwerk. Geen stress, enkel mooi afgewerkte resultaten.</p><p class="service-detail">Formaat, papiersoort en afwerking hebben invloed op het resultaat. Geef bij je aanvraag aan of je alleen een ontwerp nodig hebt of ook begeleiding richting drukwerk.</p>
-      </div>
-
-      <div class="service-card">
-        <h2>📱 Social media visuals</h2>
-        <p>Laat je social posts er consistent en professioneel uitzien. Ideaal voor ondernemers die online willen opvallen.</p><p class="service-detail">Vermeld je kanalen en de soorten berichten die je wil delen. Dan kunnen we nadenken over de juiste verhoudingen, leesbaarheid en samenhang met je huisstijl.</p>
+    <section class="service-support" id="aanvullend" aria-labelledby="support-title">
+      <header class="service-section-heading"><h2 id="support-title">Van eerste indruk tot laatste detail</h2><p>Een los ontwerp nodig of verder bouwen op een bestaande stijl? Ook hierbij denken we met je mee.</p></header>
+      <div class="service-support-grid">
+        {supportingServices.map(service => <article class="service-support-card"><div class="service-icon"><ServiceSymbol kind={service.kind} /></div><h3>{service.title}</h3><p>{service.text}</p><p class="service-examples">{service.examples}</p><p class="service-prompt">{service.question}</p></article>)}
       </div>
     </section>
-    <section class="content-section faq-section" aria-labelledby="service-questions">
+
+    <section class="service-preparation" aria-labelledby="prepare-title">
+      <header class="service-section-heading"><h2 id="prepare-title">Je hoeft het nog niet helemaal te weten.</h2><p>Een eerste idee is genoeg. Met deze drie dingen maken we de vraag samen concreet.</p></header>
+      <ol><li><span aria-hidden="true">01</span><h3>Je doel</h3><p>Wat wil je vertellen en voor wie is het ontwerp bedoeld?</p></li><li><span aria-hidden="true">02</span><h3>Je toepassingen</h3><p>Waar komt het terecht: op papier, online of allebei?</p></li><li><span aria-hidden="true">03</span><h3>Je randvoorwaarden</h3><p>Welke timing, oplage of budget heb je in gedachten?</p></li></ol>
+      <p class="service-scope-note">De precieze inhoud, planning, prijs en bestandsafspraken stemmen we per project af. De voorbeelden hierboven zijn mogelijkheden, geen vaste pakketten.</p>
+    </section>
+    <section class="content-section faq-section service-faq" aria-labelledby="service-questions">
       <h2 id="service-questions">Goed om vooraf te weten</h2>
       <details><summary>Wat kost een ontwerp?</summary><p>Dat hangt af van de opdracht: een los kaartje vraagt een andere aanpak dan een volledige huisstijl. Vertel wat je nodig hebt, welke toepassingen je voorziet en of er drukwerk bij komt. De prijs en inhoud stemmen we per project af.</p></details>
       <details><summary>Wanneer neem ik het best contact op?</summary><p>Zodra je weet wat je ongeveer nodig hebt. Vermeld een gewenste datum, zeker als het ontwerp nog gedrukt moet worden. Een planning hangt af van de omvang, feedbackmomenten en eventuele productie.</p></details>
       <details><summary>Moet ik zelf al een idee hebben?</summary><p>Een uitgewerkt plan is niet nodig. Een paar voorbeelden van wat je mooi vindt, je doelgroep en een korte uitleg over je doel helpen om het gesprek te starten.</p></details>
       <details><summary>Welke bestanden heb ik nodig?</summary><p>Dat hangt af van het gebruik. Een drukker heeft andere bestanden nodig dan een social media kanaal. Vermeld vooraf waar je het ontwerp wil gebruiken en bespreek ook welke gebruiksrechten en bewerkbare bestanden bij de opdracht horen.</p></details>
     </section>
-    <ProjectCallout title="Waar kunnen we jou mee helpen?" text="Beschrijf je project, gewenste timing en de toepassingen die je voor ogen hebt. Zo kunnen we gericht meedenken." />
+    <ProjectCallout title="Wat wil jij laten vormgeven?" text="Vertel ons kort over je idee. Je hoeft nog geen volledige briefing te hebben: we denken graag met je mee over een passende aanpak." label="Vertel ons je idee" />
   </div>
-
-  <script>
-    const cards = document.querySelectorAll('.service-card');
-  
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          // Stagger each card by 100ms
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 100);
-  
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-  
-    cards.forEach(card => observer.observe(card));
-  </script>
 </BaseLayout>
-
-

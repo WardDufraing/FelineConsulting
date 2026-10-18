@@ -11,7 +11,7 @@ img { max-width: 100%; height: auto; }
 }
 .about-page .about-title-section { max-width: 75ch; margin: 0 auto clamp(2rem, 4vw, 3rem); }
 .about-page .about-grid, .services-page .services-grid, .blog-page .blog-grid { width: 100%; }
-.about-page .about-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+.about-page .about-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .about-card, .service-card, .info-card { min-width: 0; overflow-wrap: break-word; }
 .about-page .about-grid .about-card ul { margin-block: 1.5rem 0; line-height: 1.6; }
 .about-card li + li { margin-top: .6rem; }
@@ -50,3 +50,9 @@ footer { padding: clamp(2rem, 5vw, 4rem) max(1rem, 5vw); }
 }
 .blog-card .blog-content .blog-readmore:hover,
 .blog-post-content a:hover { color: #244f47; }
+
+/* Wider About cards keep longer copy readable; stack on narrow screens. */
+@media (max-width: 635px) { .about-page .about-grid { grid-template-columns: minmax(0, 1fr); } }
+.blog-card .blog-content .blog-readmore { min-height: 44px; display: inline-flex; justify-content: center; align-items: center; }
+@media (max-width: 849px) { footer .footer-nav a { display: inline-block; min-height: 44px; padding-block: .4rem; } }
+.privacy-policy.legal-page .privacy-section ul { list-style: disc; }

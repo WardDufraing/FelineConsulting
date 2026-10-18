@@ -39,6 +39,4 @@
 .related-articles ul { padding-inline-start: 1.25rem; }
 .related-articles li + li { margin-top: .75rem; }
 @media (max-width: 635px) { .content-grid { grid-template-columns: 1fr; gap: 1.25rem; } }
-.services-page .services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
-.services-page .services-grid .service-card { flex: 1 1 280px; max-width: 360px; width: 100%; }
 .blog-post-page .blog-post .blog-post-title { font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.35; margin: 1.5rem 0 .75rem; }

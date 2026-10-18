@@ -1,0 +1,12 @@
+---
+interface Props { kind: 'brand' | 'card' | 'print' | 'social' | 'finish' }
+const { kind } = Astro.props;
+const paths = {
+  brand: '<path d="m32 12 6 13 14 2-10 10 2 14-12-7-12 7 2-14-10-10 14-2Z"/>',
+  card: '<rect x="10" y="17" width="44" height="32" rx="4"/><path d="m11 20 21 17 21-17M11 47l15-14m27 14L38 33"/>',
+  print: '<path d="M20 23V10h24v13M20 45H12V25h40v20h-8"/><path d="M20 37h24v17H20zM26 44h12m-12 5h9M43 30h2"/>',
+  social: '<rect x="18" y="8" width="28" height="48" rx="5"/><path d="M27 14h10M29 50h6"/><path d="M24 23h16v15H24zM24 42h16"/>',
+  finish: '<path d="M12 15h30v39H12zM20 25h14m-14 7h14m-14 7h7"/><path d="m35 42 7 7 14-17"/>'
+};
+---
+<svg class="service-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><g set:html={paths[kind]} /></svg>
