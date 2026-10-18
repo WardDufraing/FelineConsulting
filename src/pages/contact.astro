@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
 import '../styles/contact-styles.scss';
 
 const pageTitle = "Contact - Feline Consulting";
@@ -9,8 +10,7 @@ const pageType = "contact"
 <BaseLayout description="Bespreek jouw ontwerpidee met Feline Consulting. Vertel over je project, gewenste timing en stijl, of mail rechtstreeks naar Jolien." pageTitle={pageTitle} pageType={pageType}>
   <div class="contact">
     <section class="contact-section">
-      <h1 class="contact-header">Neem contact op</h1>
-      <p class="contact-intro">Een idee voor een logo, kaartje of huisstijl? Vertel ons wat je in gedachten hebt. We denken graag met je mee.</p>
+      <PageIntro eyebrow="Laten we kennismaken" title="Vertel ons je idee." description="Een logo, kaartje of huisstijl in gedachten? Vertel ons wat je wil maken. Een eerste idee is genoeg om het gesprek te starten." />
 
       <details class="brief-help"><summary>Wat zet ik in mijn bericht?</summary><ul><li>Wat wil je laten ontwerpen en voor wie?</li><li>Waar ga je het gebruiken: online, op papier of allebei?</li><li>Heb je een gewenste datum of een budget in gedachten?</li><li>Welke stijl of voorbeelden spreken je aan?</li></ul><p>Je hoeft nog niet op alles een antwoord te hebben. Begin gerust met je idee.</p></details>
       <form

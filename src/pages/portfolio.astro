@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
 import ProjectCallout from '../components/ProjectCallout.astro';
 import PortfolioCarousel from '../components/Carousel.tsx';
 
@@ -23,13 +24,12 @@ const inviteImages = [
 ];
 ---
 <BaseLayout description="Bekijk de beschikbare ontwerpvoorbeelden van Feline Consulting: een eigen merkidentiteit en uitnodigingen als inspiratie voor jouw project." pageTitle={pageTitle} pageType={pageType}>
-<div class="portfolio-page">
-    <h1>Ontwerp in beeld</h1>
-    <p class="section-lead">Een eerste blik op de beschikbare ontwerpen: van de eigen merkidentiteit van Feline Consulting tot uitnodigingen. Gebruik ze als vertrekpunt om te vertellen welke sfeer jij zoekt.</p>
-    <section><h2>Een eigen identiteit</h2><p class="section-lead">Het logo van Feline Consulting brengt de naam en de zachte, persoonlijke uitstraling van het merk samen.</p>
+<div class="portfolio-page studio-page">
+    <PageIntro eyebrow="Ontwerp in beeld" title="Een verhaal krijgt vorm." description="Van de eigen merkidentiteit van Feline Consulting tot uitnodigingen: ontdek de beschikbare voorbeelden en vertel welke sfeer jou aanspreekt." />
+    <section class="portfolio-showcase"><h2>Een eigen identiteit</h2><p class="section-lead">Het logo van Feline Consulting brengt de naam en de zachte, persoonlijke uitstraling van het merk samen.</p>
     <PortfolioCarousel images={logoImages} title="Logo-ontwerpen" client:visible />
     </section>
-    <section>
+    <section class="portfolio-showcase portfolio-showcase-warm">
     <h2>Uitnodigingen</h2><p class="section-lead">Kijk naar de combinatie van typografie, kleur en compositie. Wat spreekt je aan: rustig, speels, uitgesproken of verfijnd?</p>
     <PortfolioCarousel images={inviteImages} title="Uitnodigingsontwerpen" client:visible />
     </section>

@@ -16,7 +16,7 @@
   
   .blog-post-page {
     .blog-post {
-        width: 80vw;
+        width: min(90%, 760px);
         margin: auto;
         text-align: left;
       opacity: 1;
