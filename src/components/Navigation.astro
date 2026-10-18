@@ -13,7 +13,7 @@ const { pageType } = Astro.props;
         <a class={`nav-link ${pageType === 'services' ? 'active' : ''}`} aria-current={pageType === 'services' ? 'page' : undefined} href="/services/">Diensten</a>
         <a class="home-link" href="/">
             <div class="header-image">
-                <Picture src={orangeLogo} alt="Feline Consulting"/>
+                <Picture src={orangeLogo} widths={[160, 320, 480]} sizes="(max-width: 849px) 120px, 220px" formats={['webp']} alt="Feline Consulting" loading="eager" />
             </div>
         </a>
         <a class={`nav-link ${pageType === 'portfolio' ? 'active' : ''}`} aria-current={pageType === 'portfolio' ? 'page' : undefined} href="/portfolio/">Portfolio</a>

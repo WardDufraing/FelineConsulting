@@ -1,4 +1,10 @@
 ---
+export const prerender = true;
+export async function getStaticPaths() {
+  return (await getCollection('blog')).map(post => ({ params: { slug: post.id } }));
+}
+import { Image } from 'astro:assets';
+import { blogImage } from '../../lib/blog-images';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageIntro from '../../components/PageIntro.astro';
 import ProjectCallout from '../../components/ProjectCallout.astro';
@@ -16,14 +22,14 @@ const readingMinutes = Math.max(1, Math.ceil((post.body ?? '').split(/\s+/).leng
 const related = (await getCollection('blog')).filter(entry => entry.id !== post.id).sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()).slice(0, 2);
 ---
 
-<BaseLayout pageTitle={post.data.title} pageType="blog" description={post.data.excerpt}>
+<BaseLayout pageTitle={post.data.title} socialImage={post.data.img} socialImageAlt={post.data.title} articleDate={post.data.publishDate.toISOString()} pageType="blog" description={post.data.excerpt}>
   <div class="blog-post-page">
     <article class="blog-post">
       <a class="article-back" href="/blog/">← Alle ontwerptips</a>
       <PageIntro eyebrow="Ontwerptips" title={post.data.title}>
         <p class="article-meta"><time datetime={post.data.publishDate.toISOString()}>{post.data.publishDate.toLocaleDateString('nl-BE')}</time> · {readingMinutes} min leestijd</p>
       </PageIntro>
-      <img src={post.data.img} alt={post.data.title} class="blog-post-img" />
+      <Image src={blogImage(post.data.img)} widths={[400, 800, 1536]} sizes="(max-width: 844px) 90vw, 760px" alt={post.data.title} class="blog-post-img" loading="eager" decoding="async" />
       <div class="blog-post-content">
         <Content />
       </div>

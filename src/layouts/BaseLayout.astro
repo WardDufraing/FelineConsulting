@@ -6,7 +6,26 @@ import CookieBanner from '../components/CookieBanner.astro';
 import '../styles/refinements.scss';
 import '../styles/content-enhancements.scss';
 import '../styles/studio-system.scss';
-const { pageTitle, pageType, description = "Feline Consulting in België: persoonlijk grafisch ontwerp, logo’s, branding en geboorte- en huwelijksdrukwerk." } = Astro.props;
+import { canonicalUrl, isPreview, siteUrl } from '../lib/site';
+import regularFont from '../fonts/futura/futura-regular.ttf?url';
+const { pageTitle, pageType, socialImage = '/images/social-preview.png', socialImageAlt = 'Feline Consulting — persoonlijk grafisch ontwerp', articleDate, noindex = false, description = "Feline Consulting in België: persoonlijk grafisch ontwerp, logo’s, branding en geboorte- en huwelijksdrukwerk." } = Astro.props;
+const title = pageTitle.includes('Feline Consulting') ? pageTitle : `${pageTitle} | Feline Consulting`;
+const canonical = canonicalUrl(Astro.url.pathname);
+const image = new URL(socialImage, siteUrl).href;
+const organization = {
+  '@context': 'https://schema.org', '@type': 'Organization',
+  '@id': new URL('/#organization', siteUrl).href,
+  name: 'Feline Consulting', url: siteUrl.href,
+  logo: new URL('/Logo_Orange.png', siteUrl).href,
+  email: 'jolien@feline-consulting.be',
+  address: { '@type': 'PostalAddress', streetAddress: 'Steursstraat 16', postalCode: '3130', addressLocality: 'Begijnendijk', addressCountry: 'BE' },
+};
+const article = articleDate ? {
+  '@context': 'https://schema.org', '@type': 'BlogPosting', headline: pageTitle,
+  description, image, datePublished: articleDate, inLanguage: 'nl-BE',
+  mainEntityOfPage: canonical, publisher: { '@id': organization['@id'] },
+} : undefined;
+const json = (value: unknown) => JSON.stringify(value).replace(/</g, '\u003c');
 ---
 
 <html lang="nl-BE">
@@ -16,7 +35,28 @@ const { pageTitle, pageType, description = "Feline Consulting in België: persoo
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    <title>{pageTitle}</title>
+    <title>{title}</title>
+    <link rel="canonical" href={canonical} />
+    <link rel="preload" href={regularFont} as="font" type="font/ttf" crossorigin="anonymous" />
+    {(noindex || isPreview) && <meta name="robots" content="noindex, follow" />}
+    <meta property="og:site_name" content="Feline Consulting" />
+    <meta property="og:locale" content="nl_BE" />
+    <meta property="og:type" content={articleDate ? 'article' : 'website'} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content={socialImageAlt} />
+    <meta property="og:image:width" content={articleDate ? '1536' : '1200'} />
+    <meta property="og:image:height" content={articleDate ? '1024' : '630'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
+    {articleDate && <meta property="article:published_time" content={articleDate} />}
+    <script type="application/ld+json" set:html={json(organization)} />
+    {article && <script type="application/ld+json" set:html={json(article)} />}
   </head>
   <body>
     <a class="skip-link" href="#main-content">Ga naar inhoud</a>

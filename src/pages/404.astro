@@ -1,8 +1,9 @@
 ---
+export const prerender = true;
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageIntro from '../components/PageIntro.astro';
 ---
-<BaseLayout pageTitle="Pagina niet gevonden - Feline Consulting">
+<BaseLayout noindex={true} pageTitle="Pagina niet gevonden - Feline Consulting">
   <section class="not-found">
     <PageIntro eyebrow="Pagina niet gevonden · 404" title="Even de weg kwijt?" />
     <p>Misschien is de link gewijzigd of staat er een typefout in het adres. Via onze diensten en ontwerptips vind je snel je weg terug.</p>

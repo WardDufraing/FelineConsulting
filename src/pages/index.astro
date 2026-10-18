@@ -1,4 +1,5 @@
 ---
+export const prerender = true;
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BenefitIllustration from '../components/BenefitIllustration.astro';
 import ServiceSymbol from '../components/ServiceSymbol.astro';
@@ -9,7 +10,7 @@ import '../styles/index-styles.scss';
 const pageTitle = "Feline Consulting";
 const pageType = "index";
 ---
-<BaseLayout description="Persoonlijk grafisch ontwerp in België: logo’s, huisstijl, kaartjes en drukwerk. Ontdek Feline Consulting en vertel ons jouw idee." pageTitle={pageTitle} pageType={pageType}>
+<BaseLayout description="Persoonlijk grafisch ontwerp in België: logo’s, huisstijl, kaartjes en drukwerk. Ontdek Feline Consulting en vertel ons jouw idee." pageTitle="Grafisch ontwerp, logo’s & kaartjes | Feline Consulting" pageType={pageType}>
 
   <header class="hero">
     <div class="hero-content">

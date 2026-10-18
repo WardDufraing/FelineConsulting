@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import { blogImage } from '../lib/blog-images';
 import '../styles/blogCard-styles.scss';
 
 export interface Props {
@@ -12,7 +14,7 @@ const { title, excerpt, href, img } = Astro.props;
 ---
 
 <article class="blog-card">
-  <img loading="lazy" decoding="async" src={img} alt={title} class="blog-thumbnail" />
+  <Image loading="lazy" decoding="async" src={blogImage(img)} widths={[400, 800]} sizes="(max-width: 635px) 90vw, (max-width: 1023px) 45vw, 360px" alt={title} class="blog-thumbnail" />
   <div class="blog-content">
     <p class="blog-kicker">Ontwerptip</p>
     <h2 class="blog-heading">{title}</h2>
