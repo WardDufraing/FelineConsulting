@@ -7,6 +7,7 @@ import '../styles/refinements.scss';
 import '../styles/content-enhancements.scss';
 import '../styles/studio-system.scss';
 import { canonicalUrl, isPreview, siteUrl } from '../lib/site';
+const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 import regularFont from '../fonts/futura/futura-regular.ttf?url';
 const { pageTitle, pageType, socialImage = '/images/social-preview.png', socialImageAlt = 'Feline Consulting — persoonlijk grafisch ontwerp', articleDate, noindex = false, description = "Feline Consulting in België: persoonlijk grafisch ontwerp, logo’s, branding en geboorte- en huwelijksdrukwerk." } = Astro.props;
 const title = pageTitle.includes('Feline Consulting') ? pageTitle : `${pageTitle} | Feline Consulting`;
@@ -31,10 +32,16 @@ const json = (value: unknown) => JSON.stringify(value).replace(/</g, '\u003c');
 <html lang="nl-BE">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="any" />
+    <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#79d1c2" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    {googleSiteVerification && <meta name="google-site-verification" content={googleSiteVerification} />}
     <title>{title}</title>
     <link rel="canonical" href={canonical} />
     <link rel="preload" href={regularFont} as="font" type="font/ttf" crossorigin="anonymous" />
