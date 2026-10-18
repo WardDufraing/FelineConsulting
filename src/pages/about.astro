@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCallout from '../components/ProjectCallout.astro';
 
 import '../styles/about-styles.scss';
 
@@ -7,7 +8,7 @@ const pageTitle = "Over Feline Consulting";
 const pageType = "about"
 ---
 
-<BaseLayout pageTitle={pageTitle} pageType={pageType}>
+<BaseLayout description="Maak kennis met Jolien en de persoonlijke aanpak van Feline Consulting. Doordacht grafisch ontwerp voor ondernemers en bijzondere momenten." pageTitle={pageTitle} pageType={pageType}>
   <div class="about-page">
     <section class="about-title-section">
       <h1 class="about-title">Over Feline Consulting</h1>
@@ -49,6 +50,15 @@ const pageType = "about"
           </p>
         </div>
       </section>
+    <section class="content-section" aria-labelledby="about-values">
+      <h2 id="about-values">Van een mooi idee naar een bruikbaar ontwerp</h2>
+      <p class="section-lead">Een ontwerp moet niet alleen bij je passen, maar ook werken op de plekken waar je het gebruikt.</p>
+      <div class="content-grid">
+        <article class="content-card"><h3>Jouw verhaal als vertrekpunt</h3><p>Inspiratiebeelden zijn welkom, maar je hoeft nog geen uitgewerkt plan te hebben. Vertel vooral wat je wil overbrengen en voor wie het bedoeld is.</p></article>
+        <article class="content-card"><h3>Aandacht voor het geheel</h3><p>Kleuren, letters, beeld en materiaal versterken elkaar. Daarom bekijken we een ontwerp in zijn context: op een scherm, op papier of als onderdeel van je huisstijl.</p></article>
+      </div>
+    </section>
+    <ProjectCallout title="Past onze aanpak bij jouw idee?" text="Ontdek de diensten of vertel ons alvast waar je naar op zoek bent." />
   </div>
   <script>
     const cards = document.querySelectorAll('.about-card');

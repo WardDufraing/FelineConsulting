@@ -6,18 +6,18 @@ const { pageType } = Astro.props;
 ---
 
 <div class={pageType === 'index' ? 'nav-container bg-index' : 'nav-container bg-wave'} id="nav-container">
-    <div class="nav-links" id="nav-links">
+    <nav class="nav-links" id="nav-links" aria-label="Hoofdnavigatie">
         
-        <a class={`nav-link ${pageType === 'index' ? 'active' : ''}`} href="/">Home</a>
-        <a class={`nav-link ${pageType === 'about' ? 'active' : ''}`} href="/about/">Over ons</a>
-        <a class={`nav-link ${pageType === 'services' ? 'active' : ''}`} href="/services/">Diensten</a>
+        <a class={`nav-link ${pageType === 'index' ? 'active' : ''}`} aria-current={pageType === 'index' ? 'page' : undefined} href="/">Home</a>
+        <a class={`nav-link ${pageType === 'about' ? 'active' : ''}`} aria-current={pageType === 'about' ? 'page' : undefined} href="/about/">Over ons</a>
+        <a class={`nav-link ${pageType === 'services' ? 'active' : ''}`} aria-current={pageType === 'services' ? 'page' : undefined} href="/services/">Diensten</a>
         <a class="home-link" href="/">
             <div class="header-image">
-                <Picture src={orangeLogo} alt="Logo"/>
+                <Picture src={orangeLogo} alt="Feline Consulting"/>
             </div>
         </a>
-        <a class={`nav-link ${pageType === 'portfolio' ? 'active' : ''}`} href="/portfolio/">Portfolio</a>
-        <a class={`nav-link ${pageType === 'contact' ? 'active' : ''}`} href="/contact/">Contact</a>
-        <a class={`nav-link ${pageType === 'blog' ? 'active' : ''}`} href="/blog/">Blog</a>
-    </div>
+        <a class={`nav-link ${pageType === 'portfolio' ? 'active' : ''}`} aria-current={pageType === 'portfolio' ? 'page' : undefined} href="/portfolio/">Portfolio</a>
+        <a class={`nav-link ${pageType === 'contact' ? 'active' : ''}`} aria-current={pageType === 'contact' ? 'page' : undefined} href="/contact/">Contact</a>
+        <a class={`nav-link ${pageType === 'blog' ? 'active' : ''}`} aria-current={pageType === 'blog' ? 'page' : undefined} href="/blog/">Blog</a>
+    </nav>
 </div>

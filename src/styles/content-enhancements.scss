@@ -1,0 +1,44 @@
+/* Editorial content uses the existing soft cards and mint/orange palette. */
+.content-section { width: min(90%, 1200px); margin: 0 auto; padding-block: clamp(2.5rem, 5vw, 4rem); }
+.about-page .content-section, .services-page .content-section { width: 100%; }
+.section-lead { max-width: 65ch; margin: 0 auto 2rem; line-height: 1.75; }
+.content-section > h2 { margin: 0 0 1rem; }
+.content-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+.content-card { padding: clamp(1.5rem, 3vw, 2rem); background: #f9f9f9; border: 1px solid #eee; border-radius: 1rem; }
+.content-card h3 { color: #356e64; margin: 0 0 1rem; font-size: 1.25rem; }
+.content-card p { line-height: 1.75; }
+.content-card a, .recovery-links a, .form-note a, .related-articles a { color: #356e64; text-underline-offset: .2em; font-size: 1rem; }
+.info-blocks .info-title h3 { color: #ff9438; font-size: 1.5rem; }
+.project-callout { width: min(100%, 760px); margin: clamp(2.5rem, 5vw, 4rem) auto 0; padding: clamp(1.5rem, 4vw, 2.5rem); border: 1px solid #c8e7df; border-radius: 1rem; background: #e6f5f1; text-align: center; }
+.project-callout h2 { color: #356e64; margin: 0 0 1rem; }
+.project-callout p { max-width: 55ch; margin: 0 auto 1.5rem; line-height: 1.75; }
+.project-callout .custom-button { margin-inline: auto; justify-content: center; }
+.faq-section details, .brief-help { background: #f9f9f9; border: 1px solid #ddd; border-radius: .75rem; padding: 1rem 1.25rem; text-align: left; }
+.faq-section details + details { margin-top: 1rem; }
+.faq-section summary, .brief-help summary { color: #356e64; font-weight: bold; cursor: pointer; }
+.faq-section details p, .brief-help p { line-height: 1.75; margin-bottom: 0; }
+.service-detail { border-top: 1px solid #dce7e3; padding-top: 1rem; }
+.brief-help { margin-bottom: 1.5rem; }
+.brief-help ul { padding-inline-start: 1.25rem; }
+.brief-help li + li { margin-top: .5rem; }
+.contact .contact-form .form-note, .contact .contact-form .field-help { font-size: .9rem; line-height: 1.6; color: #444; }
+.contact .contact-form .form-note { margin: 0 0 1.5rem; }
+.contact .contact-form .field-help { text-align: left; margin: 0; }
+.legal-page.legal-page { width: min(90%, 760px); max-width: 760px; margin: 0 auto; padding: clamp(1.5rem, 4vw, 3rem) 0 4rem; text-align: left; line-height: 1.8; }
+.legal-page.legal-page h1 { text-align: center; margin-top: 0; }
+.legal-page.legal-page h2 { color: #356e64; margin: 2rem 0 .75rem; font-size: 1.35rem; }
+.legal-page.legal-page p { margin: 0 0 1.25rem; }
+.legal-page.legal-page ul { list-style: disc; padding-inline-start: 1.25rem; }
+.legal-page.legal-page a { color: #356e64; overflow-wrap: anywhere; font-size: inherit; }
+.legal-page code { overflow-wrap: anywhere; }
+.legal-page .custom-button { font: inherit; }
+.blog-post-page .blog-post .blog-post-img { max-height: 420px; object-fit: contain; }
+.article-back { display: inline-block; margin-bottom: 1.5rem; color: #356e64; font-size: 1rem; }
+.article-meta { color: #555; font-size: .9rem; text-align: center; }
+.related-articles { margin-top: 3rem; border-top: 1px solid #dce7e3; padding-top: 1.5rem; }
+.related-articles ul { padding-inline-start: 1.25rem; }
+.related-articles li + li { margin-top: .75rem; }
+@media (max-width: 635px) { .content-grid { grid-template-columns: 1fr; gap: 1.25rem; } }
+.services-page .services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
+.services-page .services-grid .service-card { flex: 1 1 280px; max-width: 360px; width: 100%; }
+.blog-post-page .blog-post .blog-post-title { font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.35; margin: 1.5rem 0 .75rem; }

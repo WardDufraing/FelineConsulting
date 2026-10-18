@@ -29,3 +29,13 @@ FormSubmit handles delivery. The recipient must activate the service. Verify del
 - Review third-party form and cookie wording against the services actually used; no tracking was added.
 - Confirm font licensing before publishing; supplied Futura assets are preserved.
 - Check a real phone and deployed Vercel preview, including form delivery.
+
+## Content review — October 2026
+
+All public pages and the three existing articles have been reviewed for clearer copy, practical guidance, page descriptions and internal links. The five-tip article now contains exactly five numbered tips. Commercial terms were preserved; legal-page typography and the factual FormSubmit/cookie descriptions were corrected. Provider reference: https://formsubmit.co/documentation (submission archive) and https://formsubmit.co/help (retention before activation).
+
+Owner input for a future content pass:
+- A portrait and a short approved personal introduction for Jolien.
+- Real project assets, permission to show them and factual project descriptions.
+- Confirmed deliverable formats, revision scope and typical turnaround by service.
+- Review existing commercial terms and complete privacy details such as the applicable retention periods and controller information before publishing policy changes. These were not invented.

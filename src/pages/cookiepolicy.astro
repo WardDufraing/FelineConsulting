@@ -1,41 +1,29 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-import '../styles/cookiePolicy-styles.scss';
-
-const pageTitle = "Cookiebeleid - Feline Consulting";
 ---
-
-<BaseLayout pageTitle={pageTitle}>
-  <div class="cookiepolicy">
-    <section class="cookiepolicy-section">
-      <h1 class="cookiepolicy-header">Cookiebeleid</h1>
-
-      <p>
-        We gebruiken cookies om je ervaring op onze website te verbeteren. Cookies helpen ons te begrijpen hoe bezoekers de site gebruiken en zorgen ervoor dat bepaalde functionaliteiten correct werken.
-      </p>
-
-      <h2>Welke cookies gebruiken we?</h2>
-      <ul class="cookiepolicy-list">
-        <li><strong>Noodzakelijke cookies:</strong> Deze zorgen ervoor dat de website goed functioneert, bijvoorbeeld om je cookievoorkeuren te onthouden.</li>
-        <li><strong>Analytische cookies:</strong> Indien ingeschakeld, helpen deze ons anoniem te begrijpen hoe bezoekers onze site gebruiken.</li>
-        <li><strong>Marketing cookies:</strong> We gebruiken momenteel geen marketing cookies. Indien dit verandert, zullen we dit hier vermelden.</li>
-      </ul>
-
-      <h2>Wat doen we met de gegevens?</h2>
-      <p>
-        We verzamelen geen persoonlijke gegevens zonder jouw toestemming. Indien we analytische tools gebruiken, gebeurt dit enkel op anonieme basis en worden er geen persoonsgegevens gedeeld met derden.
-      </p>
-
-      <h2>Hoe beheer je cookies?</h2>
-      <p>
-        Je kunt je cookievoorkeuren op elk moment wijzigen via je browserinstellingen. Je kunt ook je voorkeur op deze site beheren via de cookiebanner onderaan de pagina.
-      </p>
-
-      <h2>Contact</h2>
-      <p>
-        Heb je vragen over ons cookiebeleid? Neem gerust contact op via <a href="mailto:jolien@feline-consulting.be ">jolien@feline-consulting.be</a>.
-      </p>
-    </section>
+<BaseLayout pageTitle="Cookiebeleid - Feline Consulting" description="Lees hoe deze website je voorkeur onthoudt en welke externe diensten worden gebruikt.">
+  <div class="cookiepolicy legal-page">
+    <h1>Cookies en websitevoorkeuren</h1>
+    <p>Deze pagina legt uit wat de website zelf in je browser bewaart. Voor gegevens die je via het contactformulier deelt, lees je ook ons <a href="/privacy/">privacybeleid</a>.</p>
+    <h2>Je keuze onthouden</h2>
+    <p>De website bewaart je keuze uit de banner lokaal in je browser, onder de naam <code>cookiesAccepted</code>. Dit gebeurt met localStorage. Zo verschijnt dezelfde vraag niet bij ieder bezoek opnieuw.</p>
+    <h2>Analytische en marketingtools</h2>
+    <p>De huidige websitecode bevat geen analytische of marketingtrackers. De keuze in de banner schakelt daarom op dit moment geen dergelijke scripts in of uit.</p>
+    <h2>Externe diensten</h2>
+    <p>Het contactformulier verstuurt je bericht via FormSubmit. Links naar sociale media openen de betreffende externe websites. Daar gelden de instellingen en voorwaarden van die diensten.</p>
+    <h2>Je voorkeur opnieuw kiezen</h2>
+    <p>Je kan de lokaal opgeslagen keuze wissen via je browserinstellingen of met de knop hieronder. Daarna verschijnt de banner opnieuw.</p>
+    <button type="button" class="custom-button" id="reset-cookie-choice">Toon de banner opnieuw</button>
+    <p id="cookie-reset-status" role="status"></p>
+    <h2>Een vraag?</h2>
+    <p>Mail naar <a href="mailto:jolien@feline-consulting.be">jolien@feline-consulting.be</a>.</p>
   </div>
+  <script>
+    document.getElementById('reset-cookie-choice')?.addEventListener('click', () => {
+      localStorage.removeItem('cookiesAccepted');
+      document.getElementById('cookie-banner')?.classList.remove('hidden');
+      const status = document.getElementById('cookie-reset-status');
+      if (status) status.textContent = 'Je opgeslagen keuze is gewist. De banner is opnieuw zichtbaar.';
+    });
+  </script>
 </BaseLayout>

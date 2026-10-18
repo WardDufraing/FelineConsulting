@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCallout from '../components/ProjectCallout.astro';
 import BlogCard from '../components/BlogCard.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
@@ -12,11 +13,11 @@ const blogPosts = (await getCollection("blog")).sort(
 );
 ---
 
-<BaseLayout pageTitle={pageTitle} pageType={pageType}>
+<BaseLayout description="Praktische ontwerptips over branding, geboortekaartjes en typografie. Heldere uitleg om betere keuzes te maken voor jouw ontwerp." pageTitle={pageTitle} pageType={pageType}>
   <div class="blog-page">
     <section class="blog-intro">
       <h1 class="blog-title">Blog</h1>
-      <p>Welkom op onze blog! Hier delen we tips, inspiratie en inzichten over grafisch ontwerp, branding, drukwerk en meer.</p>
+      <p>Van een herkenbare huisstijl tot een persoonlijk geboortekaartje: hier vind je praktische tips om je ontwerpvraag scherper te maken. Kies een onderwerp en neem de aandachtspunten mee naar je eigen project.</p>
     </section>
 
     <section class="blog-grid">
@@ -30,6 +31,7 @@ const blogPosts = (await getCollection("blog")).sort(
       ))}
     </section>
 
+    <ProjectCallout title="Van inspiratie naar jouw ontwerp" text="Heb je na het lezen een concrete vraag? Vertel ons wat je wil maken en welke keuzes nog openstaan." />
     <script>
       const cards = document.querySelectorAll('.blog-card');
 

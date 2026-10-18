@@ -1,0 +1,9 @@
+---
+interface Props { title?: string; text?: string; label?: string }
+const { title = 'Een idee dat je wil laten groeien?', text = 'Vertel ons wat je in gedachten hebt. Samen bekijken we welke aanpak bij jouw project past.', label = 'Bespreek je idee' } = Astro.props;
+---
+<aside class="project-callout">
+  <h2>{title}</h2>
+  <p>{text}</p>
+  <a class="custom-button" href="/contact/">{label}</a>
+</aside>

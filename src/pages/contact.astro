@@ -6,18 +6,20 @@ const pageTitle = "Contact - Feline Consulting";
 const pageType = "contact"
 ---
 
-<BaseLayout pageTitle={pageTitle} pageType={pageType}>
+<BaseLayout description="Bespreek jouw ontwerpidee met Feline Consulting. Vertel over je project, gewenste timing en stijl, of mail rechtstreeks naar Jolien." pageTitle={pageTitle} pageType={pageType}>
   <div class="contact">
     <section class="contact-section">
       <h1 class="contact-header">Neem contact op</h1>
       <p class="contact-intro">Een idee voor een logo, kaartje of huisstijl? Vertel ons wat je in gedachten hebt. We denken graag met je mee.</p>
 
+      <details class="brief-help"><summary>Wat zet ik in mijn bericht?</summary><ul><li>Wat wil je laten ontwerpen en voor wie?</li><li>Waar ga je het gebruiken: online, op papier of allebei?</li><li>Heb je een gewenste datum of een budget in gedachten?</li><li>Welke stijl of voorbeelden spreken je aan?</li></ul><p>Je hoeft nog niet op alles een antwoord te hebben. Begin gerust met je idee.</p></details>
       <form
         id="contact-form"
         action="https://formsubmit.co/jolien@feline-consulting.be"
         method="POST"
         class="contact-form"
       >
+        <p class="form-note">Alle velden zijn verplicht. Deel alleen gegevens die nodig zijn om je vraag te beantwoorden.</p>
         <!-- Honeypot -->
         <input type="text" name="_honey" style="display:none" tabindex="-1" />
 
@@ -54,12 +56,15 @@ const pageType = "contact"
           <textarea
             name="message"
             id="message"
+            aria-describedby="message-help"
             rows="5"
             required
             class="form-input"
           ></textarea>
+          <p id="message-help" class="field-help">Een korte beschrijving van je idee en gewenste timing is genoeg om te beginnen.</p>
         </div>
 
+        <p class="form-note">Je bericht wordt via FormSubmit naar Jolien gestuurd. Lees hoe dit werkt in ons <a href="/privacy/">privacybeleid</a>.</p>
         <button type="submit" class="form-button">
           <span class="button-text">Verstuur</span>
           <span class="button-loader hidden" aria-hidden="true"></span>

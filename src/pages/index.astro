@@ -7,7 +7,7 @@ import '../styles/index-styles.scss';
 const pageTitle = "Feline Consulting";
 const pageType = "index";
 ---
-<BaseLayout pageTitle={pageTitle} pageType={pageType}>
+<BaseLayout description="Persoonlijk grafisch ontwerp in België: logo’s, huisstijl, kaartjes en drukwerk. Ontdek Feline Consulting en vertel ons jouw idee." pageTitle={pageTitle} pageType={pageType}>
 
   <header class="hero">
     <div class="hero-content">
@@ -29,24 +29,32 @@ const pageType = "index";
     </svg>
   </div>
 
+  <section class="content-section home-services" aria-labelledby="home-services-title">
+    <h2 id="home-services-title">Voor jouw merk. Voor jouw moment.</h2>
+    <p class="section-lead">Een onderneming die vorm krijgt of een bijzonder moment dat je wil delen: elk verhaal vraagt om een eigen ontwerp.</p>
+    <div class="content-grid">
+      <article class="content-card"><h3>Een herkenbaar merk</h3><p>Een logo, huisstijl, flyer of social media visual: laat de verschillende onderdelen van je communicatie bij elkaar passen.</p><a href="/services/#merken">Ontwerp voor ondernemers →</a></article>
+      <article class="content-card"><h3>Een persoonlijk kaartje</h3><p>Geboorte, huwelijk of uitnodiging: zoek een stijl die bij jullie past, met aandacht voor tekst, papier en afwerking.</p><a href="/services/#kaartjes">Ontwerp voor bijzondere momenten →</a></article>
+    </div>
+  </section>
   <section class="info-blocks">
     <h2 class="info-blocks-title">Waarom kiezen voor Feline Consulting?</h2>
     <div class="info-block-grid">
-      {['Sterke merkidentiteit', 'Persoonlijke aanpak', 'Onderbouwd ontwerp', 'Eerlijke prijzen'].map((title, i) => (
+      {['Sterke merkidentiteit', 'Persoonlijke aanpak', 'Onderbouwd ontwerp', 'Een duidelijke aanpak'].map((title, i) => (
         <article class="info-card">
           <div class="info-img">
             <BenefitIllustration kind={i} />
           </div>
           <header class="info-title">
-            <h2>{title}</h2>
+            <h3>{title}</h3>
           </header>
           <div class="info">
             <p>
               {{
                 0: "We zoeken samen naar wat jouw merk uniek maakt. Deze merkwaarde vertalen wij in design om jouw zaak te onderscheiden van de rest.",
-                1: "Bandwerk is uit den boze bij ons. Er wordt voldoende tijd geïnvesteerd om het persoonlijk verhaal van elke klant te verwoorden.",
-                2: "Geen natte vinger werk, maar een masterdiploma marketing op zak. Jouw design steunt zodus op theorie en wetenschap.",
-                3: "Feline Consulting is nog een jong bedrijfje. Wij rekenen dus geen monsterbedragen zoals ervaren grafische studios of webdesigners."
+                1: "Jouw verhaal is het vertrekpunt. We luisteren naar je wensen en vertalen die naar een ontwerp dat bij jou of je onderneming past.",
+                2: "Een mooi ontwerp heeft ook een doel. We denken na over je doelgroep, boodschap en de plekken waar je ontwerp gebruikt wordt.",
+                3: "Elk ontwerp begint met een duidelijke vraag. We bespreken wat je nodig hebt en stemmen de aanpak en prijs af op de omvang van je project."
               }[i]}
             </p>
           </div>
