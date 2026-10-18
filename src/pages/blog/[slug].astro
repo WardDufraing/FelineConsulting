@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageIntro from '../../components/PageIntro.astro';
 import ProjectCallout from '../../components/ProjectCallout.astro';
 import { getEntry, getCollection, render } from 'astro:content';
 
@@ -19,11 +20,10 @@ const related = (await getCollection('blog')).filter(entry => entry.id !== post.
   <div class="blog-post-page">
     <article class="blog-post">
       <a class="article-back" href="/blog/">← Alle ontwerptips</a>
+      <PageIntro eyebrow="Ontwerptips" title={post.data.title}>
+        <p class="article-meta"><time datetime={post.data.publishDate.toISOString()}>{post.data.publishDate.toLocaleDateString('nl-BE')}</time> · {readingMinutes} min leestijd</p>
+      </PageIntro>
       <img src={post.data.img} alt={post.data.title} class="blog-post-img" />
-      <h1 class="blog-post-title">{post.data.title}</h1>
-      <p class="blog-post-date article-meta">
-        <time datetime={post.data.publishDate.toISOString()}>{post.data.publishDate.toLocaleDateString('nl-BE')}</time> · {readingMinutes} min leestijd
-      </p>
       <div class="blog-post-content">
         <Content />
       </div>
@@ -32,20 +32,5 @@ const related = (await getCollection('blog')).filter(entry => entry.id !== post.
     </article>
   </div>
 
-  <script>
-    const post = document.querySelector('.blog-post');
-  
-    if (post) {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-  
-      observer.observe(post);
-    }
-  </script>
+
 </BaseLayout>

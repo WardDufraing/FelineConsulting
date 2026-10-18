@@ -1,0 +1,36 @@
+/* Shared page language derived from About and Diensten. */
+.studio-intro { max-width: 680px; margin: 0 auto 2.5rem; text-align: center; }
+.studio-eyebrow { color: #356e64; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; font-weight: bold; margin: 0 0 .6rem; }
+.studio-intro h1 { font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.25; margin: .4rem 0 1rem; }
+.studio-intro .studio-lead { font-size: 1rem; line-height: 1.75; margin: 0; }
+.studio-icon { width: 64px; height: 64px; display: grid; place-items: center; border-radius: 50%; background: #e6f5f1; color: #356e64; margin-bottom: 1.25rem; }
+.studio-icon .service-symbol { width: 42px; height: 42px; }
+.blog-page.studio-page, .portfolio-page.studio-page { width: min(90%, 1120px); }
+.blog-page .blog-grid > .blog-card { text-align: left; border-color: #d8e6e1; border-top: 4px solid #79d1c2; box-shadow: 0 4px 16px rgba(0,0,0,.04); }
+.blog-card .blog-content .blog-kicker { color: #356e64; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; font-weight: bold; margin: 0; }
+.blog-card .blog-content .blog-heading { color: #356e64; line-height: 1.4; }
+.blog-card .blog-content .blog-readmore { justify-content: flex-start; }
+.portfolio-page .portfolio-showcase { padding: clamp(1.5rem, 3vw, 2.5rem); border: 1px solid #d8e6e1; border-top: 4px solid #79d1c2; border-radius: 1rem; background: #f9f9f9; text-align: left; box-shadow: 0 4px 16px rgba(0,0,0,.04); }
+.portfolio-page .portfolio-showcase-warm { border-top-color: #ff9438; }
+.portfolio-page .portfolio-showcase + .portfolio-showcase { margin-top: 2rem; }
+.portfolio-page .portfolio-showcase h2 { color: #356e64; margin: 0 0 1rem; font-size: clamp(1.5rem, 2.4vw, 1.8rem); }
+.portfolio-page .portfolio-showcase .section-lead { margin-left: 0; }
+.portfolio-showcase .carousel-slide { display: flex; align-items: center; justify-content: center; }
+.portfolio-showcase .swiper .swiper-wrapper .swiper-slide img { max-width: 100%; max-height: 320px; object-fit: contain; }
+.contact .contact-form { border-top: 4px solid #79d1c2; }
+.contact .contact-section .studio-intro { margin-bottom: 2rem; }
+.contact .brief-help { border-color: #d8e6e1; }
+.custom-button { min-height: 48px; border-radius: .5rem; padding: .75rem 1.5rem; justify-content: center; }
+.legal-page .studio-intro { margin-bottom: 2.5rem; }
+.blog-post-page .blog-post .studio-intro { margin-bottom: 2rem; }
+.blog-post-page .blog-post .blog-post-img { display: block; margin: 0 0 2rem; padding: 1rem; background: #f9f9f9; border: 1px solid #d8e6e1; border-radius: 1rem; }
+.blog-post-page .related-articles { border: 1px solid #bfddd4; border-radius: 1rem; background: #e6f5f1; padding: 1.5rem; }
+.blog-post-page .related-articles h2 { color: #356e64; font-size: 1.3rem; margin-top: 0; }
+.blog-post-content h2 { color: #356e64; font-size: 1.4rem; line-height: 1.4; }
+.not-found { max-width: 760px; }
+.not-found .recovery-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1rem; margin-top: 1.5rem; }
+.not-found .recovery-links a { display: inline-flex; align-items: center; min-height: 44px; }
+footer { color: #244f47; }
+footer.footer .footer-container .footer-brand .footer-logo, footer.footer .footer-container .footer-nav a, footer.footer .footer-container .footer-contact a { color: #244f47; }
+footer .social-button.custom-button { padding: .6rem .9rem; min-height: 44px; font-size: 1rem; }
+@media (max-width: 635px) { .studio-intro { margin-bottom: 2rem; } .blog-post-page .blog-post .studio-intro h1 { font-size: 1.75rem; line-height: 1.35; } }

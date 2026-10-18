@@ -11,11 +11,6 @@ img { max-width: 100%; height: auto; }
 }
 .blog-page .blog-grid { width: 100%; }
 .about-card, .service-card, .info-card { min-width: 0; overflow-wrap: break-word; }
-.hero .hero-content { max-width: 1200px; padding-block: clamp(1.5rem, 4vw, 3rem); }
-.hero .hero-content .hero-CTA { margin-top: 1rem; }
-.info-blocks { padding-bottom: clamp(3rem, 6vw, 5rem); }
-.info-blocks-title { margin: 0 auto 2.5rem; padding-inline: 1rem; }
-.info-blocks .info-block-grid { width: min(90%, 1200px); }
 textarea { resize: vertical; }
 button:disabled { cursor: wait; opacity: .7; }
 .form-confirmation-message.error { color: #9e2020; }
@@ -46,6 +41,6 @@ footer { padding: clamp(2rem, 5vw, 4rem) max(1rem, 5vw); }
 .blog-card .blog-content .blog-readmore:hover,
 .blog-post-content a:hover { color: #244f47; }
 
-.blog-card .blog-content .blog-readmore { min-height: 44px; display: inline-flex; justify-content: center; align-items: center; }
+.blog-card .blog-content .blog-readmore { min-height: 44px; display: inline-flex; justify-content: flex-start; align-items: center; }
 @media (max-width: 849px) { footer .footer-nav a { display: inline-block; min-height: 44px; padding-block: .4rem; } }
 .privacy-policy.legal-page .privacy-section ul { list-style: disc; }

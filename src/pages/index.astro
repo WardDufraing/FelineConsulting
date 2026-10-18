@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BenefitIllustration from '../components/BenefitIllustration.astro';
+import ServiceSymbol from '../components/ServiceSymbol.astro';
+import ProjectCallout from '../components/ProjectCallout.astro';
 
 import '../styles/index-styles.scss';
 
@@ -11,12 +13,9 @@ const pageType = "index";
 
   <header class="hero">
     <div class="hero-content">
+      <p class="home-eyebrow">Persoonlijk grafisch ontwerp</p>
       <h1>Designs die er niet alleen goed uitzien, maar ook goed voelen.</h1>
-      <p>
-        Of het nu gaat om de start van een merk of een nieuw hoofdstuk in het leven <br>
-        wij maken doordacht design dat jouw verhaal vertelt. <br>
-        Van krachtige logo’s tot lieve kaartjes, elk ontwerp voelt 100% als jou.
-      </p>
+      <p class="home-lead">Van een herkenbaar merk tot een bijzonder moment op papier: we maken doordacht ontwerp dat jouw verhaal vertelt en bij je past.</p>
       <a class="hero-CTA" href="/services/">Bekijk onze diensten.</a>
     </div>
   </header>
@@ -33,8 +32,8 @@ const pageType = "index";
     <h2 id="home-services-title">Voor jouw merk. Voor jouw moment.</h2>
     <p class="section-lead">Een onderneming die vorm krijgt of een bijzonder moment dat je wil delen: elk verhaal vraagt om een eigen ontwerp.</p>
     <div class="content-grid">
-      <article class="content-card"><h3>Een herkenbaar merk</h3><p>Een logo, huisstijl, flyer of social media visual: laat de verschillende onderdelen van je communicatie bij elkaar passen.</p><a href="/services/#merken">Ontwerp voor ondernemers →</a></article>
-      <article class="content-card"><h3>Een persoonlijk kaartje</h3><p>Geboorte, huwelijk of uitnodiging: zoek een stijl die bij jullie past, met aandacht voor tekst, papier en afwerking.</p><a href="/services/#kaartjes">Ontwerp voor bijzondere momenten →</a></article>
+      <article class="content-card"><div class="studio-icon"><ServiceSymbol kind="brand" /></div><p class="studio-eyebrow">Voor ondernemers</p><h3>Een herkenbaar merk</h3><p>Een logo, huisstijl, flyer of social media visual: laat de verschillende onderdelen van je communicatie bij elkaar passen.</p><a href="/services/#merken">Ontwerp voor ondernemers →</a></article>
+      <article class="content-card content-card-warm"><div class="studio-icon"><ServiceSymbol kind="card" /></div><p class="studio-eyebrow">Voor bijzondere momenten</p><h3>Een persoonlijk kaartje</h3><p>Geboorte, huwelijk of uitnodiging: zoek een stijl die bij jullie past, met aandacht voor tekst, papier en afwerking.</p><a href="/services/#kaartjes">Ontwerp voor bijzondere momenten →</a></article>
     </div>
   </section>
   <section class="info-blocks">
@@ -73,24 +72,6 @@ const pageType = "index";
       <li><span class="step-number" aria-hidden="true">03</span><h3>We ontwerpen samen</h3><p>We werken een ontwerp uit en bespreken je feedback. Samen verfijnen we de details.</p></li>
       <li><span class="step-number" aria-hidden="true">04</span><h3>Klaar voor jouw verhaal</h3><p>Je ontvangt het afgewerkte ontwerp. Heb je drukwerk nodig? Dan bekijken we ook de afwerking.</p></li>
     </ol>
-    <a class="custom-button" href="/contact/">Vertel ons je idee</a>
   </section>
-  <script>
-    const cards = document.querySelectorAll('.info-card');
-  
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          // Stagger each card by 100ms
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 100);
-  
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-  
-    cards.forEach(card => observer.observe(card));
-  </script>
+  <div class="home-closing"><ProjectCallout title="Welk verhaal wil jij vertellen?" text="Ontdek de persoonlijke aanpak achter Feline Consulting of vertel ons alvast wat je in gedachten hebt." label="Bespreek je idee" /><a class="home-about-link" href="/about/">Maak kennis met Feline Consulting <span aria-hidden="true">→</span></a></div>
 </BaseLayout>
