@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
 
 const pageTitle = "Algemene Voorwaarden - Feline Consulting";
 ---
@@ -7,7 +8,7 @@ const pageTitle = "Algemene Voorwaarden - Feline Consulting";
 <BaseLayout description="Lees de algemene voorwaarden van Feline Consulting over offertes, uitvoering, betaling en gebruik van ontwerpen." pageTitle={pageTitle}>
   <div class="terms-page legal-page">
     <section class="terms-section">
-      <h1 class="terms-header">Algemene Voorwaarden</h1>
+      <PageIntro eyebrow="Praktische informatie" title="Algemene voorwaarden" />
 
       <h2>1. Toepasselijkheid</h2>
       <p>

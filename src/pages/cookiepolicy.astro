@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
 ---
 <BaseLayout pageTitle="Cookiebeleid - Feline Consulting" description="Lees hoe deze website je voorkeur onthoudt en welke externe diensten worden gebruikt.">
   <div class="cookiepolicy legal-page">
-    <h1>Cookies en websitevoorkeuren</h1>
+    <PageIntro eyebrow="Praktische informatie" title="Cookies en websitevoorkeuren" />
     <p>Deze pagina legt uit wat de website zelf in je browser bewaart. Voor gegevens die je via het contactformulier deelt, lees je ook ons <a href="/privacy/">privacybeleid</a>.</p>
     <h2>Je keuze onthouden</h2>
     <p>De website bewaart je keuze uit de banner lokaal in je browser, onder de naam <code>cookiesAccepted</code>. Dit gebeurt met localStorage. Zo verschijnt dezelfde vraag niet bij ieder bezoek opnieuw.</p>

@@ -14,6 +14,7 @@ const { title, excerpt, href, img } = Astro.props;
 <article class="blog-card">
   <img loading="lazy" decoding="async" src={img} alt={title} class="blog-thumbnail" />
   <div class="blog-content">
+    <p class="blog-kicker">Ontwerptip</p>
     <h2 class="blog-heading">{title}</h2>
     <p class="blog-excerpt">{excerpt}</p>
     <a href={href} class="blog-readmore" aria-label={`Lees meer: ${title}`}>Lees meer →</a>
