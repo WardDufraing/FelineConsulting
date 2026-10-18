@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
 
 import '../styles/privacy-styles.scss';
 
@@ -9,7 +10,7 @@ const pageTitle = "Privacybeleid - Feline Consulting";
 <BaseLayout description="Lees welke gegevens je via het contactformulier deelt, waarom Feline Consulting ze gebruikt en hoe je vragen over privacy stelt." pageTitle={pageTitle}>
   <div class="privacy-policy legal-page">
     <section class="privacy-section">
-      <h1 class="privacy-header">Privacybeleid</h1>
+      <PageIntro eyebrow="Praktische informatie" title="Privacybeleid" />
 
       <p>
         Bij Feline Consulting hechten we veel waarde aan je privacy. In dit privacybeleid leggen we uit welke gegevens we verzamelen, waarom we dat doen, en hoe we jouw informatie beschermen.
