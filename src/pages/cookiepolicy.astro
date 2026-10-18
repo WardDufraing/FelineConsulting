@@ -22,10 +22,10 @@ import PageIntro from '../components/PageIntro.astro';
   </div>
   <script>
     document.getElementById('reset-cookie-choice')?.addEventListener('click', () => {
-      localStorage.removeItem('cookiesAccepted');
+      try { localStorage.removeItem('cookiesAccepted'); } catch { /* Storage can be disabled. */ }
       document.getElementById('cookie-banner')?.classList.remove('hidden');
       const status = document.getElementById('cookie-reset-status');
-      if (status) status.textContent = 'Je opgeslagen keuze is gewist. De banner is opnieuw zichtbaar.';
+      if (status) status.textContent = 'De banner is opnieuw zichtbaar. Je kan je keuze aanpassen.';
     });
   </script>
 </BaseLayout>

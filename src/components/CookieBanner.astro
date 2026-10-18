@@ -1,7 +1,7 @@
 ---
 import '../styles/cookieBanner-styles.scss';
 ---
-<div id="cookie-banner" class="cookie-banner hidden">
+<div id="cookie-banner" class="cookie-banner hidden" role="region" aria-label="Cookievoorkeur">
     <p class="cookie-message">
       Deze website onthoudt je keuze in deze browser. Er zijn momenteel geen analytische of marketingtrackers ingesteld.
       <a href="/cookiepolicy" class="cookie-link">Lees meer</a>
@@ -18,19 +18,19 @@ import '../styles/cookieBanner-styles.scss';
       const rejectBtn = document.getElementById('reject-cookies');
   
       if (banner && acceptBtn && rejectBtn) {
-        if (!localStorage.getItem('cookiesAccepted')) {
-          banner.classList.remove('hidden');
-        }
-  
-        acceptBtn.addEventListener('click', () => {
-          localStorage.setItem('cookiesAccepted', 'true');
+        let choice;
+        try { choice = localStorage.getItem('cookiesAccepted'); } catch { /* Storage can be disabled. */ }
+        if (!choice) banner.classList.remove('hidden');
+        const reserveSpace = () => document.documentElement.style.setProperty('--cookie-banner-height', `${banner.offsetHeight}px`);
+        new ResizeObserver(reserveSpace).observe(banner);
+        reserveSpace();
+        const saveChoice = (accepted: boolean) => {
+          try { localStorage.setItem('cookiesAccepted', String(accepted)); } catch { /* Dismiss for this visit. */ }
           banner.classList.add('hidden');
-        });
-  
-        rejectBtn.addEventListener('click', () => {
-          localStorage.setItem('cookiesAccepted', 'false');
-          banner.classList.add('hidden');
-        });
+          reserveSpace();
+        };
+        acceptBtn.addEventListener('click', () => saveChoice(true));
+        rejectBtn.addEventListener('click', () => saveChoice(false));
       }
     </script>
   </div>

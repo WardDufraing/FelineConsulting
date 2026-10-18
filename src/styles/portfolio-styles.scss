@@ -15,24 +15,24 @@
     .swiper-pagination{
         position: relative;
         .swiper-pagination-bullet {
-            background: #ccc; // inactive color
+            background: #607b73; // inactive color
             opacity: 1;
           }
           
           .swiper-pagination-bullet-active {
-            background: variables.$colour-brand-orange; // active color
+            background: #244f47; // active color
           }
     }
     .swiper-button-prev,
     .swiper-button-next {
-        color: variables.$colour-brand-orange;
+        color: #356e64;
         padding: 1rem;
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
         transition: background-color 0.3s ease;
 
         &:hover {
-            color: darken(variables.$colour-brand-orange, 10%);
+            color: #244f47;
         }
     }
 
@@ -54,4 +54,11 @@
             position: relative;
         }
     }
+}
+/* Preserve the small dots while making their whole hit area usable. */
+.swiper .swiper-pagination .swiper-pagination-bullet {
+  width: 44px; height: 44px; margin: 0 !important; background: transparent;
+  display: inline-flex; align-items: center; justify-content: center;
+  &::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #607b73; }
+  &.swiper-pagination-bullet-active::after { background: #244f47; }
 }

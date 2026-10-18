@@ -14,7 +14,7 @@ interface Props {
 
 export default function Carousel({ images, title }: Props) {
   return (
-    <section className="my-16">
+    <section className="my-16" aria-label={title ?? "Ontwerpvoorbeelden"}>
 
 
         <Swiper
@@ -36,7 +36,7 @@ export default function Carousel({ images, title }: Props) {
             },
           }}
           className="carousel-wrapper"
-          pagination={images.length > 1}
+          pagination={images.length > 1 ? { clickable: true } : false}
           navigation={images.length > 1}
         >
         {images.map((src, i) => (
