@@ -1,49 +1,41 @@
 ---
-import Social from '../components/Social.astro'
-
 import '../styles/footer-styles.scss';
-
-const platform = "github";
-const username = "withastro";
 ---
 
 <footer class="footer">
-  <section class="footer-container">
+  <div class="footer-container">
     <div class="footer-brand">
-      <h2 class="footer-logo">Feline Consulting</h2>
+      <a class="footer-logo" href="/" aria-label="Feline Consulting — naar de homepage">Feline Consulting</a>
+      <p>Persoonlijk grafisch ontwerp voor jouw merk en bijzondere momenten.</p>
+      <a class="footer-project-link" href="/contact/">Vertel ons je idee <span aria-hidden="true">→</span></a>
     </div>
 
-    <nav class="footer-nav">
+    <nav class="footer-nav" aria-label="Voettekst navigatie">
+      <h2 class="footer-heading">Ontdek Feline</h2>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/about">Over ons</a></li>
-        <li><a href="/services">Diensten</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/cookiepolicy">Cookiebeleid</a></li>
-        <li><a href="/privacy">Privacybeleid</a></li>
-        <li><a href="/terms-conditions">Voorwaarden</a></li>
+        <li><a href="/about/">Over ons</a></li>
+        <li><a href="/services/">Diensten</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/blog/">Blog</a></li>
       </ul>
     </nav>
 
-    <article class="footer-contact">
-      <p>Email: <a href="mailto:jolien@feline-consulting.be">jolien@feline-consulting.be</a></p>
-      <p>BTW BE0794.844.328</p>
-      <p>IBAN BE88 0019 4300 1441</p>
-      <p>Steursstraat 16<br/> 3130 BEGIJNENDIJK</p>
-      <!-- <p>Tel: <a href="tel:+32471234567">+32 471 23 45 67</a></p> -->
-    </article>
-
-    <article class="footer-social">
-        <Social platform="instagram" username="felineconsulting" />
-        <Social platform="pinterest" username="felineconsulting" />
-        <Social platform="linkedin" username="felineconsulting" />
-        <Social platform="facebook" username="felineconsulting" />
-    </article>
-  </section>
+    <div class="footer-contact">
+      <h2 class="footer-heading">Laten we kennismaken</h2>
+      <a class="footer-email" href="mailto:jolien@feline-consulting.be">jolien@feline-consulting.be</a>
+      <address>Steursstraat 16<br />3130 Begijnendijk, België</address>
+      <p class="footer-vat">BTW BE0794.844.328</p>
+    </div>
+  </div>
 
   <div class="footer-bottom">
-    <p>© {new Date().getFullYear()} Feline Consulting — Alle rechten voorbehouden.</p>
+    <p>© {new Date().getFullYear()} Feline Consulting</p>
+    <nav aria-label="Beleid en voorwaarden">
+      <a href="/privacy/">Privacybeleid</a>
+      <a href="/cookiepolicy/">Cookiebeleid</a>
+      <a href="/terms-conditions/">Voorwaarden</a>
+    </nav>
   </div>
 </footer>

@@ -30,7 +30,4 @@
 .not-found { max-width: 760px; }
 .not-found .recovery-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1rem; margin-top: 1.5rem; }
 .not-found .recovery-links a { display: inline-flex; align-items: center; min-height: 44px; }
-footer { color: #244f47; }
-footer.footer .footer-container .footer-brand .footer-logo, footer.footer .footer-container .footer-nav a, footer.footer .footer-container .footer-contact a { color: #244f47; }
-footer .social-button.custom-button { padding: .6rem .9rem; min-height: 44px; font-size: 1rem; }
 @media (max-width: 635px) { .studio-intro { margin-bottom: 2rem; } .blog-post-page .blog-post .studio-intro h1 { font-size: 1.75rem; line-height: 1.35; } }
