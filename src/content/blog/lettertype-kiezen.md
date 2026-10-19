@@ -31,6 +31,6 @@ Zet twee mogelijke combinaties naast elkaar op dezelfde toepassing, zoals een vi
 
 ## Leg je keuze vast
 
-Noteer de lettertypen, gewichten en basisafspraken in je [brandinggids](/blog/branding-gids). Dat maakt het eenvoudiger om later consistent te blijven.
+Noteer de lettertypen, gewichten en basisafspraken in je [brandinggids](/blog/branding-gids/). Dat maakt het eenvoudiger om later consistent te blijven.
 
 Twijfel je tussen verschillende richtingen? [Vertel ons over je merk](/contact/) en waar je het ontwerp wil gebruiken.

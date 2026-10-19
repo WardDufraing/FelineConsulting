@@ -19,12 +19,12 @@ const blogPosts = (await getCollection("blog")).sort(
   <div class="blog-page studio-page">
     <PageIntro eyebrow="Inspiratie & advies" title="Ontwerptips voor jouw verhaal." description="Van een herkenbare huisstijl tot een persoonlijk geboortekaartje: praktische tips om je ontwerpvraag scherper te maken en keuzes te maken die bij je passen." />
 
-    <section class="blog-grid">
+    <section class="blog-grid" aria-label="Artikelen over branding, kaartjes en typografie">
       {blogPosts.map((post: CollectionEntry<"blog">) => (
         <BlogCard
           title={post.data.title}
           excerpt={post.data.excerpt}
-          href={`/blog/${post.id}`}
+          href={`/blog/${post.id}/`}
           img={post.data.img}
         />
       ))}
