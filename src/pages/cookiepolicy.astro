@@ -8,9 +8,10 @@ import PageIntro from '../components/PageIntro.astro';
     <PageIntro eyebrow="Praktische informatie" title="Cookies en websitevoorkeuren" />
     <p>Deze pagina legt uit wat de website zelf in je browser bewaart. Voor gegevens die je via het contactformulier deelt, lees je ook ons <a href="/privacy/">privacybeleid</a>.</p>
     <h2>Je keuze onthouden</h2>
-    <p>De website bewaart je keuze uit de banner lokaal in je browser, onder de naam <code>cookiesAccepted</code>. Dit gebeurt met localStorage. Zo verschijnt dezelfde vraag niet bij ieder bezoek opnieuw.</p>
+    <p>De website bewaart je keuze uit de banner lokaal in je browser, onder de naam <code>felineAnalyticsConsentV1</code>. Dit gebeurt met localStorage. De keuze wordt maximaal 180 dagen onthouden. Een oudere keuze van vóór de invoering van Analytics geldt niet als toestemming voor statistieken.</p>
     <h2>Analytische en marketingtools</h2>
-    <p>De huidige websitecode bevat geen analytische of marketingtrackers. De keuze in de banner schakelt daarom op dit moment geen dergelijke scripts in of uit.</p>
+    <p>Alleen na toestemming laden we Google Analytics 4 voor bezoekstatistieken, zoals bekeken pagina’s en apparaatgegevens. Vóór toestemming en na weigering wordt de Google-tag niet geladen. We gebruiken deze integratie niet voor advertenties of gepersonaliseerde reclame.</p>
+    <p>Analytics kan cookies met namen zoals <code>_ga</code> en <code>_ga_…</code> plaatsen. We stellen de looptijd in op maximaal 180 dagen. Google verwerkt de meetgegevens; lees ook het <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">privacybeleid van Google</a>. We sturen via onze eigen meting geen namen, e-mailadressen, berichtinhoud of URL-queryparameters.</p>
     <h2>Externe diensten</h2>
     <p>Het contactformulier gebruikt Resend voor e-mailbezorging en Cloudflare Turnstile om spam tegen te gaan. Deze diensten verwerken de gegevens die daarvoor nodig zijn. Lees meer in ons privacybeleid.</p>
     <h2>Je voorkeur opnieuw kiezen</h2>
@@ -20,12 +21,4 @@ import PageIntro from '../components/PageIntro.astro';
     <h2>Een vraag?</h2>
     <p>Mail naar <a href="mailto:jolien@feline-consulting.be">jolien@feline-consulting.be</a>.</p>
   </div>
-  <script>
-    document.getElementById('reset-cookie-choice')?.addEventListener('click', () => {
-      try { localStorage.removeItem('cookiesAccepted'); } catch { /* Storage can be disabled. */ }
-      document.getElementById('cookie-banner')?.classList.remove('hidden');
-      const status = document.getElementById('cookie-reset-status');
-      if (status) status.textContent = 'De banner is opnieuw zichtbaar. Je kan je keuze aanpassen.';
-    });
-  </script>
 </BaseLayout>

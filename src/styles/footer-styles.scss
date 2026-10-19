@@ -46,6 +46,7 @@ footer.footer {
   }
   .footer-bottom p { margin: 0; }
   .footer-bottom nav { display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+  .footer-bottom button { border: 0; background: transparent; color: inherit; font: inherit; padding: 0; text-decoration: underline; text-underline-offset: .22em; cursor: pointer; min-height: 44px; }
   .footer-bottom a { display: inline-flex; align-items: center; min-height: 44px; }
   @media (min-width: 700px) {
     .footer-container { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem; }
