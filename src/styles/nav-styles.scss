@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     width: 100vw;
-    background-color: variables.$colour-brand-green;
+    background-color: variables.$colour-brand-mint-surface;
     .mobile-nav-image{
       margin-left: 20px;
       img{
@@ -47,7 +47,7 @@
   
   
   .nav-container{
-    background-color: variables.$colour-brand-green;
+    background-color: variables.$colour-brand-mint-surface;
     &.bg-wave{
       padding-bottom: 0;
       &::after {
@@ -59,7 +59,7 @@
     }
   
     &.bg-index{
-      background-color: variables.$colour-brand-green;
+      background-color: variables.$colour-brand-mint-surface;
     }
   
     &.expanded{
@@ -140,7 +140,7 @@
           white-space: nowrap;
           font-size: clamp(.85rem, 1.3vw, 1.2rem);
           &.active {
-            border-bottom: 2px solid variables.$colour-brand-orange;
+            border-bottom: 2px solid #356e64;
           }
         }
       }
@@ -148,10 +148,7 @@
   }
   
   /* END NAV STYLES */
-/* Softer mint and a restrained shadow keep the original orange logo distinct. */
-.mobile-nav-container, .nav-container, .nav-container.bg-index {
-  background-color: #a4dfd4;
-}
+/* A restrained shadow keeps the original orange logo distinct on mint. */
 
 .mobile-nav-image img, .nav-container .header-image img {
   filter: drop-shadow(0 1px 1px rgba(36, 79, 71, .38));
