@@ -11,7 +11,7 @@ const reply = (status: number, body: Record<string, unknown>) => new Response(JS
 export async function handleContact(request: Request, dependencies: Dependencies) {
   const { env, fetch: send } = dependencies;
   const origin = request.headers.get('origin');
-  const allowed = new Set([new URL(request.url).origin, new URL(env.PUBLIC_SITE_URL || 'https://feline-consulting.vercel.app/').origin]);
+  const allowed = new Set([new URL(request.url).origin, new URL(env.PUBLIC_SITE_URL || 'https://feline-consulting.be/').origin]);
   if (!origin || !allowed.has(origin)) return reply(403, { success: false, error: 'invalid_origin' });
   const contentType = request.headers.get('content-type') || '';
   if (!/^(multipart\/form-data;|application\/x-www-form-urlencoded(?:;|$))/i.test(contentType)) return reply(415, { success: false, error: 'invalid_format' });

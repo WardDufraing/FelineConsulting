@@ -33,7 +33,7 @@ const related = (await getCollection('blog')).filter(entry => entry.id !== post.
       <div class="blog-post-content">
         <Content />
       </div>
-      <nav class="related-articles" aria-label="Meer ontwerptips"><h2>Lees ook</h2><ul>{related.map(entry => <li><a href={`/blog/${entry.id}`}>{entry.data.title}</a></li>)}</ul></nav>
+      <nav class="related-articles" aria-label="Meer ontwerptips"><h2>Lees ook</h2><ul>{related.map(entry => <li><a href={`/blog/${entry.id}/`}>{entry.data.title}</a></li>)}</ul></nav>
       <ProjectCallout title="Hoe vertaal je dit naar jouw project?" text="Vertel ons wat je wil ontwerpen en welke vragen je nog hebt. We denken graag met je mee." />
     </article>
   </div>

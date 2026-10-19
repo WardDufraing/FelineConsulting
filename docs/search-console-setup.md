@@ -1,19 +1,21 @@
 # Google Search Console and favicon
 
-The working production site is currently https://feline-consulting.vercel.app/. The custom domain has not yet been confirmed to serve this deployment, so canonical URLs and the sitemap remain on the Vercel origin.
+The custom domain now serves the Vercel site. The SEO branch changes the preferred origin to `https://feline-consulting.be/` for canonical URLs, sharing links, structured data, robots and sitemap. Production aliases redirect to that origin after deployment. Preview deployments retain noindex.
 
-## Connect Search Console
+## Optional Search Console setup
 
-1. Sign in at https://search.google.com/search-console with the Google account that should own the property.
-2. For the working site, add the URL-prefix property `https://feline-consulting.vercel.app/`.
-3. Choose HTML tag verification. Copy only the content value from Google's `google-site-verification` tag.
-4. Set `PUBLIC_GOOGLE_SITE_VERIFICATION` to that value in Vercel's production environment and redeploy (or add Google's exact downloaded verification HTML file to `public/`). The layout emits the tag when the environment variable is set; no verification token is invented or committed.
-5. Check the published homepage source, then complete verification in Search Console.
-6. Submit `https://feline-consulting.vercel.app/sitemap.xml`. Inspect the homepage and request indexing. Indexing is not immediate or guaranteed.
+No Search Console account/property has been configured in this task. The owner previously paused this setup.
 
-When the custom domain is connected, prefer a Domain property `feline-consulting.be` with Google's DNS TXT verification. Keep the verification record in place. Set `PUBLIC_SITE_URL` to the actual preferred HTTPS origin, redeploy, check canonical/sitemap URLs, then submit that domain's sitemap. Avoid submitting the new site's sitemap under the older WordPress property's URL.
+If the owner chooses to resume:
 
-Google's verification guidance: https://support.google.com/webmasters/answer/9008080?hl=en-GB
+1. Sign in to the intended Google account at https://search.google.com/search-console.
+2. Add the Domain property `feline-consulting.be` and publish Google's exact DNS TXT verification record in Cloudflare. Keep the record in place. Alternatively use a URL-prefix property `https://feline-consulting.be/` with the provided HTML-tag verification and `PUBLIC_GOOGLE_SITE_VERIFICATION`.
+3. After this branch is deployed, inspect the homepage and services URL and submit `https://feline-consulting.be/sitemap.xml`.
+4. Check indexing and migration redirects over time. A sitemap or valid structured data does not guarantee indexing, rankings or rich results.
+
+If `PUBLIC_SITE_URL` is explicitly set in Vercel, it must be `https://feline-consulting.be/`; otherwise the code's new default applies. Redeploy after changing a build-time setting.
+
+Google verification guidance: https://support.google.com/webmasters/answer/9008080?hl=en-GB
 
 ## Icons
 
