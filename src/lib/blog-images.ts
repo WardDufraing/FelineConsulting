@@ -1,3 +1,6 @@
+import guide0 from '../../public/images/blog/kleuren-huisstijl.webp';
+import guide1 from '../../public/images/blog/ontwerpbriefing.webp';
+import guide2 from '../../public/images/blog/flyer-ontwerpen.webp';
 import logoFiles from '../../public/images/blog/logo-bestanden.webp';
 import wedding from '../../public/images/blog/huwelijksdrukwerk.webp';
 import proof from '../../public/images/blog/drukproef-controleren.webp';
@@ -5,6 +8,10 @@ import branding from '../../public/images/blog/branding-guide.webp';
 import birth from '../../public/images/blog/geboortekaartje-tips.webp';
 import type from '../../public/images/blog/lettertype-kiezen.webp';
 export const blogImages = {
+  '/images/blog/kleuren-huisstijl.webp': guide0,
+  '/images/blog/ontwerpbriefing.webp': guide1,
+  '/images/blog/flyer-ontwerpen.webp': guide2,
+
   '/images/blog/logo-bestanden.webp': logoFiles,
   '/images/blog/huwelijksdrukwerk.webp': wedding,
   '/images/blog/drukproef-controleren.webp': proof,
