@@ -31,4 +31,4 @@ Je hoeft niet meteen een uitgebreid document te maken. Een compacte basis die je
 
 Bekijk een social post en een visitekaartje naast elkaar. Herken je dezelfde kleuren, letters en beeldtaal? Zo niet, noteer waar het verschil zit. Dat is een goed vertrekpunt voor het aanscherpen van je huisstijl.
 
-Lees ook [hoe je een lettertype voor je merk kiest](/blog/lettertype-kiezen). Wil je je merkidentiteit laten uitwerken? Bekijk onze [diensten voor ondernemers](/services/#merken).
+Lees ook [hoe je een lettertype voor je merk kiest](/blog/lettertype-kiezen/). Wil je je merkidentiteit laten uitwerken? Bekijk onze [diensten voor ondernemers](/services/#merken).

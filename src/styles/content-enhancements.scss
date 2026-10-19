@@ -40,3 +40,9 @@
 .related-articles li + li { margin-top: .75rem; }
 @media (max-width: 635px) { .content-grid { grid-template-columns: 1fr; gap: 1.25rem; } }
 .blog-post-page .blog-post .blog-post-title { font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.35; margin: 1.5rem 0 .75rem; }
+
+/* Longer practical guidance follows the existing left-aligned studio cards. */
+.editorial-section { text-align: left; }
+.editorial-section .section-lead { margin-inline: 0; }
+.editorial-section a, .about-panel a, .faq-section a { color: #356e64; font-size: inherit; text-underline-offset: .2em; }
+.portfolio-page .editorial-section { width: 100%; }
