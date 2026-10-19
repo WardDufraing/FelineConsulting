@@ -4,7 +4,7 @@
 .hero .home-eyebrow { margin: 0 0 1rem; color: #244f47; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; font-weight: bold; }
 .hero .hero-content h1 { color: #244f47; text-align: left; max-width: 28ch; margin: 0 0 1.5rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.25; }
 .hero .home-lead { max-width: 60ch; margin: 0 0 1.5rem; line-height: 1.75; }
-.hero .hero-CTA { display: flex; align-items: center; justify-content: center; width: 30%; min-width: max-content; max-width: 100%; min-height: 48px; padding: .75rem 1.5rem; border: 1px solid variables.$colour-brand-orange; border-radius: .5rem; background: variables.$colour-brand-orange; color: #173e36; text-decoration: none; font-size: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,.1); }
+.hero .hero-CTA { display: flex; align-items: center; justify-content: center; width: 30%; min-width: max-content; max-width: 100%; min-height: 48px; padding: .75rem 1.5rem; border: 2px solid #244f47; border-radius: .5rem; background: variables.$colour-brand-orange; color: #173e36; text-decoration: none; font-size: 1rem; box-shadow: 0 2px 4px rgba(0,0,0,.1); }
 .hero .hero-CTA:hover { transform: translateY(-2px); }
 .wave { margin-top: -1px; }
 .wave svg { display: block; width: 100%; height: clamp(64px, 10vw, 130px); }

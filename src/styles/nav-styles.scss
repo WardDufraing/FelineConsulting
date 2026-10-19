@@ -140,7 +140,7 @@
           white-space: nowrap;
           font-size: clamp(.85rem, 1.3vw, 1.2rem);
           &.active {
-            border-bottom: 2px solid variables.$colour-brand-orange;
+            border-bottom: 2px solid #244f47;
           }
         }
       }
@@ -148,3 +148,11 @@
   }
   
   /* END NAV STYLES */
+/* A pale logo plaque separates the original orange mark from the mint header. */
+.mobile-nav-image, .nav-container .header-image {
+  background: #fffaf5;
+  border-radius: 1rem;
+  padding: .4rem .8rem;
+}
+.mobile-nav-image { margin-block: .5rem; }
+.nav-container .header-image { margin-block: .75rem; }
