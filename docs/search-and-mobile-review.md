@@ -10,7 +10,7 @@ Branch: `improve/search-sharing-mobile-performance` (based directly on main).
 - Generated sitemap for all 12 content pages, robots.txt referencing it, and noindex for 404 and Vercel preview builds.
 - Content pages and articles are generated at build time, rather than rendered on every request.
 
-`PUBLIC_SITE_URL` is the single domain setting, used by Astro, canonical URLs, share URLs, schemas and sitemap. It currently defaults to https://feline-consulting.vercel.app/ because the custom domain has not been confirmed to serve the new site. When the domain is ready, set this variable to the preferred HTTPS origin in Vercel and redeploy. Submit the resulting `/sitemap.xml` in Search Console after domain verification; this change does not claim account verification or indexing.
+`PUBLIC_SITE_URL` is the single domain setting, used by Astro, canonical URLs, share URLs, schemas and sitemap. The custom domain has now been confirmed to serve the site. The SEO follow-up defaults to https://feline-consulting.be/; any explicit Vercel override must match that origin. Submit the resulting `/sitemap.xml` in Search Console after domain verification; this change does not claim account verification or indexing.
 
 Canonical and sitemap alignment follows Google's guidance: https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
 

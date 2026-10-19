@@ -27,6 +27,39 @@ const article = articleDate ? {
   description, image, datePublished: articleDate, inLanguage: 'nl-BE',
   mainEntityOfPage: canonical, publisher: { '@id': organization['@id'] },
 } : undefined;
+const pageNames: Record<string, string> = {
+  '/about/': 'Over ons', '/services/': 'Diensten', '/portfolio/': 'Portfolio',
+  '/contact/': 'Contact', '/blog/': 'Ontwerptips', '/privacy/': 'Privacybeleid',
+  '/cookiepolicy/': 'Cookiebeleid', '/terms-conditions/': 'Voorwaarden',
+};
+const path = Astro.url.pathname;
+const website = {
+  '@context': 'https://schema.org', '@type': 'WebSite',
+  '@id': new URL('/#website', siteUrl).href, url: siteUrl.href,
+  name: 'Feline Consulting', inLanguage: 'nl-BE',
+  publisher: { '@id': organization['@id'] },
+};
+const webpage = {
+  '@context': 'https://schema.org',
+  '@type': path === '/contact/' ? 'ContactPage' : path === '/about/' ? 'AboutPage' : 'WebPage',
+  '@id': `${canonical}#webpage`, url: canonical, name: title, description,
+  inLanguage: 'nl-BE', isPartOf: { '@id': website['@id'] }, about: { '@id': organization['@id'] },
+};
+const crumbs = [{ name: 'Home', item: siteUrl.href }];
+if (articleDate) crumbs.push({ name: 'Ontwerptips', item: canonicalUrl('/blog/') });
+if (path !== '/') crumbs.push({ name: pageNames[path] || pageTitle, item: canonical });
+const breadcrumb = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((crumb, index) => ({ '@type': 'ListItem', position: index + 1, ...crumb })),
+};
+const services = [
+  { name: 'Logo & huisstijl', anchor: 'merken', serviceType: 'Logo- en huisstijlontwerp' },
+  { name: 'Persoonlijke kaartjes', anchor: 'kaartjes', serviceType: 'Geboorte- en huwelijksdrukwerk' },
+  { name: 'Grafisch drukwerk en social media visuals', anchor: 'aanvullend', serviceType: 'Grafisch ontwerp' },
+].map(({ name, anchor, serviceType }) => ({
+  '@context': 'https://schema.org', '@type': 'Service', name, serviceType,
+  url: `${canonicalUrl('/services/')}#${anchor}`, provider: { '@id': organization['@id'] },
+}));
 const json = (value: unknown) => JSON.stringify(value).replace(/</g, '\u003c');
 ---
 
@@ -64,6 +97,10 @@ const json = (value: unknown) => JSON.stringify(value).replace(/</g, '\u003c');
     <meta name="twitter:image:alt" content={socialImageAlt} />
     {articleDate && <meta property="article:published_time" content={articleDate} />}
     <script type="application/ld+json" set:html={json(organization)} />
+    {!noindex && <script type="application/ld+json" set:html={json(website)} />}
+    {!noindex && <script type="application/ld+json" set:html={json(webpage)} />}
+    {!noindex && path !== '/' && <script type="application/ld+json" set:html={json(breadcrumb)} />}
+    {path === '/services/' && services.map(service => <script type="application/ld+json" set:html={json(service)} />)}
     {article && <script type="application/ld+json" set:html={json(article)} />}
   </head>
   <body>
