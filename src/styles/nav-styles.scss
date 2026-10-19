@@ -148,3 +148,11 @@
   }
   
   /* END NAV STYLES */
+/* Softer mint and a restrained shadow keep the original orange logo distinct. */
+.mobile-nav-container, .nav-container, .nav-container.bg-index {
+  background-color: #a4dfd4;
+}
+
+.mobile-nav-image img, .nav-container .header-image img {
+  filter: drop-shadow(0 1px 1px rgba(36, 79, 71, .38));
+}
