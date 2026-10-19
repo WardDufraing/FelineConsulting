@@ -1,5 +1,5 @@
 @use 'variables.scss';
-.hero { background: variables.$colour-brand-green; padding: 0 5%; color: #244f47; }
+.hero { background: #a4dfd4; padding: 0 5%; color: #244f47; }
 .hero .hero-content { width: min(100%, 1120px); margin-inline: auto; display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding: clamp(2rem, 5vw, 4rem) 0; }
 .hero .home-eyebrow { margin: 0 0 1rem; color: #244f47; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; font-weight: bold; }
 .hero .hero-content h1 { color: #244f47; text-align: left; max-width: 28ch; margin: 0 0 1.5rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.25; }
